@@ -12,14 +12,15 @@
 <link rel="canonical" href="https://songgollab.co.kr/airang">
 <link rel="icon" href="/assets/favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body>
-<div class="notice">🚗 <b>드라이브 콘솔 무료 테스터 모집</b> · 구글 플레이 출시 전 먼저 써 보세요 <a href="/drive-console#tester">신청 방법</a></div>
+<body class="pg-airang">
 <header class="top" id="top">
   <div class="wrap">
     <a class="brand" href="/"><img src="/assets/logo-symbol.png" alt="송골랩 심벌"><span><b>송골랩</b><small>SONGGOL LAB</small></span></a>
-    <nav class="nav" id="nav"><a href="/services">서비스</a><a href="/projects" class=on>프로젝트</a><a href="/videos">영상</a><a href="/about">회사 소개</a><a class="ext" href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a></nav>
+    <nav class="nav" id="nav"><a href="/consulting">컨설팅</a><a href="/projects" class=on>랩 프로젝트</a><a href="/services">서비스</a><a href="/videos">영상</a><a href="/about">소개</a><a class="ext" href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a></nav>
     <a class="btn btn-primary" href="/contact">문의하기</a>
     <button class="menu-btn" aria-label="메뉴 열기" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
   </div>
@@ -36,18 +37,20 @@
 <section class="sec " id=hist><div class="wrap"><span class="eyebrow">개발 이력 · 로드맵</span><h2>앞으로의 계획</h2><div class="tbl-wrap"><table class="tbl"><thead><tr><th>단계</th><th>내용</th></tr></thead><tbody><tr><td>구상</td><td>용인 대상, 수집 가능한 정보부터 정리</td></tr><tr><td>수집기</td><td>공공 데이터 매일 아침 자동 수집</td></tr><tr><td>웹앱 공개</td><td>여덟 가지 메뉴, 학원 알림, 무료·가입 없음 (2026.10 시범 운영)</td></tr><tr><td>1단계</td><td>월 1만 명까지 — 급식·유치원 모집 추가, 꾸준한 홍보, 의견 바로 반영</td></tr><tr><td>2단계</td><td>월 1만~5만 명 — 동네 학원·키즈 업체 광고, 채용 공고 상단 노출 ("광고" 표시)</td></tr><tr><td>3단계</td><td>월 5만 명 이상 — 도시 계속 늘리기, 지자체·기관 협업</td></tr></tbody></table></div></div></section>
 <section class="band"><div class="wrap"><div class="cta-band"><div><h3>우리 동네를 골라 지금 써 보세요</h3><p>무료이고, 가입 없이 바로 열립니다. 필요한 기능이 있으면 알려 주세요.</p></div><div class="links"><a class="btn btn-primary" href="https://airang.songgollab.co.kr" target="_blank" rel="noopener">아이랑 열기 ↗</a><a class="btn btn-ghost" href="/contact">의견 보내기</a></div></div></div></section>
 </main>
-<footer>
+<footer class="foot">
   <div class="wrap">
-    <div>
-      <div class="brand" style="margin-bottom:10px"><img src="/assets/logo-symbol.png" alt=""><span><b style="color:var(--ink)">송골랩</b><small>SONGGOL LAB</small></span></div>
-      <p>상호 송골랩 · 대표 이진복 · songgollab@gmail.com</p>
-      <p>© 2026 SONGGOL LAB</p>
+    <div class="foot-brand">
+      <div class="brand"><img src="/assets/logo-symbol.png" alt=""><span><b>송골랩</b><small>SONGGOL LAB</small></span></div>
+      <p class="foot-tag">Semiconductor Process &amp; Equipment Engineering · Life-tech Lab</p>
+      <p>상호 송골랩 · 대표 이진복 · <a href="mailto:songgollab@gmail.com">songgollab@gmail.com</a></p>
     </div>
-    <nav>
-      <a href="/services">서비스</a><a href="/projects">프로젝트</a><a href="/videos">영상</a><a href="/about">회사 소개</a><a href="/contact">문의</a>
-      <a href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a><a href="https://airang.songgollab.co.kr" target="_blank" rel="noopener">아이랑</a><a href="/drive-console-privacy">개인정보처리방침</a>
-    </nav>
+    <div class="foot-cols">
+      <div><b>Engineering</b><a href="/consulting">반도체 컨설팅</a><a href="/consulting#areas">컨설팅 분야</a><a href="/contact?topic=반도체">사전 상담</a></div>
+      <div><b>Lab</b><a href="/projects">랩 프로젝트</a><a href="/drive-console">드라이브 콘솔</a><a href="/airang">아이랑</a><a href="/project-home-iot">홈 IoT</a></div>
+      <div><b>About</b><a href="/about">소개</a><a href="/videos">영상</a><a href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그 ↗</a><a href="/drive-console-privacy">개인정보처리방침</a></div>
+    </div>
   </div>
+  <div class="wrap foot-bottom"><span>© 2026 SONGGOL LAB. All rights reserved.</span><span class="mono">BUILT IN YONGIN, KR</span></div>
 </footer>
 <script src="/assets/site.js" defer></script>
 </body>

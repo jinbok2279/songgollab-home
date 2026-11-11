@@ -28,9 +28,9 @@ IMG = {
 def lh(i, w=1280): return f'https://lh3.googleusercontent.com/d/{i}=w{w}'
 
 # ---------- 공통 틀 ----------
-NAV = [('services', '서비스'), ('projects', '프로젝트'), ('videos', '영상'), ('about', '회사 소개')]
+NAV = [('consulting', '컨설팅'), ('projects', '랩 프로젝트'), ('services', '서비스'), ('videos', '영상'), ('about', '소개')]
 
-def page(slug, title, desc, body, on='', lang='ko'):
+def page(slug, title, desc, body, on='', lang='ko', tail=''):
     nav = ''.join(f'<a href="/{k}"{" class=on" if k == on else ""}>{v}</a>' for k, v in NAV)
     t = f'{title} | 송골랩' if title else '송골랩 SONGGOL LAB'
     url = SITE + ('/' + slug if slug != 'index' else '/')
@@ -48,10 +48,11 @@ def page(slug, title, desc, body, on='', lang='ko'):
 <link rel="canonical" href="{url}">
 <link rel="icon" href="/assets/favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body>
-<div class="notice">🚗 <b>드라이브 콘솔 무료 테스터 모집</b> · 구글 플레이 출시 전 먼저 써 보세요 <a href="/drive-console#tester">신청 방법</a></div>
+<body class="pg-{slug}">
 <header class="top" id="top">
   <div class="wrap">
     <a class="brand" href="/"><img src="/assets/logo-symbol.png" alt="송골랩 심벌"><span><b>송골랩</b><small>SONGGOL LAB</small></span></a>
@@ -63,20 +64,22 @@ def page(slug, title, desc, body, on='', lang='ko'):
 <main>
 {body}
 </main>
-<footer>
+<footer class="foot">
   <div class="wrap">
-    <div>
-      <div class="brand" style="margin-bottom:10px"><img src="/assets/logo-symbol.png" alt=""><span><b style="color:var(--ink)">송골랩</b><small>SONGGOL LAB</small></span></div>
-      <p>상호 송골랩 · 대표 이진복 · {MAIL}</p>
-      <p>© 2026 SONGGOL LAB</p>
+    <div class="foot-brand">
+      <div class="brand"><img src="/assets/logo-symbol.png" alt=""><span><b>송골랩</b><small>SONGGOL LAB</small></span></div>
+      <p class="foot-tag">Semiconductor Process &amp; Equipment Engineering · Life-tech Lab</p>
+      <p>상호 송골랩 · 대표 이진복 · <a href="mailto:{MAIL}">{MAIL}</a></p>
     </div>
-    <nav>
-      <a href="/services">서비스</a><a href="/projects">프로젝트</a><a href="/videos">영상</a><a href="/about">회사 소개</a><a href="/contact">문의</a>
-      <a href="{BLOG}" target="_blank" rel="noopener">블로그</a><a href="{AIRANG}" target="_blank" rel="noopener">아이랑</a><a href="/drive-console-privacy">개인정보처리방침</a>
-    </nav>
+    <div class="foot-cols">
+      <div><b>Engineering</b><a href="/consulting">반도체 컨설팅</a><a href="/consulting#areas">컨설팅 분야</a><a href="/contact?topic=반도체">사전 상담</a></div>
+      <div><b>Lab</b><a href="/projects">랩 프로젝트</a><a href="/drive-console">드라이브 콘솔</a><a href="/airang">아이랑</a><a href="/project-home-iot">홈 IoT</a></div>
+      <div><b>About</b><a href="/about">소개</a><a href="/videos">영상</a><a href="{BLOG}" target="_blank" rel="noopener">블로그 ↗</a><a href="/drive-console-privacy">개인정보처리방침</a></div>
+    </div>
   </div>
+  <div class="wrap foot-bottom"><span>© 2026 SONGGOL LAB. All rights reserved.</span><span class="mono">BUILT IN YONGIN, KR</span></div>
 </footer>
-<script src="/assets/site.js" defer></script>
+<script src="/assets/site.js" defer></script>{tail}
 </body>
 </html>
 '''
@@ -402,7 +405,7 @@ CONTACT_FORM = f'''<form class="form" id="cform" novalidate>
 <h2 style="margin:0">문의 남기기</h2>
 <label>이름<input name="name" autocomplete="name" required></label>
 <label>연락처 (이메일 또는 전화)<input name="contact" required></label>
-<label>문의 분야<select name="topic"><option>드라이브 콘솔 테스터 신청</option><option>서비스 의견 · 아이랑</option><option>서비스 의견 · 드라이브 콘솔</option><option>오류 신고</option><option>프로젝트 의견 · 홈 IoT</option><option>설치 상담 · 홈 IoT</option><option>기술 교류</option><option>협업 · 사업 제안</option><option>기타</option></select></label>
+<label>문의 분야<select name="topic"><option>반도체 공정·설비 컨설팅 사전 상담</option><option>드라이브 콘솔 테스터 신청</option><option>서비스 의견 · 아이랑</option><option>서비스 의견 · 드라이브 콘솔</option><option>오류 신고</option><option>프로젝트 의견 · 홈 IoT</option><option>설치 상담 · 홈 IoT</option><option>기술 교류</option><option>협업 · 사업 제안</option><option>기타</option></select></label>
 <label>내용<textarea name="body" required placeholder="드라이브 콘솔 테스터 신청은 플레이스토어에서 쓰는 Gmail 주소를 적어 주세요."></textarea></label>
 <label class="agree"><input type="checkbox" name="agree" required>문의 답변을 위한 개인정보(이름·연락처) 수집·이용에 동의합니다</label>
 <p class="err" id="cerr" role="alert"></p>
@@ -606,13 +609,16 @@ PAGES['404'] = ('페이지를 찾을 수 없어요', '요청하신 페이지가 
 
 # ---------- 쓰기 ----------
 def main():
-    css = open(os.path.join(HERE, 'assets/base.css'), encoding='utf-8').read() + '\n' + open(os.path.join(HERE, 'assets/pages.css'), encoding='utf-8').read()
+    import home  # 첫 화면 · 반도체 컨설팅 페이지 (home.py)
+    home.add(globals())
+    css = '\n'.join(open(os.path.join(HERE, 'assets', f), encoding='utf-8').read() for f in ('base.css', 'pages.css', 'theme.css'))
     open(os.path.join(HERE, 'assets/site.css'), 'w', encoding='utf-8').write(css)
     for slug, v in PAGES.items():
         title, desc, on, body = v[:4]
         lang = v[4] if len(v) > 4 else 'ko'
-        open(os.path.join(HERE, slug + '.html'), 'w', encoding='utf-8').write(page(slug, title, desc, body, on, lang))
-    urls = ['/'] + ['/' + k for k in PAGES if k != '404']
+        tail = v[5] if len(v) > 5 else ''
+        open(os.path.join(HERE, slug + '.html'), 'w', encoding='utf-8').write(page(slug, title, desc, body, on, lang, tail))
+    urls = ['/' + k if k != 'index' else '/' for k in PAGES if k != '404']
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{SITE}{u}</loc></url>\n' for u in urls) + '</urlset>\n'
     open(os.path.join(HERE, 'sitemap.xml'), 'w', encoding='utf-8').write(sm)
     open(os.path.join(HERE, 'robots.txt'), 'w', encoding='utf-8').write(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')

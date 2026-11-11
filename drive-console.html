@@ -12,14 +12,15 @@
 <link rel="canonical" href="https://songgollab.co.kr/drive-console">
 <link rel="icon" href="/assets/favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body>
-<div class="notice">🚗 <b>드라이브 콘솔 무료 테스터 모집</b> · 구글 플레이 출시 전 먼저 써 보세요 <a href="/drive-console#tester">신청 방법</a></div>
+<body class="pg-drive-console">
 <header class="top" id="top">
   <div class="wrap">
     <a class="brand" href="/"><img src="/assets/logo-symbol.png" alt="송골랩 심벌"><span><b>송골랩</b><small>SONGGOL LAB</small></span></a>
-    <nav class="nav" id="nav"><a href="/services" class=on>서비스</a><a href="/projects">프로젝트</a><a href="/videos">영상</a><a href="/about">회사 소개</a><a class="ext" href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a></nav>
+    <nav class="nav" id="nav"><a href="/consulting">컨설팅</a><a href="/projects">랩 프로젝트</a><a href="/services" class=on>서비스</a><a href="/videos">영상</a><a href="/about">소개</a><a class="ext" href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a></nav>
     <a class="btn btn-primary" href="/contact">문의하기</a>
     <button class="menu-btn" aria-label="메뉴 열기" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
   </div>
@@ -37,18 +38,20 @@
 <section class="sec alt" id=faq><div class="wrap"><span class="eyebrow">FAQ</span><h2>자주 묻는 질문</h2><div class="faq"><details><summary>어떻게 설치하나요?</summary><p>테스터로 등록되면 설치 링크를 보내 드려요. 폰에서 링크를 열고 "테스터 되기" → "다운로드"를 누르면 플레이스토어에서 바로 설치돼요. 파일을 따로 받을 필요가 없어요.</p></details><details><summary>동글이 안 잡혀요</summary><p>시동을 켜고, 태블릿 블루투스를 켠 뒤 설정 › 연결에서 다시 골라 주세요. 다른 앱(예: Car Scanner)이 동글을 잡고 있으면 그 앱을 꺼 주세요.</p></details><details><summary>값이 회색으로 나와요</summary><p>차종마다 주는 값이 다릅니다. 회색은 기준이 없는 참고값이에요.</p></details><details><summary>운전 중에 조작해도 되나요?</summary><p>안전을 위해 정차 중에 조작하고, 운전 중에는 음성 비서를 써 주세요. 주행 중에는 분할 화면의 영상 앱이 자동으로 가려져요.</p></details><details><summary>후기는 어디에 남기나요?</summary><p>써 보셨다면 플레이스토어 앱 페이지나 문의 페이지로 후기와 질문을 남겨 주세요. 남겨 주신 후기는 이곳에도 옮겨 적어요.</p></details></div><p class="p" style="margin-top:18px">블로그 15일 체험판을 이미 쓰고 계신 분은 체험이 끝난 뒤 잠금 화면의 <b>기기 번호</b>를 카카오톡 문의로 보내 주세요.</p></div></section>
 <section class="band"><div class="wrap"><div class="cta-band"><div><h3>궁금한 점이 있으신가요?</h3><p>카카오톡이나 songgollab@gmail.com으로 물어봐 주세요.</p></div><div class="links"><a class="btn btn-primary" href="https://open.kakao.com/o/syctg5Qi" target="_blank" rel="noopener">카카오톡으로 문의하기</a><a class="btn btn-ghost" href="/contact">문의 페이지</a></div></div></div></section>
 </main>
-<footer>
+<footer class="foot">
   <div class="wrap">
-    <div>
-      <div class="brand" style="margin-bottom:10px"><img src="/assets/logo-symbol.png" alt=""><span><b style="color:var(--ink)">송골랩</b><small>SONGGOL LAB</small></span></div>
-      <p>상호 송골랩 · 대표 이진복 · songgollab@gmail.com</p>
-      <p>© 2026 SONGGOL LAB</p>
+    <div class="foot-brand">
+      <div class="brand"><img src="/assets/logo-symbol.png" alt=""><span><b>송골랩</b><small>SONGGOL LAB</small></span></div>
+      <p class="foot-tag">Semiconductor Process &amp; Equipment Engineering · Life-tech Lab</p>
+      <p>상호 송골랩 · 대표 이진복 · <a href="mailto:songgollab@gmail.com">songgollab@gmail.com</a></p>
     </div>
-    <nav>
-      <a href="/services">서비스</a><a href="/projects">프로젝트</a><a href="/videos">영상</a><a href="/about">회사 소개</a><a href="/contact">문의</a>
-      <a href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a><a href="https://airang.songgollab.co.kr" target="_blank" rel="noopener">아이랑</a><a href="/drive-console-privacy">개인정보처리방침</a>
-    </nav>
+    <div class="foot-cols">
+      <div><b>Engineering</b><a href="/consulting">반도체 컨설팅</a><a href="/consulting#areas">컨설팅 분야</a><a href="/contact?topic=반도체">사전 상담</a></div>
+      <div><b>Lab</b><a href="/projects">랩 프로젝트</a><a href="/drive-console">드라이브 콘솔</a><a href="/airang">아이랑</a><a href="/project-home-iot">홈 IoT</a></div>
+      <div><b>About</b><a href="/about">소개</a><a href="/videos">영상</a><a href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그 ↗</a><a href="/drive-console-privacy">개인정보처리방침</a></div>
+    </div>
   </div>
+  <div class="wrap foot-bottom"><span>© 2026 SONGGOL LAB. All rights reserved.</span><span class="mono">BUILT IN YONGIN, KR</span></div>
 </footer>
 <script src="/assets/site.js" defer></script>
 </body>

@@ -3,206 +3,107 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>송골랩 SONGGOL LAB — 생활에서 시작한 기술</title>
-<meta name="description" content="송골랩은 아이 키우는 집의 동네 정보 앱 '아이랑', 차량용 계기판 앱 '드라이브 콘솔', 홈 IoT를 직접 만들고 직접 쓰면서 다듬는 생활 기술 연구소입니다.">
+<title>송골랩 SONGGOL LAB</title>
+<meta name="description" content="송골랩 — 20년 반도체 세정장비 공정 경험으로 장비 불량의 원인을 끝까지 추적하는 엔지니어링 랩. 반도체 공정·설비 컨설팅 준비 중, 드라이브 콘솔·아이랑·홈 IoT 랩 프로젝트.">
 <meta property="og:title" content="송골랩 SONGGOL LAB">
-<meta property="og:description" content="생활에서 시작한 기술을 직접 쓰면서 다듬습니다.">
+<meta property="og:description" content="송골랩 — 20년 반도체 세정장비 공정 경험으로 장비 불량의 원인을 끝까지 추적하는 엔지니어링 랩. 반도체 공정·설비 컨설팅 준비 중, 드라이브 콘솔·아이랑·홈 IoT 랩 프로젝트.">
 <meta property="og:image" content="https://songgollab.co.kr/assets/og.jpg">
 <meta property="og:url" content="https://songgollab.co.kr/">
+<link rel="canonical" href="https://songgollab.co.kr/">
 <link rel="icon" href="/assets/favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body>
-
-<div class="notice">🚗 <b>드라이브 콘솔 무료 테스터 모집</b> · 구글 플레이 출시 전 먼저 써 보세요 <a href="/drive-console#tester">신청 방법</a></div>
-
+<body class="pg-index">
 <header class="top" id="top">
   <div class="wrap">
     <a class="brand" href="/"><img src="/assets/logo-symbol.png" alt="송골랩 심벌"><span><b>송골랩</b><small>SONGGOL LAB</small></span></a>
-    <nav class="nav" id="nav">
-      <a href="/services">서비스</a>
-      <a href="/projects">프로젝트</a>
-      <a href="/videos">영상</a>
-      <a href="/about">회사 소개</a>
-      <a class="ext" href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a>
-    </nav>
+    <nav class="nav" id="nav"><a href="/consulting">컨설팅</a><a href="/projects">랩 프로젝트</a><a href="/services">서비스</a><a href="/videos">영상</a><a href="/about">소개</a><a class="ext" href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a></nav>
     <a class="btn btn-primary" href="/contact">문의하기</a>
     <button class="menu-btn" aria-label="메뉴 열기" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
   </div>
 </header>
-
 <main>
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">생활 기술 · 자동화 연구소</span>
-      <h1>생활에서 시작한 기술을<br><em>직접 쓰면서</em> 다듬습니다</h1>
-      <p class="lead">송골랩은 아이 키우는 집의 동네 정보, 차량용 계기판 앱, 집과 가게의 IoT를 직접 만들고, 실제로 쓰면서 고칩니다.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="#services">서비스 둘러보기 →</a>
-        <a class="btn btn-ghost" href="#projects">프로젝트 보기</a>
-      </div>
-      <div class="facts">
-        <div><b>63곳</b><span>아이랑 운영 지역</span></div>
-        <div><b>2개</b><span>공개·테스트 서비스</span></div>
-        <div><b>2026.10</b><span>개발 시작</span></div>
-      </div>
-    </div>
-    <div class="stage" aria-hidden="true">
-      <div class="tab"><img src="/assets/drive-console.jpg" alt=""></div>
-      <div class="phone"><img src="/assets/airang-phone.jpg" alt=""></div>
-      <span class="tag t1">🚗 드라이브 콘솔</span>
-      <span class="tag t2">🏫 아이랑</span>
-    </div>
-  </div>
-</section>
-
-<section id="services" style="padding-top:40px">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">서비스</span>
-      <h2 class="h2">지금 바로 써 볼 수 있어요</h2>
-      <p class="lead">둘 다 무료이고, 써 보신 의견으로 계속 다듬고 있습니다.</p>
-    </div>
-    <div class="svc">
-      <article class="card">
-        <div>
-          <span class="badge">공개 서비스 · 무료</span>
-          <h3>아이랑</h3>
-          <p>아이 키우는 집을 위한 우리 동네 정보. 학교 일정·급식, 도서관, 유치원, 학원, 동네병원, 놓치기 쉬운 혜택을 한곳에서. 회원가입이 없고 아이 정보는 휴대폰에만 저장돼요.</p>
-          <div class="chips"><span>경기 <b>31</b></span><span>서울 <b>25</b></span><span>인천 <b>5</b></span><span>충남 <b>2</b></span></div>
-          <div class="links"><a class="btn btn-primary" href="https://airang.songgollab.co.kr" target="_blank" rel="noopener">아이랑 열기 ↗</a><a class="more" href="/airang">자세히</a></div>
-        </div>
-        <div class="shot ph"><img src="/assets/airang-phone.jpg" alt="아이랑 첫 화면"></div>
-      </article>
-      <article class="card dc">
-        <div>
-          <span class="badge amber">테스트 중 · 테스터 모집</span>
-          <h3>드라이브 콘솔</h3>
-          <p>남는 안드로이드 태블릿·휴대폰을 우리 차 계기판으로. OBD 동글을 꽂으면 속도·연비·고장 코드를 실시간으로 보고, 내비와 다른 앱을 나눠 띄울 수 있어요.</p>
-          <div class="chips"><span>실시간 계기판</span><span>고장 코드 설명</span><span>분할 화면 · 음성</span></div>
-          <div class="links"><a class="btn btn-primary" href="/drive-console#tester">테스터 신청</a><a class="more" href="/drive-console">자세히</a></div>
-        </div>
-        <div class="shot"><img src="/assets/drive-console.jpg" alt="드라이브 콘솔 메인 화면 (개발 중 화면)"></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section style="padding-top:24px">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">송골랩이 하는 일</span>
-      <h2 class="h2">생활 속 불편을 기술로 풉니다</h2>
-    </div>
-    <div class="do">
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h4>생활 정보 앱</h4><p>학교 일정·급식, 도서관, 학원, 병원 정보를 한 화면에 모은 아이랑.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l4-4"/><path d="M3.3 17a9 9 0 1 1 17.4 0"/></svg></div><h4>차량 소프트웨어</h4><p>남는 태블릿을 계기판으로 쓰는 드라이브 콘솔. 고장 코드 설명까지.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></div><h4>홈 IoT · 월패드</h4><p>공사 없이 집 안 기기를 한 화면에서 제어하고 자동화하는 실험.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18v12H3z"/><path d="M3 9l2-6h14l2 6"/></svg></div><h4>사업장 자동화</h4><p>실제 매장의 에어컨·PC를 한 화면으로 묶은 라그릴스 허브.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M1 12h4M19 12h4M4.2 19.8L7 17M17 7l2.8-2.8"/></svg></div><h4>업무 자동화</h4><p>반복 업무를 줄이는 중앙관제와 상품 등록 자동화.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V12"/><path d="M12 12C12 7 8 4 3 4c0 5 4 8 9 8z"/><path d="M12 12c0-4 3-7 8-7 0 4-3 7-8 7z"/></svg></div><h4>IoT 비닐하우스</h4><p>집에서 쓰던 IoT를 부모님과 함께 짓는 밭으로 옮기는 프로젝트.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="alt" id="projects">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">프로젝트</span>
-      <h2 class="h2">지금 개발하고 있는 것</h2>
-      <p class="lead">직접 쓰면서 검증 중인 것과 기획 단계를 구분해 보여 드립니다.</p>
-    </div>
-    <div class="pj">
-      <div class="card"><span class="st">자체 실사용 · 검증</span><h4>송골집 IoT · AI 월패드</h4><p>공사 없이 우리 집에 맞춘 월패드와 원격 관리.</p></div>
-      <div class="card"><span class="st">사업장 실증</span><h4>라그릴스 허브</h4><p>셀프 바베큐장 구역별 에어컨을 매장 PC 한 화면에서.</p></div>
-      <div class="card"><span class="st">내부 전용</span><h4>중앙관제</h4><p>개발 도구와 운영 중인 서비스를 통합 관리.</p></div>
-      <div class="card"><span class="st plan">기획 · 준비 중</span><h4>IoT 비닐하우스</h4><p>농사에 홈 IoT를 옮겨 오는 스마트팜 실험.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">만드는 방식</span>
-      <h2 class="h2">왜 필요한가부터 시작합니다</h2>
-      <p class="lead">먼저 우리가 쓰고, 있는 그대로 알리고, 계속 다듬습니다.</p>
-    </div>
-    <div class="steps">
-      <div><b>문제 정의</b><span>왜 필요한가</span></div>
-      <div><b>기획</b><span>무엇을 만들까</span></div>
-      <div><b>디자인</b><span>어떻게 쓸까</span></div>
-      <div><b>검토·승인</b><span>기준 확정</span></div>
-      <div><b>구현</b><span>기능 개발</span></div>
-      <div><b>실사용 검증</b><span>불편 확인</span></div>
-      <div><b>개선·판단</b><span>제품화 검토</span></div>
-    </div>
-
-    <div class="two" style="margin-top:56px">
-      <div>
-        <h3 style="font-size:22px;margin-bottom:16px">블로그 최근 글</h3>
-        <div class="posts" id="posts">
-          <a class="card post" href="https://songgollab.blogspot.com" target="_blank" rel="noopener"><span class="d">블로그</span><b>개발 일지와 소식은 송골랩 블로그에서 볼 수 있어요</b></a>
-        </div>
-      </div>
-      <div class="card tl">
-        <h3 style="font-size:22px;margin-bottom:18px">걸어온 길</h3>
-        <ul>
-          <li><b>2026.10</b>기술 개발 시작 · 홈 IoT 화면과 라그릴스 허브 실사용</li>
-          <li><b>2026.10</b>아이랑 공개 · 용인에서 시작해 경기·서울·인천·충남으로</li>
-          <li><b>2026.11</b>송골랩 사업자 등록 · 드라이브 콘솔 구글 플레이 테스터 모집</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" style="padding-top:0">
-  <div class="wrap">
-    <div class="cta-band">
-      <div>
-        <h3>송골랩과 이야기 나눠요</h3>
-        <p>테스터 신청, 서비스 의견, 오류 신고, 협업 제안 모두 반가워요.</p>
-      </div>
-      <div class="links">
-        <a class="btn btn-primary" href="mailto:songgollab@gmail.com?subject=%5B%EC%86%A1%EA%B3%A8%EB%9E%A9%20%EB%AC%B8%EC%9D%98%5D">songgollab@gmail.com</a>
-        <a class="btn btn-ghost" href="https://www.instagram.com/songgollab/" target="_blank" rel="noopener">인스타 @songgollab</a>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="hx dark grid-bg glow"><div class="wrap">
+<div>
+  <span class="eyebrow">Semiconductor Process · Equipment Engineering</span>
+  <h1>보이지 않는 원인까지<br><span class="grad">끝까지 추적합니다</span></h1>
+  <p class="lead">송골랩은 20년 동안 반도체 세정장비 공정 현장에서 장비의 SW·HW·시퀀스·제어를 함께 엮어 불량의 원인을 찾아 온 엔지니어링 랩입니다.</p>
+  <div class="status"><i></i>반도체 공정·설비 컨설팅 준비 중 · 사전 상담을 받습니다</div>
+  <div class="cta"><a class="btn btn-teal" href="/contact?topic=반도체">사전 상담 문의 →</a><a class="btn btn-line" href="/consulting">컨설팅 분야 보기</a></div>
+  <div class="metrics"><div><b>20년</b><span>세정장비 공정 현장</span></div><div><b>4 Layer</b><span>SW · HW · 시퀀스 · 제어</span></div><div><b>Root cause</b><span>현상이 아니라 원인으로</span></div></div>
+</div>
+<div><div class="panel">
+  <div class="panel-head"><span>WAFER MAP · INSPECTION</span><b>● ANALYZING</b></div>
+  <svg class="wafer" viewBox="0 0 440 440" role="img" aria-label="웨이퍼 맵 일러스트">
+<defs><radialGradient id="wg" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#22355E"/><stop offset="1" stop-color="#0B1428"/></radialGradient>
+<linearGradient id="sg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#19C2B0" stop-opacity="0"/><stop offset=".5" stop-color="#19C2B0" stop-opacity=".55"/><stop offset="1" stop-color="#19C2B0" stop-opacity="0"/></linearGradient>
+<clipPath id="wc"><circle cx="220" cy="220" r="200"/></clipPath></defs>
+<circle cx="220" cy="220" r="208" fill="none" stroke="rgba(160,190,255,.18)" stroke-dasharray="2 6"/>
+<circle cx="220" cy="220" r="200" fill="url(#wg)" stroke="#5E6F91" stroke-width="1.5"/>
+<g clip-path="url(#wc)"><rect class="die" x="33.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="33.0" y="186.0" width="15" height="15" rx="2"/><rect class="die ok" x="33.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="33.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="33.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="33.0" y="254.0" width="15" height="15" rx="2"/><rect class="die ok" x="50.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="50.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="50.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="50.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="50.0" y="203.0" width="15" height="15" rx="2"/><rect class="die ok" x="50.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="50.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="50.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="50.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="50.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="67.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="67.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="67.0" y="135.0" width="15" height="15" rx="2"/><rect class="die ok" x="67.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="67.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="67.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="67.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="67.0" y="220.0" width="15" height="15" rx="2"/><rect class="die ok" x="67.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="67.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="67.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="67.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="67.0" y="305.0" width="15" height="15" rx="2"/><rect class="die ok" x="67.0" y="322.0" width="15" height="15" rx="2"/><rect class="die ok" x="84.0" y="84.0" width="15" height="15" rx="2"/><rect class="die" x="84.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="84.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="84.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="84.0" y="152.0" width="15" height="15" rx="2"/><rect class="die ok" x="84.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="84.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="84.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="84.0" y="220.0" width="15" height="15" rx="2"/><rect class="die chk" x="84.0" y="237.0" width="15" height="15" rx="2"/><rect class="die ok" x="84.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="84.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="84.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="84.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="84.0" y="322.0" width="15" height="15" rx="2"/><rect class="die ok" x="84.0" y="339.0" width="15" height="15" rx="2"/><rect class="die" x="101.0" y="67.0" width="15" height="15" rx="2"/><rect class="die" x="101.0" y="84.0" width="15" height="15" rx="2"/><rect class="die ok" x="101.0" y="101.0" width="15" height="15" rx="2"/><rect class="die chk" x="101.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="101.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="101.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="101.0" y="169.0" width="15" height="15" rx="2"/><rect class="die ok" x="101.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="101.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="101.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="101.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="101.0" y="254.0" width="15" height="15" rx="2"/><rect class="die ok" x="101.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="101.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="101.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="101.0" y="322.0" width="15" height="15" rx="2"/><rect class="die" x="101.0" y="339.0" width="15" height="15" rx="2"/><rect class="die ok" x="101.0" y="356.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="67.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="84.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="101.0" width="15" height="15" rx="2"/><rect class="die ok" x="118.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="186.0" width="15" height="15" rx="2"/><rect class="die ok" x="118.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="271.0" width="15" height="15" rx="2"/><rect class="die ok" x="118.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="322.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="339.0" width="15" height="15" rx="2"/><rect class="die" x="118.0" y="356.0" width="15" height="15" rx="2"/><rect class="die warn" x="135.0" y="50.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="67.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="84.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="118.0" width="15" height="15" rx="2"/><rect class="die ok" x="135.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="203.0" width="15" height="15" rx="2"/><rect class="die ok" x="135.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="288.0" width="15" height="15" rx="2"/><rect class="die ok" x="135.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="322.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="339.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="356.0" width="15" height="15" rx="2"/><rect class="die" x="135.0" y="373.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="50.0" width="15" height="15" rx="2"/><rect class="die ok" x="152.0" y="67.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="84.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="135.0" width="15" height="15" rx="2"/><rect class="die ok" x="152.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="220.0" width="15" height="15" rx="2"/><rect class="die ok" x="152.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="305.0" width="15" height="15" rx="2"/><rect class="die ok" x="152.0" y="322.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="339.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="356.0" width="15" height="15" rx="2"/><rect class="die" x="152.0" y="373.0" width="15" height="15" rx="2"/><rect class="die hot" x="169.0" y="33.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="50.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="67.0" width="15" height="15" rx="2"/><rect class="die ok" x="169.0" y="84.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="152.0" width="15" height="15" rx="2"/><rect class="die ok" x="169.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="237.0" width="15" height="15" rx="2"/><rect class="die ok" x="169.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="322.0" width="15" height="15" rx="2"/><rect class="die ok" x="169.0" y="339.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="356.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="373.0" width="15" height="15" rx="2"/><rect class="die" x="169.0" y="390.0" width="15" height="15" rx="2"/><rect class="die hot" x="186.0" y="33.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="50.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="67.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="84.0" width="15" height="15" rx="2"/><rect class="die ok" x="186.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="169.0" width="15" height="15" rx="2"/><rect class="die ok" x="186.0" y="186.0" width="15" height="15" rx="2"/><rect class="die chk" x="186.0" y="203.0" width="15" height="15" rx="2"/><rect class="die chk" x="186.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="254.0" width="15" height="15" rx="2"/><rect class="die ok" x="186.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="322.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="339.0" width="15" height="15" rx="2"/><rect class="die ok" x="186.0" y="356.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="373.0" width="15" height="15" rx="2"/><rect class="die" x="186.0" y="390.0" width="15" height="15" rx="2"/><rect class="die hot" x="203.0" y="33.0" width="15" height="15" rx="2"/><rect class="die warn" x="203.0" y="50.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="67.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="84.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="101.0" width="15" height="15" rx="2"/><rect class="die ok" x="203.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="186.0" width="15" height="15" rx="2"/><rect class="die chk" x="203.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="271.0" width="15" height="15" rx="2"/><rect class="die ok" x="203.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="322.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="339.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="356.0" width="15" height="15" rx="2"/><rect class="die ok" x="203.0" y="373.0" width="15" height="15" rx="2"/><rect class="die" x="203.0" y="390.0" width="15" height="15" rx="2"/><rect class="die warn" x="220.0" y="33.0" width="15" height="15" rx="2"/><rect class="die hot" x="220.0" y="50.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="67.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="84.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="118.0" width="15" height="15" rx="2"/><rect class="die ok" x="220.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="203.0" width="15" height="15" rx="2"/><rect class="die chk" x="220.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="288.0" width="15" height="15" rx="2"/><rect class="die ok" x="220.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="322.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="339.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="356.0" width="15" height="15" rx="2"/><rect class="die" x="220.0" y="373.0" width="15" height="15" rx="2"/><rect class="die ok" x="220.0" y="390.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="33.0" width="15" height="15" rx="2"/><rect class="die hot" x="237.0" y="50.0" width="15" height="15" rx="2"/><rect class="die warn" x="237.0" y="67.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="84.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="135.0" width="15" height="15" rx="2"/><rect class="die ok" x="237.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="220.0" width="15" height="15" rx="2"/><rect class="die ok" x="237.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="305.0" width="15" height="15" rx="2"/><rect class="die ok" x="237.0" y="322.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="339.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="356.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="373.0" width="15" height="15" rx="2"/><rect class="die" x="237.0" y="390.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="33.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="50.0" width="15" height="15" rx="2"/><rect class="die hot" x="254.0" y="67.0" width="15" height="15" rx="2"/><rect class="die ok" x="254.0" y="84.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="152.0" width="15" height="15" rx="2"/><rect class="die ok" x="254.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="237.0" width="15" height="15" rx="2"/><rect class="die ok" x="254.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="322.0" width="15" height="15" rx="2"/><rect class="die ok" x="254.0" y="339.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="356.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="373.0" width="15" height="15" rx="2"/><rect class="die" x="254.0" y="390.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="50.0" width="15" height="15" rx="2"/><rect class="die warn" x="271.0" y="67.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="84.0" width="15" height="15" rx="2"/><rect class="die ok" x="271.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="169.0" width="15" height="15" rx="2"/><rect class="die ok" x="271.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="254.0" width="15" height="15" rx="2"/><rect class="die ok" x="271.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="322.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="339.0" width="15" height="15" rx="2"/><rect class="die ok" x="271.0" y="356.0" width="15" height="15" rx="2"/><rect class="die" x="271.0" y="373.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="50.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="67.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="84.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="101.0" width="15" height="15" rx="2"/><rect class="die ok" x="288.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="186.0" width="15" height="15" rx="2"/><rect class="die ok" x="288.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="271.0" width="15" height="15" rx="2"/><rect class="die ok" x="288.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="322.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="339.0" width="15" height="15" rx="2"/><rect class="die" x="288.0" y="356.0" width="15" height="15" rx="2"/><rect class="die ok" x="288.0" y="373.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="67.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="84.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="118.0" width="15" height="15" rx="2"/><rect class="die ok" x="305.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="203.0" width="15" height="15" rx="2"/><rect class="die ok" x="305.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="288.0" width="15" height="15" rx="2"/><rect class="die ok" x="305.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="322.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="339.0" width="15" height="15" rx="2"/><rect class="die" x="305.0" y="356.0" width="15" height="15" rx="2"/><rect class="die ok" x="322.0" y="67.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="84.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="135.0" width="15" height="15" rx="2"/><rect class="die ok" x="322.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="220.0" width="15" height="15" rx="2"/><rect class="die ok" x="322.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="305.0" width="15" height="15" rx="2"/><rect class="die ok" x="322.0" y="322.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="339.0" width="15" height="15" rx="2"/><rect class="die" x="322.0" y="356.0" width="15" height="15" rx="2"/><rect class="die ok" x="339.0" y="84.0" width="15" height="15" rx="2"/><rect class="die" x="339.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="339.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="339.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="339.0" y="152.0" width="15" height="15" rx="2"/><rect class="die ok" x="339.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="339.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="339.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="339.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="339.0" y="237.0" width="15" height="15" rx="2"/><rect class="die ok" x="339.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="339.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="339.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="339.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="339.0" y="322.0" width="15" height="15" rx="2"/><rect class="die ok" x="339.0" y="339.0" width="15" height="15" rx="2"/><rect class="die ok" x="356.0" y="101.0" width="15" height="15" rx="2"/><rect class="die" x="356.0" y="118.0" width="15" height="15" rx="2"/><rect class="die" x="356.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="356.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="356.0" y="169.0" width="15" height="15" rx="2"/><rect class="die ok" x="356.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="356.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="356.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="356.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="356.0" y="254.0" width="15" height="15" rx="2"/><rect class="die ok" x="356.0" y="271.0" width="15" height="15" rx="2"/><rect class="die" x="356.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="356.0" y="305.0" width="15" height="15" rx="2"/><rect class="die" x="356.0" y="322.0" width="15" height="15" rx="2"/><rect class="die" x="373.0" y="135.0" width="15" height="15" rx="2"/><rect class="die" x="373.0" y="152.0" width="15" height="15" rx="2"/><rect class="die" x="373.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="373.0" y="186.0" width="15" height="15" rx="2"/><rect class="die ok" x="373.0" y="203.0" width="15" height="15" rx="2"/><rect class="die" x="373.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="373.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="373.0" y="254.0" width="15" height="15" rx="2"/><rect class="die" x="373.0" y="271.0" width="15" height="15" rx="2"/><rect class="die ok" x="373.0" y="288.0" width="15" height="15" rx="2"/><rect class="die" x="390.0" y="169.0" width="15" height="15" rx="2"/><rect class="die" x="390.0" y="186.0" width="15" height="15" rx="2"/><rect class="die" x="390.0" y="203.0" width="15" height="15" rx="2"/><rect class="die ok" x="390.0" y="220.0" width="15" height="15" rx="2"/><rect class="die" x="390.0" y="237.0" width="15" height="15" rx="2"/><rect class="die" x="390.0" y="254.0" width="15" height="15" rx="2"/><rect class="scan" x="0" y="200" width="440" height="40" fill="url(#sg)"/></g>
+<path d="M211 419 a9 9 0 0 1 18 0" fill="#060B18" stroke="#5E6F91"/>
+<path d="M340 70 L395 20 L425 20" fill="none" stroke="#F59E0B" stroke-width="1.2"/>
+<text x="370" y="14" fill="#F5B544" font-family="JetBrains Mono,monospace" font-size="10">EDGE · CLUSTER</text>
+</svg>
+  <div class="panel-foot"><div>PATTERN<b class="a">Edge cluster</b></div><div>LAYER<b>Sequence</b></div><div>STATUS<b class="t">Root cause</b></div></div>
+  <span class="panel-note">설명용 일러스트 · 실제 데이터 아님</span>
+</div></div>
+</div></section><section class="s2"><div class="wrap">
+<div class="head"><div><span class="eyebrow">Engineering · 컨설팅 분야</span><h2>장비 앞에서 20년,<br>문제를 푸는 순서가 있습니다</h2></div>
+<p>현상만 보고 부품을 바꾸지 않습니다. 장비가 남긴 기록과 동작 순서를 함께 놓고, 원인이 하나로 좁혀질 때까지 확인합니다.</p></div>
+<div class="areas"><div class="area rv"><span class="no">01 /</span><h3>세정 공정 최적화</h3><p>습식 세정의 약액·린스·건조 조건과 레시피를 데이터로 다시 보고, 결과가 흔들리는 이유를 찾습니다.</p><div class="kw"><span>WET CLEAN</span><span>RECIPE</span><span>RINSE/DRY</span></div></div><div class="area rv"><span class="no">02 /</span><h3>불량 원인 추적</h3><p>파티클·비산·워터마크 같은 현상을 장비의 SW·HW·시퀀스·제어를 함께 엮어 보며 원인을 좁혀 갑니다.</p><div class="kw"><span>PARTICLE</span><span>ROOT CAUSE</span><span>SEQUENCE</span></div></div><div class="area rv"><span class="no">03 /</span><h3>신규 장비 평가 · 양산 전환</h3><p>평가 계획과 합격 기준을 세우고, 평가에서 양산으로 넘어가는 과정을 단계별로 함께합니다.</p><div class="kw"><span>JDP</span><span>EVALUATION</span><span>RAMP-UP</span></div></div><div class="area rv"><span class="no">04 /</span><h3>시퀀스 · 물류 로직 검토</h3><p>FOUP 스케줄링, 대기·병목 구간을 로직 단위로 비교해 처리량을 막는 지점을 찾습니다.</p><div class="kw"><span>SCHEDULER</span><span>FOUP</span><span>THROUGHPUT</span></div></div><div class="area rv"><span class="no">05 /</span><h3>공정 데이터 분석 도구</h3><p>E/R·웨이퍼 맵·파티클 이력을 현장에서 바로 쓸 수 있는 분석 프로그램으로 만듭니다.</p><div class="kw"><span>E/R</span><span>WAFER MAP</span><span>TOOLING</span></div></div><div class="area rv"><span class="no">06 /</span><h3>평가 자동화</h3><p>감수지 카운트처럼 손으로 하던 반복 평가를 센서와 자동화로 바꾸는 방법을 설계합니다.</p><div class="kw"><span>AUTOMATION</span><span>SENSOR</span><span>SPLASH</span></div></div></div>
+<p style="margin-top:22px"><a class="more" style="font-weight:700;color:var(--blue)" href="/consulting">컨설팅 자세히 보기 →</a></p>
+</div></section><section class="s2 dark grid-bg"><div class="wrap" style="position:relative;z-index:1">
+<div class="head"><div><span class="eyebrow">How we work · 일하는 방식</span><h2>추측 대신,<br>재현되는 근거로</h2></div>
+<p>원인을 찾았다고 말하려면 같은 조건에서 다시 일어나야 합니다. 그 근거를 기준값과 문서로 남겨 현장에 넘깁니다.</p></div>
+<div class="flow"><div class="rv"><b>현상 관찰</b><span>언제·어디서·얼마나</span></div><div class="rv"><b>데이터 수집</b><span>로그·레시피·이력</span></div><div class="rv"><b>가설 분리</b><span>SW·HW·시퀀스·제어</span></div><div class="rv"><b>검증</b><span>조건을 바꿔 재현</span></div><div class="rv"><b>기준 확정</b><span>합격선과 관리값</span></div><div class="rv"><b>이관</b><span>문서화·현장 전달</span></div></div><div class="fee rv"><div class="ic2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l5 5L21 4"/></svg></div>
+<div><h3>성과 연동형으로 진행합니다</h3><p>시작할 때 목표 기준을 함께 정하고, 그 기준을 달성했을 때 합당한 비용을 받는 방식을 기본으로 생각하고 있습니다. 세부 조건은 상담에서 정합니다.</p></div>
+<a class="btn btn-teal" href="/contact?topic=반도체">사전 상담</a></div>
+</div></section><section class="s2"><div class="wrap">
+<div class="head"><div><span class="eyebrow">Lab · 랩 프로젝트</span><h2>현장에서 쓰던 방식으로,<br>생활 속 문제도 풀어 봅니다</h2></div>
+<p>엔지니어의 개인 연구로 만들고, 직접 쓰면서 다듬는 프로젝트들입니다. 일부는 누구나 무료로 써 볼 수 있어요.</p></div>
+<div class="lab">
+  <a class="rv" href="/drive-console"><div class="im" style="background-image:url('/assets/drive-console.jpg')"><span class="b t">테스터 모집 · 무료</span></div>
+    <div class="tx"><span class="k">MOBILITY · ANDROID</span><h3>드라이브 콘솔</h3><p>남는 태블릿을 차 계기판으로. OBD로 고장 코드 약 1만 개를 해석하고 원인과 점검 순서까지 보여 줍니다.</p><span class="go">테스터 신청 →</span></div></a>
+  <a class="rv" href="/airang"><div class="im" style="background-image:url('/assets/airang-phone.jpg');background-position:top"><span class="b">공개 서비스 · 63곳</span></div>
+    <div class="tx"><span class="k">LOCAL DATA · WEB</span><h3>아이랑</h3><p>아이 키우는 집의 동네 정보를 매일 아침 자동으로 모아 한 화면에.</p><span class="go">자세히 →</span></div></a>
+  <a class="rv" href="/project-home-iot"><div class="im" style="background-image:url('/assets/iot-concept.jpg')"><span class="b">실증 중</span></div>
+    <div class="tx"><span class="k">HOME IoT · AUTOMATION</span><h3>홈 IoT · AI 월패드</h3><p>공사 없이 집과 가게의 기기를 한 화면에서 보고 자동으로 제어합니다.</p><span class="go">자세히 →</span></div></a>
+</div>
+<p class="labnote">그 밖에 중앙관제, 상품 등록 자동화, IoT 비닐하우스까지 — <a style="color:var(--blue);font-weight:700" href="/projects">랩 프로젝트 전체 보기 →</a></p>
+</div></section><section class="s2" style="padding-top:0"><div class="wrap">
+<div class="two">
+  <div><span class="eyebrow">Journal · 블로그</span><h3 style="font-size:24px;margin:10px 0 18px">개발 일지와 소식</h3>
+    <div class="posts" id="posts"><a class="card post" href="https://songgollab.blogspot.com" target="_blank" rel="noopener"><span class="d">블로그</span><b>개발 일지와 소식은 송골랩 블로그에서 볼 수 있어요</b></a></div></div>
+  <div class="card tl"><span class="eyebrow">Timeline</span><h3 style="font-size:24px;margin:10px 0 18px">걸어온 길</h3><ul>
+    <li><b>20년</b>반도체 세정장비 공정 엔지니어 — 공정 개발, 장비 평가, 불량 원인 추적</li>
+    <li><b>2026.10</b>송골랩 랩 프로젝트 시작 · 홈 IoT, 아이랑, 드라이브 콘솔</li>
+    <li><b>2026.11</b>송골랩 사업자 등록 · 홈페이지 songgollab.co.kr 개설</li>
+    <li><b>준비 중</b>반도체 공정·설비 컨설팅</li></ul></div>
+</div></div></section><section class="s2" style="padding-top:0"><div class="wrap"><div class="cta-x grid-bg glow">
+<div><span class="eyebrow" style="color:var(--teal)">Contact</span><h3 style="margin-top:10px">장비 문제,<br>같이 끝까지 봅시다</h3><p>컨설팅 사전 상담, 랩 프로젝트 의견, 협업 제안 모두 반갑습니다.</p></div>
+<div class="links"><a class="btn btn-teal" href="/contact?topic=반도체">사전 상담 문의</a><a class="btn btn-line" href="mailto:songgollab@gmail.com">songgollab@gmail.com</a></div>
+</div></div></section>
 </main>
-
-<footer>
+<footer class="foot">
   <div class="wrap">
-    <div>
-      <div class="brand" style="margin-bottom:10px"><img src="/assets/logo-symbol.png" alt=""><span><b style="color:var(--ink)">송골랩</b><small>SONGGOL LAB</small></span></div>
-      <p>상호 송골랩 · 대표 이진복 · songgollab@gmail.com</p>
-      <p>© 2026 SONGGOL LAB</p>
+    <div class="foot-brand">
+      <div class="brand"><img src="/assets/logo-symbol.png" alt=""><span><b>송골랩</b><small>SONGGOL LAB</small></span></div>
+      <p class="foot-tag">Semiconductor Process &amp; Equipment Engineering · Life-tech Lab</p>
+      <p>상호 송골랩 · 대표 이진복 · <a href="mailto:songgollab@gmail.com">songgollab@gmail.com</a></p>
     </div>
-    <nav>
-      <a href="/services">서비스</a><a href="/projects">프로젝트</a><a href="/videos">영상</a><a href="/about">회사 소개</a><a href="/contact">문의</a><a href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a>
-      <a href="https://airang.songgollab.co.kr" target="_blank" rel="noopener">아이랑</a><a href="/drive-console-privacy">개인정보처리방침</a>
-    </nav>
+    <div class="foot-cols">
+      <div><b>Engineering</b><a href="/consulting">반도체 컨설팅</a><a href="/consulting#areas">컨설팅 분야</a><a href="/contact?topic=반도체">사전 상담</a></div>
+      <div><b>Lab</b><a href="/projects">랩 프로젝트</a><a href="/drive-console">드라이브 콘솔</a><a href="/airang">아이랑</a><a href="/project-home-iot">홈 IoT</a></div>
+      <div><b>About</b><a href="/about">소개</a><a href="/videos">영상</a><a href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그 ↗</a><a href="/drive-console-privacy">개인정보처리방침</a></div>
+    </div>
   </div>
+  <div class="wrap foot-bottom"><span>© 2026 SONGGOL LAB. All rights reserved.</span><span class="mono">BUILT IN YONGIN, KR</span></div>
 </footer>
-
-<script>
-  // 헤더 그림자
-  addEventListener('scroll',()=>document.getElementById('top').classList.toggle('scrolled',scrollY>8),{passive:true});
-  // 블로그 최근 글 3개 (Blogger 공개 피드). 실패하면 기본 링크만 보입니다.
-  function sgPosts(d){try{
-    const box=document.getElementById('posts'); const es=(d.feed.entry||[]).slice(0,3); if(!es.length) return;
-    box.innerHTML='';
-    es.forEach(e=>{const l=(e.link||[]).find(x=>x.rel==='alternate'); const a=document.createElement('a');
-      a.className='card post'; a.href=l?l.href:'https://songgollab.blogspot.com'; a.target='_blank'; a.rel='noopener';
-      const dt=new Date(e.published.$t); const d1=document.createElement('span'); d1.className='d';
-      d1.textContent=dt.getFullYear()+'.'+String(dt.getMonth()+1).padStart(2,'0')+'.'+String(dt.getDate()).padStart(2,'0');
-      const t=document.createElement('b'); t.textContent=e.title.$t; a.append(d1,t); box.append(a);});
-  }catch(_){}}
-</script>
-<script src="https://songgollab.blogspot.com/feeds/posts/summary?alt=json-in-script&max-results=3&callback=sgPosts" async></script>
+<script src="/assets/site.js" defer></script><script>function sgPosts(d){try{var box=document.getElementById('posts');var es=(d.feed.entry||[]).slice(0,4);if(!es.length)return;box.innerHTML='';es.forEach(function(e){var l=(e.link||[]).find(function(x){return x.rel==='alternate'});var a=document.createElement('a');a.className='card post';a.href=l?l.href:'https://songgollab.blogspot.com';a.target='_blank';a.rel='noopener';var dt=new Date(e.published.$t);var s=document.createElement('span');s.className='d';s.textContent=dt.getFullYear()+'.'+String(dt.getMonth()+1).padStart(2,'0')+'.'+String(dt.getDate()).padStart(2,'0');var t=document.createElement('b');t.textContent=e.title.$t;a.append(s,t);box.append(a)})}catch(_){}}</script>
+<script src="https://songgollab.blogspot.com/feeds/posts/summary?alt=json-in-script&max-results=4&callback=sgPosts" async></script>
 </body>
 </html>

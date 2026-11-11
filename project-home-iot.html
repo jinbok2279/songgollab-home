@@ -12,14 +12,15 @@
 <link rel="canonical" href="https://songgollab.co.kr/project-home-iot">
 <link rel="icon" href="/assets/favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body>
-<div class="notice">🚗 <b>드라이브 콘솔 무료 테스터 모집</b> · 구글 플레이 출시 전 먼저 써 보세요 <a href="/drive-console#tester">신청 방법</a></div>
+<body class="pg-project-home-iot">
 <header class="top" id="top">
   <div class="wrap">
     <a class="brand" href="/"><img src="/assets/logo-symbol.png" alt="송골랩 심벌"><span><b>송골랩</b><small>SONGGOL LAB</small></span></a>
-    <nav class="nav" id="nav"><a href="/services">서비스</a><a href="/projects" class=on>프로젝트</a><a href="/videos">영상</a><a href="/about">회사 소개</a><a class="ext" href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a></nav>
+    <nav class="nav" id="nav"><a href="/consulting">컨설팅</a><a href="/projects" class=on>랩 프로젝트</a><a href="/services">서비스</a><a href="/videos">영상</a><a href="/about">소개</a><a class="ext" href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a></nav>
     <a class="btn btn-primary" href="/contact">문의하기</a>
     <button class="menu-btn" aria-label="메뉴 열기" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
   </div>
@@ -33,18 +34,20 @@
 <section class="sec tight" id=hist><div class="wrap"><span class="eyebrow">개발 이력</span><h2>버전별 정리</h2><div class="tbl-wrap"><table class="tbl"><thead><tr><th>버전</th><th>추가된 것</th></tr></thead><tbody><tr><td>v1.0 ~ 1.2</td><td>Home Assistant 연결, 조명·가족지킴이·날씨, 태블릿 접속, 3D 평면도</td></tr><tr><td>v1.3 ~ 1.5</td><td>구글 스피커 연결, 자비스 음성 호출, 로봇청소기 제어·예약</td></tr><tr><td>v1.6 ~ 1.7</td><td>가전 관리, 가전별 전기 사용량·요금, 삼성 SmartThings 연결</td></tr><tr><td>v1.8 ~ 1.9</td><td>자비스 마이크 개선, 가족지킴이 실제 지도</td></tr><tr><td>v1.10</td><td>노트북·태블릿 설정 맞추기, I/O 체크, 방마다 기기 추가·삭제</td></tr><tr><td>v1.12</td><td>지금 쓰고 있는 버전</td></tr><tr><td>라그릴스 v2.6</td><td>객실·BBQ 사이트·매점 에어컨 통합 제어 (2026.10.04 설치)</td></tr></tbody></table></div></div></section>
 <section class="band"><div class="wrap"><div class="cta-band"><div><h3>우리 집·우리 가게에도 적용해 보세요</h3><p>공사 없이 설치하고, 집 구조에 맞춘 화면을 만들어 드립니다.</p></div><div class="links"><a class="btn btn-primary" href="/contact">설치 상담 문의</a><a class="btn btn-ghost" href="https://www.youtube.com/@songgollab" target="_blank" rel="noopener">유튜브</a></div></div></div></section>
 </main>
-<footer>
+<footer class="foot">
   <div class="wrap">
-    <div>
-      <div class="brand" style="margin-bottom:10px"><img src="/assets/logo-symbol.png" alt=""><span><b style="color:var(--ink)">송골랩</b><small>SONGGOL LAB</small></span></div>
-      <p>상호 송골랩 · 대표 이진복 · songgollab@gmail.com</p>
-      <p>© 2026 SONGGOL LAB</p>
+    <div class="foot-brand">
+      <div class="brand"><img src="/assets/logo-symbol.png" alt=""><span><b>송골랩</b><small>SONGGOL LAB</small></span></div>
+      <p class="foot-tag">Semiconductor Process &amp; Equipment Engineering · Life-tech Lab</p>
+      <p>상호 송골랩 · 대표 이진복 · <a href="mailto:songgollab@gmail.com">songgollab@gmail.com</a></p>
     </div>
-    <nav>
-      <a href="/services">서비스</a><a href="/projects">프로젝트</a><a href="/videos">영상</a><a href="/about">회사 소개</a><a href="/contact">문의</a>
-      <a href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a><a href="https://airang.songgollab.co.kr" target="_blank" rel="noopener">아이랑</a><a href="/drive-console-privacy">개인정보처리방침</a>
-    </nav>
+    <div class="foot-cols">
+      <div><b>Engineering</b><a href="/consulting">반도체 컨설팅</a><a href="/consulting#areas">컨설팅 분야</a><a href="/contact?topic=반도체">사전 상담</a></div>
+      <div><b>Lab</b><a href="/projects">랩 프로젝트</a><a href="/drive-console">드라이브 콘솔</a><a href="/airang">아이랑</a><a href="/project-home-iot">홈 IoT</a></div>
+      <div><b>About</b><a href="/about">소개</a><a href="/videos">영상</a><a href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그 ↗</a><a href="/drive-console-privacy">개인정보처리방침</a></div>
+    </div>
   </div>
+  <div class="wrap foot-bottom"><span>© 2026 SONGGOL LAB. All rights reserved.</span><span class="mono">BUILT IN YONGIN, KR</span></div>
 </footer>
 <script src="/assets/site.js" defer></script>
 </body>
