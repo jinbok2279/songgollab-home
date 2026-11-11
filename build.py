@@ -28,7 +28,7 @@ IMG = {
 def lh(i, w=1280): return f'https://lh3.googleusercontent.com/d/{i}=w{w}'
 
 # ---------- 공통 틀 ----------
-NAV = [('consulting', '컨설팅'), ('projects', '랩 프로젝트'), ('services', '서비스'), ('videos', '영상'), ('about', '소개')]
+NAV = [('projects', '프로그램'), ('services', '서비스'), ('consulting', '반도체 세정 공정'), ('videos', '영상'), ('about', '소개')]
 
 def page(slug, title, desc, body, on='', lang='ko', tail=''):
     nav = ''.join(f'<a href="/{k}"{" class=on" if k == on else ""}>{v}</a>' for k, v in NAV)
@@ -72,9 +72,9 @@ def page(slug, title, desc, body, on='', lang='ko', tail=''):
       <p>상호 송골랩 · 대표 이진복 · <a href="mailto:{MAIL}">{MAIL}</a></p>
     </div>
     <div class="foot-cols">
-      <div><b>Engineering</b><a href="/consulting">반도체 컨설팅</a><a href="/consulting#areas">컨설팅 분야</a><a href="/contact?topic=반도체">사전 상담</a></div>
-      <div><b>Lab</b><a href="/projects">랩 프로젝트</a><a href="/drive-console">드라이브 콘솔</a><a href="/airang">아이랑</a><a href="/project-home-iot">홈 IoT</a></div>
-      <div><b>About</b><a href="/about">소개</a><a href="/videos">영상</a><a href="{BLOG}" target="_blank" rel="noopener">블로그 ↗</a><a href="/drive-console-privacy">개인정보처리방침</a></div>
+      <div><b>SEMICONDUCTOR</b><a href="/consulting">반도체 세정 공정</a><a href="/consulting#areas">분야</a><a href="/contact?topic=반도체">사전 상담</a></div>
+      <div><b>PROGRAMS</b><a href="/projects">프로그램 14개</a><a href="/drive-console">드라이브 콘솔</a><a href="/airang">아이랑</a><a href="/project-home-iot">홈 IoT</a></div>
+      <div><b>ABOUT</b><a href="/about">소개</a><a href="/videos">영상</a><a href="{BLOG}" target="_blank" rel="noopener">블로그 ↗</a><a href="/drive-console-privacy">개인정보처리방침</a></div>
     </div>
   </div>
   <div class="wrap foot-bottom"><span>© 2026 SONGGOL LAB. All rights reserved.</span><span class="mono">BUILT IN YONGIN, KR</span></div>
@@ -609,8 +609,9 @@ PAGES['404'] = ('페이지를 찾을 수 없어요', '요청하신 페이지가 
 
 # ---------- 쓰기 ----------
 def main():
-    import home  # 첫 화면 · 반도체 컨설팅 페이지 (home.py)
+    import home, programs  # 첫 화면·반도체 세정 공정(home.py), 프로그램 14개(programs.py)
     home.add(globals())
+    programs.add(globals())
     css = '\n'.join(open(os.path.join(HERE, 'assets', f), encoding='utf-8').read() for f in ('base.css', 'pages.css', 'theme.css'))
     open(os.path.join(HERE, 'assets/site.css'), 'w', encoding='utf-8').write(css)
     for slug, v in PAGES.items():
