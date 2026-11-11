@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>송골집 IoT · AI 월패드 | 송골랩</title>
+<meta name="description" content="공사 없이 우리 집에 맞춘 AI 월패드. 송골집과 셀프 바베큐장 라그릴스에서 직접 써 보며 검증하는 홈 IoT 프로젝트.">
+<meta property="og:title" content="송골집 IoT · AI 월패드 | 송골랩">
+<meta property="og:description" content="공사 없이 우리 집에 맞춘 AI 월패드. 송골집과 셀프 바베큐장 라그릴스에서 직접 써 보며 검증하는 홈 IoT 프로젝트.">
+<meta property="og:image" content="https://songgollab.co.kr/assets/og.jpg">
+<meta property="og:url" content="https://songgollab.co.kr/project-home-iot">
+<link rel="canonical" href="https://songgollab.co.kr/project-home-iot">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<div class="notice">🚗 <b>드라이브 콘솔 무료 테스터 모집</b> · 구글 플레이 출시 전 먼저 써 보세요 <a href="/drive-console#tester">신청 방법</a></div>
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/logo-symbol.png" alt="송골랩 심벌"><span><b>송골랩</b><small>SONGGOL LAB</small></span></a>
+    <nav class="nav" id="nav"><a href="/services">서비스</a><a href="/projects" class=on>프로젝트</a><a href="/videos">영상</a><a href="/about">회사 소개</a><a class="ext" href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a></nav>
+    <a class="btn btn-primary" href="/contact">문의하기</a>
+    <button class="menu-btn" aria-label="메뉴 열기" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  </div>
+</header>
+<main>
+<section class="page-hero"><div class="wrap"><div class="crumb"><a href="/">홈</a> › <a href="/projects">프로젝트</a> › <span>홈 IoT</span></div>
+<span class="eyebrow">01 · 대표 프로젝트 · 실증 중</span><h1>송골집 IoT · AI 월패드</h1><p class="lead">공사 없이, 우리 집에 맞춘 AI 월패드. 기기 설치부터 집 구조에 맞춘 관리 화면, 원격 관리까지 한 번에 맡습니다. 지금은 우리 집(송골집 2층)과 셀프 바베큐장 라그릴스에서 직접 써 보며 검증하고 있습니다.</p><div class="cta"><a class="btn btn-primary" href="/contact">설치 상담 문의</a><a class="btn btn-ghost" href="/iot-guide">IoT, 쉽게 알아보기</a></div></div></section><nav class="toc" aria-label="이 페이지 목차"><div class="wrap"><a href="#feat">주요 기능</a><a href="#how">구성</a><a href="#site">실증 현장</a><a href="#log">개발 일지</a><a href="#hist">개발 이력</a></div></nav><section class="sec " id=feat><div class="wrap"><span class="eyebrow">주요 기능</span><h2>한 화면에서 집 전체를</h2><div class="g3"><div class="box"><b>홈 · 방 라이브</b><span>시간·날씨·집에 있는 가족 수, 방마다 조명과 온도를 큰 카드로 봅니다.</span></div><div class="box"><b>3D 평면도</b><span>집 모양 그대로 보고, 방을 누르면 그 방의 기기와 조명 스위치가 나옵니다.</span></div><div class="box"><b>가족지킴이</b><span>가족이 동의한 휴대폰 위치와 배터리를 지도에서 확인합니다.</span></div><div class="box"><b>에너지</b><span>전력 센서로 잰 실제 값으로 가전별 전기 사용량과 요금을 봅니다.</span></div><div class="box"><b>자동화</b><span>조건이 맞으면 알아서 켜고 끕니다. 센서가 없는 규칙은 작동하는 척하지 않습니다.</span></div><div class="box"><b>자비스 음성 비서</b><span>"자비스"라고 부르면 듣고, 대답은 태블릿이나 구글 스피커로 들려줍니다.</span></div><div class="box"><b>가전 관리</b><span>냉장고·세탁기·TV·로봇청소기를 연결해 상태와 세탁 끝 알림을 받습니다.</span></div><div class="box"><b>I/O 체크</b><span>공장 설비 점검처럼, 등록된 기기가 정상인지 한눈에 봅니다.</span></div><div class="box"><b>설정 공유</b><span>노트북과 태블릿이 같은 설정을 쓰고, 한쪽에서 바꾸면 다른 쪽도 바뀝니다.</span></div></div></div></section>
+<section class="sec tight" id=how><div class="wrap"><span class="eyebrow">구성</span><h2>이렇게 돌아갑니다</h2><div class="g3"><div class="box"><i class=num>1</i><b>집 안 서버</b><span>노트북 속 가상 서버에서 Home Assistant가 브랜드가 다른 기기를 하나로 묶습니다.</span></div><div class="box"><i class=num>2</i><b>관리 화면</b><span>직접 만든 송골집 화면 서버가 우리 집 평면도에 맞춘 화면을 띄웁니다.</span></div><div class="box"><i class=num>3</i><b>태블릿 · 휴대폰</b><span>벽에 붙인 태블릿과 가족 휴대폰으로 보고, 밖에서도 안전하게 접속합니다.</span></div></div></div></section>
+<section class="sec alt" id=site><div class="wrap"><span class="eyebrow">실증 현장</span><h2>직접 써 보며 검증합니다</h2><div class="g2"><div class="box"><b>송골집 (우리 집 2층)</b><span>35년 된 단독주택 2층. 벽 공사 없이 꽂고, 붙이고, 올려 두는 방식으로 자동화하고 있습니다. 관리 화면 v1.12 사용 중.</span></div><div class="box"><b>라그릴스 셀프 바베큐장</b><span>BBQ 사이트 1~9, 객실, 매점 구역별 에어컨을 매장 PC 한 화면에서 켜고 끕니다. 허브 v2.6, 2026년 10월 4일 설치(2일 작업).</span></div></div><div class="g2" style="margin-top:22px"><div><div class="video"><iframe src="https://www.youtube-nocookie.com/embed/jSeZK3VLMT4" title="라그릴스 허브 v2.6 소개" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vlabel">라그릴스 허브 v2.6 소개</p></div><div><div class="video"><iframe src="https://www.youtube-nocookie.com/embed/oSnE9LrclWM" title="셀프 바베큐장 라그릴스 소개" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="vlabel">셀프 바베큐장 라그릴스 소개</p></div></div><p><a class="more" style="font-weight:700;color:var(--blue)" href="https://songgollab.blogspot.com/2026/10/pc.html" target="_blank" rel="noopener">라그릴스 설치기 전체 글 보기 →</a></p></div></section>
+<section class="sec " id=log><div class="wrap"><span class="eyebrow">개발 일지</span><h2>어떻게 만들어 왔나</h2><ul class="log"><li><em>2026.10.02</em><b>시작 — 우리 집 자동화 구성안 v1</b><span>출발점은 단순했습니다. 집 안의 모든 기기를 한 화면에서 보고, 자동 제어로 전기를 아끼는 것. 그리고 부품은 최대한 저렴하게. 전기 공사 없이 2층만 자동화하기로 정했습니다.</span></li><li><em>2026.10.05</em><b>2층 구조 확정, 3D 평면도</b><span>로봇청소기 지도와 집 사진으로 2층을 3D로 그렸습니다. 방을 누르면 그 방의 조명과 기기가 바로 나옵니다.</span></li><li><em>v1.0 ~ v1.2</em><b>Home Assistant 첫 연결</b><span>조명·가족지킴이·날씨를 연결하고, 노트북 실행 파일과 태블릿 접속, 3D 속도 개선이 이어졌습니다.</span></li><li><em>v1.3 ~ v1.5</em><b>구글 스피커와 자비스</b><span>구글 스피커를 붙이고 "자비스" 음성 호출을 만들었습니다. 로봇청소기 제어·예약도 들어갔습니다.</span></li><li><em>v1.6 ~ v1.7</em><b>가전과 전기 사용량</b><span>냉장고·세탁기 같은 가전을 삼성 SmartThings로 연결하고, 가전별 전기 사용량과 요금, 세탁 끝 알림을 보여 줍니다.</span></li><li><em>v1.8 ~ v1.9</em><b>부딪힌 문제를 하나씩</b><span>연결 거부, 두 번째 모니터에 숨은 보안 경고 창, 태블릿에서만 다르게 보이던 지도까지 원인을 찾아 고쳤습니다. 자비스 마이크와 가족지킴이 실제 지도도 개선했습니다.</span></li><li><em>2026.10.04</em><b>두 번째 현장, 라그릴스</b><span>우리 집에서 써 본 방식을 처음으로 업장에 옮겼습니다. 구역마다 IR 리모컨을 달고 매장 PC에 허브 v2.6을 설치했습니다.</span></li><li><em>v1.10</em><b>설정 맞추기와 I/O 체크</b><span>노트북과 태블릿이 같은 설정을 쓰고, 등록된 기기가 정상인지 한눈에 봅니다. 센서가 없는 기능은 동작하는 척하지 않도록 정리했습니다.</span></li><li><em>2026.10.11</em><b>IoT 이야기 영상 5편 공개</b><span>IoT가 무엇인지, 무엇이 좋아지는지 40초 영상 다섯 편으로 정리했습니다. <a href="/iot-guide" style="color:var(--blue);font-weight:700">IoT, 쉽게 알아보기 →</a></span></li><li class="next"><em>다음</em><b>진짜 자동 제어 시작</b><span>Zigbee 센서와 에어컨 리모컨을 달아 방마다 재실·온도에 따라 움직이게 합니다. 라그릴스는 전 구역 전등, 예약 시간 연동, 에어컨 전력 확인으로 넓힙니다.</span></li></ul></div></section>
+<section class="sec tight" id=hist><div class="wrap"><span class="eyebrow">개발 이력</span><h2>버전별 정리</h2><div class="tbl-wrap"><table class="tbl"><thead><tr><th>버전</th><th>추가된 것</th></tr></thead><tbody><tr><td>v1.0 ~ 1.2</td><td>Home Assistant 연결, 조명·가족지킴이·날씨, 태블릿 접속, 3D 평면도</td></tr><tr><td>v1.3 ~ 1.5</td><td>구글 스피커 연결, 자비스 음성 호출, 로봇청소기 제어·예약</td></tr><tr><td>v1.6 ~ 1.7</td><td>가전 관리, 가전별 전기 사용량·요금, 삼성 SmartThings 연결</td></tr><tr><td>v1.8 ~ 1.9</td><td>자비스 마이크 개선, 가족지킴이 실제 지도</td></tr><tr><td>v1.10</td><td>노트북·태블릿 설정 맞추기, I/O 체크, 방마다 기기 추가·삭제</td></tr><tr><td>v1.12</td><td>지금 쓰고 있는 버전</td></tr><tr><td>라그릴스 v2.6</td><td>객실·BBQ 사이트·매점 에어컨 통합 제어 (2026.10.04 설치)</td></tr></tbody></table></div></div></section>
+<section class="band"><div class="wrap"><div class="cta-band"><div><h3>우리 집·우리 가게에도 적용해 보세요</h3><p>공사 없이 설치하고, 집 구조에 맞춘 화면을 만들어 드립니다.</p></div><div class="links"><a class="btn btn-primary" href="/contact">설치 상담 문의</a><a class="btn btn-ghost" href="https://www.youtube.com/@songgollab" target="_blank" rel="noopener">유튜브</a></div></div></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand" style="margin-bottom:10px"><img src="/assets/logo-symbol.png" alt=""><span><b style="color:var(--ink)">송골랩</b><small>SONGGOL LAB</small></span></div>
+      <p>상호 송골랩 · 대표 이진복 · songgollab@gmail.com</p>
+      <p>© 2026 SONGGOL LAB</p>
+    </div>
+    <nav>
+      <a href="/services">서비스</a><a href="/projects">프로젝트</a><a href="/videos">영상</a><a href="/about">회사 소개</a><a href="/contact">문의</a>
+      <a href="https://songgollab.blogspot.com" target="_blank" rel="noopener">블로그</a><a href="https://airang.songgollab.co.kr" target="_blank" rel="noopener">아이랑</a><a href="/drive-console-privacy">개인정보처리방침</a>
+    </nav>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
