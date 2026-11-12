@@ -30,6 +30,8 @@ def lh(i, w=1280): return f'https://lh3.googleusercontent.com/d/{i}=w{w}'
 # ---------- 공통 틀 ----------
 NAV = [('log', '작업 일지'), ('projects', '프로그램'), ('services', '써 보기'), ('consulting', '반도체'), ('about', '소개')]
 
+VER = 'x'
+
 def page(slug, title, desc, body, on='', lang='ko', tail=''):
     def _item(k, v):
         cls = ' class=on' if k == on else ''
@@ -60,7 +62,7 @@ def page(slug, title, desc, body, on='', lang='ko', tail=''):
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v={VER}">
 </head>
 <body class="pg-{slug}">
 <header class="top" id="top">
@@ -89,7 +91,7 @@ def page(slug, title, desc, body, on='', lang='ko', tail=''):
   </div>
   <div class="wrap foot-bottom"><span>© 2026 SONGGOL LAB. All rights reserved.</span><span class="mono">BUILT IN YONGIN, KR</span></div>
 </footer>
-<script src="/assets/site.js" defer></script>{tail}
+<script src="/assets/site.js?v={VER}" defer></script>{tail}
 </body>
 </html>
 '''
@@ -626,6 +628,9 @@ def main():
     workshop.add(globals())
     css = '\n'.join(open(os.path.join(HERE, 'assets', f), encoding='utf-8').read() for f in ('base.css', 'pages.css', 'theme.css', 'workshop.css', 'media.css'))
     open(os.path.join(HERE, 'assets/site.css'), 'w', encoding='utf-8').write(css)
+    import hashlib
+    global VER
+    VER = hashlib.md5((css + open(os.path.join(HERE, 'assets/site.js'), encoding='utf-8').read()).encode()).hexdigest()[:8]
     for slug, v in PAGES.items():
         title, desc, on, body = v[:4]
         lang = v[4] if len(v) > 4 else 'ko'
