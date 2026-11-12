@@ -81,7 +81,7 @@ def page(slug, title, desc, body, on='', lang='ko', tail=''):
     <div class="foot-brand">
       <div class="brand"><img src="/assets/logo-symbol.png" alt=""><span><b>송골랩</b><small>SONGGOL LAB</small></span></div>
       <p class="foot-tag">Semiconductor Process &amp; Equipment Engineering · Life-tech Lab</p>
-      <p>상호 송골랩 · 대표 이진복 · <a href="mailto:{MAIL}">{MAIL}</a></p>
+      <p>상호 송골랩 · <a href="mailto:{MAIL}">{MAIL}</a></p>
     </div>
     <div class="foot-cols">
       <div><b>SEMICONDUCTOR</b><a href="/consulting">반도체 세정 공정</a><a href="/consulting#areas">분야</a><a href="/contact?topic=반도체">사전 상담</a></div>
