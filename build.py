@@ -28,10 +28,20 @@ IMG = {
 def lh(i, w=1280): return f'https://lh3.googleusercontent.com/d/{i}=w{w}'
 
 # ---------- 공통 틀 ----------
-NAV = [('projects', '프로그램'), ('services', '서비스'), ('consulting', '반도체 세정 공정'), ('videos', '영상'), ('about', '소개')]
+NAV = [('log', '작업 일지'), ('projects', '프로그램'), ('services', '써 보기'), ('consulting', '반도체'), ('about', '소개')]
 
 def page(slug, title, desc, body, on='', lang='ko', tail=''):
-    nav = ''.join(f'<a href="/{k}"{" class=on" if k == on else ""}>{v}</a>' for k, v in NAV)
+    def _item(k, v):
+        cls = ' class=on' if k == on else ''
+        if k != 'projects':
+            return f'<a href="/{k}"{cls}>{v}</a>'
+        import programs as _P
+        groups = ''
+        for ck, cn in _P.CATS[1:]:
+            rows = ''.join(f'<a href="/{p[0]}"><span class="dot {p[3]}"></span>{p[1]}<em>{p[4]}</em></a>' for p in _P.P if p[2] == ck)
+            groups += f'<div class="mm-col"><b>{cn}</b>{rows}</div>'
+        return f'<div class="has-mm"><a href="/projects"{cls}>{v} ▾</a><div class="mm"><div class="mm-in">{groups}<a class="mm-all" href="/projects">프로그램 14개 한눈에 →</a></div></div></div>'
+    nav = ''.join(_item(k, v) for k, v in NAV)
     t = f'{title} | 송골랩' if title else '송골랩 SONGGOL LAB'
     url = SITE + ('/' + slug if slug != 'index' else '/')
     return f'''<!doctype html>
@@ -610,9 +620,11 @@ PAGES['404'] = ('페이지를 찾을 수 없어요', '요청하신 페이지가 
 # ---------- 쓰기 ----------
 def main():
     import home, programs  # 첫 화면·반도체 세정 공정(home.py), 프로그램 14개(programs.py)
+    import workshop
     home.add(globals())
     programs.add(globals())
-    css = '\n'.join(open(os.path.join(HERE, 'assets', f), encoding='utf-8').read() for f in ('base.css', 'pages.css', 'theme.css'))
+    workshop.add(globals())
+    css = '\n'.join(open(os.path.join(HERE, 'assets', f), encoding='utf-8').read() for f in ('base.css', 'pages.css', 'theme.css', 'workshop.css', 'media.css'))
     open(os.path.join(HERE, 'assets/site.css'), 'w', encoding='utf-8').write(css)
     for slug, v in PAGES.items():
         title, desc, on, body = v[:4]

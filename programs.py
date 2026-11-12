@@ -151,6 +151,55 @@ D['program-booking'] = dict(
  flow=[('요청', '말 또는 글'), ('검색', '항공·숙소·식당'), ('제안', '번호 목록'), ('승인', '고른 것만 예약')],
  log=[('v0.1', '화면 시안', '휴대폰 화면형·음성형, 데스크톱 화면 시안 12장을 만들었습니다.'), ('다음', '시안 다듬기', '데스크톱 화면을 같은 스타일로 맞춥니다.')])
 
+
+# ---------------------------------------------------------------- 이미지 · 영상 · 자료
+G = {
+ 'drive-console': [('/assets/drive-console.jpg', '태블릿 메인 화면'), ('/assets/prog/dc-phone.jpg', '휴대폰 세로 메인 화면 (v1.3.56)', 'tall'), ('/assets/drive-console-2.jpg', '차량 정보 화면')],
+ 'airang': [('/assets/airang-phone.jpg', '아이랑 휴대폰 화면', 'tall')],
+ 'project-home-iot': [('/assets/prog/home-energy.jpg', '에너지 화면 — 가전별 실시간 전력 (재현 화면)'), ('/assets/prog/home-auto.jpg', '장면 · 자동화 화면 — 아침 조명, 빈 방 끄기, 외출 소등 (재현 화면)')],
+ 'project-control': [('/assets/prog/control-main.jpg', '관제 메인 화면 — 프로그램 10개를 한 화면에 (재현 화면)')],
+ 'program-ai-team': [('/assets/prog/aiteam-flow.jpg', 'AI 팀 작업실이 일하는 방식'), ('/assets/prog/aiteam-home.jpg', '홈 화면 — 팀장 AI와 팀원 AI 연결 (재현 화면)'), ('/assets/prog/aiteam-order.jpg', '지시 화면 — 프로젝트별 대화와 지금 일하는 AI'), ('/assets/prog/aiteam-phone.jpg', '휴대폰 화면', 'tall')],
+ 'project-commerce': [('/assets/prog/ali-final.jpg', '마켓 등록 초안 확인 — 노출 최적화, 마진, 취급 판정')],
+}
+V = {
+ 'drive-console': [('T9bEMuzRCQA', '30초 소개'), ('rpFFTn9Ux6Q', '3분 기능 설명 v1.3'), ('wwWg9VWy7Y4', '테스터 모집')],
+ 'airang': [('YRNth4rPD_I', '아이랑 경기'), ('y_lwf2FhGaQ', '아이랑 서울 25개 구'), ('uvaTydTX3Bk', '아이랑 충남')],
+ 'project-home-iot': [('jB_N9SyBGMU', 'IoT 이야기 EP.1'), ('66hwKAWMw84', 'EP.3 스마트홈의 하루'), ('mKFjxUG26es', 'EP.4 새는 전기 막기')],
+ 'program-lagrills': [('jSeZK3VLMT4', '라그릴스 허브 v2.6 소개'), ('oSnE9LrclWM', '셀프 바베큐장 라그릴스')],
+ 'project-farm': [('05GXvZZknDs', 'IoT 이야기 EP.5 — 멀리서 살피기')],
+}
+R = {
+ 'drive-console': [('/drive-console', '사용 안내 · 설치 방법', '준비물, 5단계 설치, 사용법, 자주 묻는 질문'), ('/project-drive', '개발 기록 · 화면 둘러보기', 'v0.6부터 v1.3.53까지, 고장 코드 진단 구조'), ('/drive-console-privacy', '개인정보처리방침', '한국어 · English'), ('/drive-console-en', 'English page', 'Drive Console in English')],
+ 'airang': [('https://airang.songgollab.co.kr', '아이랑 바로 열기 ↗', '도시를 골라 바로 사용'), ('/airang', '아이랑 소개 · 로드맵', '운영 방식, 개발 일지, 단계별 계획'), ('https://songgollab.blogspot.com', '블로그 글 ↗', '아이랑 서울·경기·충남 소개 글')],
+ 'project-home-iot': [('/iot-guide', 'IoT, 쉽게 알아보기', '영상 5편으로 정리한 홈 IoT 입문'), ('https://songgollab.blogspot.com/2026/10/pc.html', '라그릴스 설치기 ↗', '바베큐장 에어컨을 한 화면으로')],
+ 'program-lagrills': [('https://songgollab.blogspot.com/2026/10/pc.html', '설치기 전체 글 ↗', '2일 작업 기록')],
+}
+
+def gallery(slug):
+    items = G.get(slug)
+    if not items: return ''
+    cells = ''.join(f'<figure class="gi{" tall" if len(x) > 2 else ""}"><a href="{x[0]}" target="_blank" rel="noopener"><img src="{x[0]}" alt="{x[1]}" loading="lazy"></a><figcaption>{x[1]}</figcaption></figure>' for x in items)
+    return f'<div class="gal">{cells}</div>'
+
+def videos(slug, yt):
+    items = V.get(slug)
+    if not items: return ''
+    return '<div class="vids">' + ''.join(f'<div>{yt(i, t)}</div>' for i, t in items) + '</div>'
+
+def resources(slug):
+    items = R.get(slug)
+    if not items: return ''
+    return '<div class="res">' + ''.join(f'<a href="{h}"{" target=_blank rel=noopener" if h.startswith("http") else ""}><span class="ri"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg></span><b>{t}</b><em>{d}</em></a>' for h, t, d in items) + '</div>'
+
+def media_sections(g, slug, with_video=True):
+    sec = g['sec']; out = ''
+    gl, vd, rs = gallery(slug), (videos(slug, g['yt']) if with_video else ''), resources(slug)
+    if gl: out += sec(gl, 'gallery', 'Images · 이미지', '화면으로 보기', cls='white-sec')
+    if vd: out += sec(vd, 'video', 'Video · 영상', '영상으로 보기')
+    if rs: out += sec(rs, 'docs', 'Docs · 자료', '설명 자료')
+    if not gl and not vd: out += sec('<div class="note blue" style="max-width:none">화면 사진과 영상은 정리되는 대로 이곳에 올립니다. 개인 연구·내부 프로그램은 계좌·금액·접속 정보가 보이지 않는 화면만 공개합니다.</div>', 'gallery', 'Images · 이미지', '화면으로 보기', cls='tight')
+    return out
+
 def detail(g, slug):
     btn, sec, boxes, log, note, yt, IMG = g['btn'], g['sec'], g['boxes'], g['log'], g['note'], g['yt'], g['IMG']
     p = next(x for x in P if x[0] == slug); d = D[slug]
@@ -158,9 +207,13 @@ def detail(g, slug):
     chips = f'<span class="{ "live" if st=="live" else ("plan" if st=="plan" else "") }">● {stl}</span><span>{plat}</span>' + (f'<span>{ver}</span>' if ver != '—' else '') + f'<span>{dict(CATS)[cat]}</span>'
     hero = f'''<section class="page-hero"><div class="wrap"><div class="crumb"><a href="/">홈</a> › <a href="/projects">프로그램</a> › <span>{name}</span></div>
 <span class="eyebrow">{dict(CATS)[cat]}</span><h1>{name}</h1><p class="lead">{d["lead"]}</p><div class="pmeta">{chips}</div></div></section>'''
-    body = hero
+    tl = [('feat', '주요 기능'), ('how', '동작 방식'), ('gallery', '이미지')] + ([('video', '영상')] if V.get(slug) else []) + ([('docs', '자료')] if R.get(slug) else []) + [('log', '개발 기록')]
+    body = hero + g['toc'](tl)
     side = ''
-    if d.get('image'):
+    if G.get(slug):
+        x = G[slug][0]
+        side = f'<figure class="fig" style="margin:0"><img src="{x[0]}" alt="{x[1]}" loading="lazy"><figcaption class="cap"><span>{x[1]}</span></figcaption></figure>'
+    elif d.get('image'):
         k, alt = d['image']
         side = f'<figure class="fig" style="margin:0"><img src="{IMG[k]}" alt="{alt}" loading="lazy"><figcaption class="cap"><span>콘셉트 이미지 · 실제 화면 아님</span></figcaption></figure>'
     else:
@@ -168,8 +221,7 @@ def detail(g, slug):
     body += sec(f'<div class="split"><div><span class="eyebrow">Why · 왜 만들었나</span><h2 style="font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.02em;margin:10px 0 12px">불편에서 시작했습니다</h2><p class="p">{d["why"]}</p></div><div>{side}</div></div>', cls='tight')
     body += sec(boxes(d['feats'], 3 if len(d['feats']) != 4 else 2), 'feat', 'Features · 주요 기능', '할 수 있는 것', cls='alt')
     body += sec(boxes(d['flow'], len(d['flow']) if len(d['flow']) <= 4 else 3, True), 'how', 'How it works · 동작 방식', '이렇게 돌아갑니다')
-    if d.get('videos'):
-        body += sec('<div class="g2">' + ''.join(f'<div>{yt(v)}</div>' for v in d['videos']) + '</div>', '', 'Video', '영상으로 보기', cls='tight')
+    body += media_sections(g, slug)
     body += sec(log([(a, b, c) for a, b, c in d['log']]) + (note(d['note'], True) if d.get('note') else ''), 'log', 'Log · 개발 기록', '어떻게 만들어 왔나', cls='alt')
     links = ''.join(btn(h, t, 'ghost') for h, t in d.get('links', []))
     body += g['band']('다른 프로그램도 둘러보세요', '송골랩이 직접 만들고 쓰는 프로그램 14개를 모아 두었습니다.', btn('/projects', '프로그램 전체') + links + btn('/contact', '문의하기', 'ghost'))
@@ -180,6 +232,11 @@ def add(g):
     for slug in D:
         p = next(x for x in P if x[0] == slug)
         PAGES[slug] = (p[1], p[7], 'projects', detail(g, slug))
+    for slug in ('drive-console', 'airang', 'project-home-iot'):
+        v = list(PAGES[slug]); body = v[3]; i = body.rfind('<section class="band">')
+        m = media_sections(g, slug, slug == 'project-home-iot')
+        v[3] = body[:i] + m + body[i:] if i > 0 else body + m
+        PAGES[slug] = tuple(v)
     hero = g['hero']([('', '프로그램')], 'Programs · 프로그램', '직접 만들고, 직접 쓰는<br>프로그램 14개',
                      '20년 장비 엔지니어가 생활과 일에서 겪은 불편을 하나씩 프로그램으로 만들었습니다. 공개 서비스부터 내부 도구, 개인 연구, 기획 중인 것까지 모두 모았습니다.')
     PAGES['projects'] = ('프로그램', '송골랩이 직접 만들고 쓰는 프로그램 14개 — 드라이브 콘솔, 아이랑, 송골집 IoT, 라그릴스 허브, 중앙관제, AI Team, SNS 통합관리, 알리 소싱 도우미, 자동매매 연구 등.', 'projects',
