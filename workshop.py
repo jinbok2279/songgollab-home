@@ -99,7 +99,20 @@ def add(g):
 <p style="margin-top:22px"><a class="more" style="font-weight:700;color:var(--blue)" href="/projects">프로그램 자세히 보기 →</a></p>
 </div></section>'''
 
-    owner = f'''<section class="s2 white"><div class="wrap owner">
+    import home as H
+    semi = f'''<section class="s2 white" id="semi"><div class="wrap">
+<div class="semi" style="box-shadow:none;border:0;padding:0;background:transparent">
+  <div><span class="eyebrow">Semiconductor · 반도체 세정장비</span>
+  <h2>보이지 않는 원인까지<br>끝까지 추적합니다</h2>
+  <p>이 작업실의 시작은 반도체 세정장비 현장입니다. 20년 동안 장비의 소프트웨어·하드웨어·동작 순서·제어를 함께 엮어 불량의 원인을 찾아 왔습니다. 그 일을 따로 정리했습니다.</p>
+  <div class="status"><i></i>반도체 공정·설비 컨설팅 준비 중 · 사전 상담 가능</div>
+  <div class="cta" style="display:flex;gap:10px;margin-top:22px;flex-wrap:wrap">{btn('/consulting', '반도체 세정장비 보기 →')}{btn('/contact?topic=반도체', '사전 상담', 'line')}</div></div>
+  <div><div class="panel"><div class="panel-head"><span>WAFER MAP · INSPECTION</span><b>● ANALYZING</b></div>{H.wafer_svg()}<span class="panel-note">설명용 일러스트 · 실제 데이터 아님</span></div></div>
+</div>
+<div style="margin-top:40px">{H.SEMI['areas']}</div>
+</div></section>'''
+
+    owner = f'''<section class="s2"><div class="wrap owner">
 <div class="ph"><div class="ph-slot"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M8 6l2-3h4l2 3"/></svg><span>작업 사진 자리</span></div></div>
 <div><span class="eyebrow">The engineer · 작업실 주인</span><h2>장비 앞에서 20년,<br>원인을 끝까지 찾던 사람</h2>
 <p>반도체 세정장비 공정 현장에서 장비의 소프트웨어·하드웨어·동작 순서·제어를 함께 엮어 불량의 원인을 찾아 왔습니다. 그 방식 그대로 — 왜 필요한지부터 묻고, 직접 써 보고, 재현되는 근거가 있을 때만 다음으로 넘어갑니다.</p>
@@ -113,7 +126,7 @@ def add(g):
 </div></section>'''
 
     PAGES['index'] = ('', '송골랩 — 20년 반도체 장비 엔지니어의 공개 작업실. 집·차·가게의 불편을 프로그램으로 만들고 직접 쓰면서 고치는 과정을 작업 일지로 남깁니다.', '',
-                      hero + stats + log_sec + try_sec + tools_sec + owner + doors, 'ko', '')
+                      hero + stats + log_sec + try_sec + tools_sec + semi + owner + doors, 'ko', '')
 
     full = g['hero']([('', '작업 일지')], 'Work log · 작업 일지', '작업대에서<br>있었던 모든 일',
                      f'2026년 10월 1일 첫 줄부터 지금까지. 새 기능, 고친 것, 공개한 것, 이정표를 날짜순으로 남깁니다. 프로그램 이름을 누르면 자세한 소개로 갑니다.')

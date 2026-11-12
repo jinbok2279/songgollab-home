@@ -35,21 +35,22 @@ def wafer_svg():
 </svg>'''
 
 
+SEMI = {}
+
 def add(g):
     PAGES, btn, BLOG, MAIL = g['PAGES'], g['btn'], g['BLOG'], g['MAIL']
 
     AREAS = [
-        ('01', '세정 공정 최적화', '습식 세정의 약액·린스·건조 조건과 레시피를 데이터로 다시 보고, 결과가 흔들리는 이유를 찾습니다.', ['WET CLEAN', 'RECIPE', 'RINSE/DRY']),
-        ('02', '불량 원인 추적', '파티클·비산·워터마크 같은 현상을 장비의 SW·HW·시퀀스·제어를 함께 엮어 보며 원인을 좁혀 갑니다.', ['PARTICLE', 'ROOT CAUSE', 'SEQUENCE']),
-        ('03', '신규 장비 평가 · 양산 전환', '평가 계획과 합격 기준을 세우고, 평가에서 양산으로 넘어가는 과정을 단계별로 함께합니다.', ['JDP', 'EVALUATION', 'RAMP-UP']),
-        ('04', '시퀀스 · 물류 로직 검토', 'FOUP 스케줄링, 대기·병목 구간을 로직 단위로 비교해 처리량을 막는 지점을 찾습니다.', ['SCHEDULER', 'FOUP', 'THROUGHPUT']),
-        ('05', '공정 데이터 분석 도구', 'E/R·웨이퍼 맵·파티클 이력을 현장에서 바로 쓸 수 있는 분석 프로그램으로 만듭니다.', ['E/R', 'WAFER MAP', 'TOOLING']),
-        ('06', '평가 자동화', '감수지 카운트처럼 손으로 하던 반복 평가를 센서와 자동화로 바꾸는 방법을 설계합니다.', ['AUTOMATION', 'SENSOR', 'SPLASH']),
+        ('01', '세정장비 불량 원인 추적', '파티클·비산·워터마크 같은 현상을 장비의 소프트웨어·하드웨어·동작 순서(시퀀스)·제어를 함께 엮어 보며 원인이 하나로 좁혀질 때까지 확인합니다.', ['PARTICLE', 'SPLASH', 'ROOT CAUSE']),
+        ('02', '스케줄러 · 시퀀스 로직 검토', 'FOUP 스케줄링과 장비 동작 순서를 로직 단위로 비교해, 대기와 병목이 생기는 지점을 찾습니다.', ['SCHEDULER', 'FOUP', 'SEQUENCE']),
+        ('03', '공정 데이터 분석 도구', '파티클 이력, E/R, 웨이퍼 맵처럼 쌓이기만 하던 데이터를 현장에서 바로 쓰는 분석 프로그램으로 만듭니다.', ['PARTICLE LOG', 'E/R', 'WAFER MAP']),
+        ('04', '평가 자동화 (구상)', '감수지를 손으로 세던 비산 평가, 가스 감지기 값을 받아 적던 배기 효율 측정을 센서와 프로그램으로 바꾸는 방법을 구상하고 있습니다.', ['SPLASH EVAL', 'EXHAUST', 'SENSOR']),
     ]
-    areas_html = '<div class="areas">' + ''.join(
+    areas_html = '<div class="areas a2">' + ''.join(
         f'<div class="area rv"><span class="no">{n} /</span><h3>{t}</h3><p>{d}</p><div class="kw">{"".join(f"<span>{k}</span>" for k in kw)}</div></div>'
         for n, t, d, kw in AREAS) + '</div>'
     FLOW = [('현상 관찰', '언제·어디서·얼마나'), ('데이터 수집', '로그·레시피·이력'), ('가설 분리', 'SW·HW·시퀀스·제어'), ('검증', '조건을 바꿔 재현'), ('기준 확정', '합격선과 관리값'), ('이관', '문서화·현장 전달')]
+    SEMI['areas'] = areas_html
     flow_html = '<div class="flow">' + ''.join(f'<div class="rv"><b>{a}</b><span>{b}</span></div>' for a, b in FLOW) + '</div>'
     FEE = '''<div class="fee rv"><div class="ic2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l5 5L21 4"/></svg></div>
 <div><h3>성과 연동형으로 진행합니다</h3><p>시작할 때 목표 기준을 함께 정하고, 그 기준을 달성했을 때 합당한 비용을 받는 방식을 기본으로 생각하고 있습니다. 세부 조건은 상담에서 정합니다.</p></div>
@@ -121,14 +122,13 @@ def add(g):
                       hero + lab_sec + how_sec + blog_sec + cta, 'ko', tail + PG.FILTER_JS)
 
     # ------------------------------------------------------------ 컨설팅
-    CASES = ['원인을 모르는 파티클·비산이 간헐적으로 생긴다', '레시피를 바꿔도 결과가 들쭉날쭉하다', '신규 장비 평가가 합격 기준을 넘지 못한다',
-             '장비 데이터는 쌓이는데 볼 도구가 없다', '스케줄러·시퀀스 때문에 처리량이 나오지 않는다', '현장 엔지니어마다 트러블슈팅 순서가 다르다']
+    CASES = ['원인을 모르는 파티클·비산이 간헐적으로 생긴다', '레시피를 바꿔도 결과가 들쭉날쭉하다', '장비 대기·병목 때문에 처리량이 나오지 않는다', '데이터는 쌓이는데 볼 도구가 없다', '손으로 세는 반복 평가에 시간이 많이 든다']
     ENG = [('SHORT · 원인 분석', '단기 원인 분석', '특정 불량이나 이상 현상 하나를 정해, 데이터와 재현 시험으로 원인을 좁히고 대책을 정리합니다.'),
-           ('PROJECT · 평가 동행', '장비 평가 · 양산 전환', '평가 계획부터 합격 기준, 양산 이관 문서까지 평가 기간 동안 함께합니다.'),
-           ('TOOL · 도구 제작', '분석 도구 제작', 'E/R·웨이퍼 맵·이력 데이터를 현장에 맞는 분석 프로그램으로 만들어 드립니다.')]
+           ('REVIEW · 로직 검토', '스케줄러 · 시퀀스 검토', '장비 동작 순서와 스케줄링 로직을 비교해 병목 지점과 개선안을 정리합니다.'),
+           ('TOOL · 도구 제작', '분석 · 평가 도구 제작', '현장 데이터를 바로 볼 수 있는 분석 프로그램이나 반복 평가를 줄이는 도구를 만듭니다.')]
     body = f'''<section class="page-hero"><div class="wrap"><div class="crumb"><a href="/">홈</a> › <span>반도체 세정 공정</span></div>
 <span class="eyebrow">Semiconductor · Wet Clean Process &amp; Equipment</span><h1>반도체 세정 공정 · 설비 엔지니어링</h1>
-<p class="lead">20년 동안 세정장비 공정 현장에서 쌓은 경험으로, 장비의 SW·HW·시퀀스·제어를 함께 보며 불량의 원인을 찾고 기준을 세웁니다.</p>
+<p class="lead">20년 동안 반도체 세정장비 현장에서 장비의 소프트웨어·하드웨어·동작 순서·제어를 함께 보며 불량의 원인을 찾아 왔습니다. 그 경험을 정리했습니다.</p>
 <div class="status"><i></i>준비 중 · 사전 상담과 일정 협의를 받고 있습니다</div>
 <div class="cta">{btn('/contact?topic=반도체', '사전 상담 문의 →', 'teal')}{btn('#areas', '분야 보기', 'line')}</div></div></section>
 <section class="s2"><div class="wrap split">
@@ -136,7 +136,7 @@ def add(g):
   <p style="color:var(--ink2)">장비 문제는 대부분 한 가지 원인으로 생기지 않습니다. 소프트웨어 설정, 하드웨어 상태, 동작 순서, 제어 값이 겹쳐서 나타납니다. 그래서 한 사람이 네 가지를 함께 봐야 빨리 풀립니다.</p></div>
   <ul class="cases">{"".join(f'<li class="rv">{c}</li>' for c in CASES)}</ul>
 </div></section>
-<section class="s2" id="areas" style="padding-top:0"><div class="wrap"><div class="head"><div><span class="eyebrow">Areas · 컨설팅 분야</span><h2>여섯 가지 분야</h2></div><p>세정장비 공정을 중심으로, 현장에서 직접 다뤄 온 일들입니다.</p></div>{areas_html}</div></section>
+<section class="s2" id="areas" style="padding-top:0"><div class="wrap"><div class="head"><div><span class="eyebrow">Areas · 컨설팅 분야</span><h2>직접 해 온 일들</h2></div><p>20년 동안 세정장비 현장에서 직접 다뤄 온 일만 적었습니다.</p></div>{areas_html}</div></section>
 <section class="s2 white"><div class="wrap"><div class="head"><div><span class="eyebrow">Process · 진행 순서</span><h2>추측 대신,<br>재현되는 근거로</h2></div><p>원인을 찾았다고 말하려면 같은 조건에서 다시 일어나야 합니다.</p></div>{flow_html}{FEE}</div></section>
 <section class="s2"><div class="wrap"><div class="head"><div><span class="eyebrow">Engagement · 진행 형태</span><h2>필요한 만큼만</h2></div><p>상황에 맞춰 범위를 정합니다. 아래는 예시이며 상담에서 조정합니다.</p></div>
 <div class="engage">{"".join(f'<div class="rv"><span class="k">{k}</span><h3>{t}</h3><p>{d}</p></div>' for k, t, d in ENG)}</div>
@@ -146,4 +146,4 @@ def add(g):
 <div><span class="eyebrow">Contact</span><h3 style="margin-top:10px">장비 문제,<br>같이 끝까지 봅시다</h3><p>회사명 없이 현상만 간단히 적어 주셔도 됩니다.</p></div>
 <div class="links">{btn('/contact?topic=반도체', '사전 상담 문의', 'teal')}{btn('mailto:' + MAIL + '?subject=%5B%EB%B0%98%EB%8F%84%EC%B2%B4%20%EC%BB%A8%EC%84%A4%ED%8C%85%20%EC%82%AC%EC%A0%84%20%EC%83%81%EB%8B%B4%5D', '메일 보내기', 'line')}</div>
 </div></div></section>'''
-    PAGES['consulting'] = ('반도체 세정 공정', '20년 반도체 세정장비 공정 경험 — 세정 공정 최적화, 불량 원인 추적, 장비 평가·양산 전환, 시퀀스·물류 로직, 공정 데이터 분석 도구. 준비 중 · 사전 상담 가능.', 'consulting', body)
+    PAGES['consulting'] = ('반도체 세정장비', '20년 반도체 세정장비 현장 경험 — 불량 원인 추적, 스케줄러·시퀀스 로직 검토, 공정 데이터 분석 도구, 평가 자동화 구상. 컨설팅 준비 중 · 사전 상담 가능.', 'consulting', body)
