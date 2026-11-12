@@ -403,7 +403,7 @@ PAGES['iot-guide'] = ('IoT, 쉽게 알아보기', 'IoT는 어려운 기술이 �
 PAGES['about'] = ('회사 소개', '송골랩은 2026년 10월 기술 개발을 시작했습니다. 만든 프로그램을 생활과 가게에서 직접 쓰면서 고치고, 쓸모가 확인된 것만 제품으로 다듬습니다.', 'about',
  hero([('', '회사 소개')], '송골랩 소개', '직접 만들고,<br>직접 쓰고, 검증합니다',
       '송골랩은 2026년 10월 기술 개발을 시작했습니다. 만든 프로그램을 생활과 가게에서 직접 쓰면서 고치고, 쓸모가 확인된 것만 제품으로 다듬습니다.')
- + sec('''<div class="g2" style="align-items:center;gap:32px"><div style="background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:40px;display:grid;place-items:center"><img src="/assets/logo-symbol.png" alt="송골랩 심벌" style="width:180px"></div>
+ + sec('''<div class="g2" style="align-items:center;gap:32px"><div style="background:radial-gradient(circle at 50% 35%,#1B2B4D,#0A1428 70%);border-radius:24px;padding:44px"><img class="logo-full" src="/assets/logo-full.png" alt="송골랩 로고 — ㅅ과 ㄱ이 맞물린 심벌과 송골랩 songgollab"></div>
 <div><span class="eyebrow">이름과 심벌</span><h2>송골, 고향 마을의 이름</h2><p class="p">송골은 고향 마을의 이름입니다. 그 마을에서 홈 IoT 화면 개발을 시작했고, 심벌은 송골의 <b>ㅅ</b>과 <b>ㄱ</b>이 맞물린 모양이에요.</p></div></div>''', cls='tight')
  + sec(boxes([('먼저 우리가 씁니다', '집과 가게에서 직접 써 보고 불편을 고친 뒤에 공개합니다.'), ('있는 그대로 알립니다', '과장된 수치보다 실제 구현 범위와 개발 단계를 그대로 보여 드립니다.'), ('계속 다듬습니다', '써 보신 분들의 의견으로 기능과 화면을 꾸준히 고칩니다.')], 3, True),
     '', '일하는 원칙', '기술의 가치는 실사용에서 확인합니다', cls='alt')
