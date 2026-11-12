@@ -25,7 +25,7 @@ CATS = [('all', '전체'), ('svc', '공개 서비스'), ('iot', 'IoT · 자동�
 P = [
  ('drive-console', '드라이브 콘솔', 'svc', 'live', '테스터 모집', 'Android', 'v1.3.57', '남는 태블릿·휴대폰을 차 계기판으로. OBD로 고장 코드 약 1만 개를 해석하고 원인·점검 순서까지.', ('#1E3A8A', '#2563EB', 'car', '/assets/drive-console.jpg')),
  ('airang', '아이랑', 'svc', 'live', '공개 · 63곳', 'Web (PWA)', 'v1.0', '아이 키우는 집의 동네 정보를 매일 아침 자동으로 모아 한 화면에. 가입 없음, 무료.', ('#0FB5A2', '#2563EB', 'kid', '/assets/airang-phone.jpg')),
- ('project-home-iot', '송골집 IoT · AI 월패드', 'iot', 'dev', '실증 중', 'Windows · 태블릿', 'v2.6', '공사 없이 우리 집에 맞춘 월패드. 집 구조 그대로의 화면, 음성 비서, 사람 감지 조명, 라디오.', ('#0B1630', '#1E40AF', 'home', '/assets/iot-concept.jpg')),
+ ('project-home-iot', '송골집 IoT · AI 월패드', 'iot', 'dev', '실증 중', 'Windows · 태블릿', 'v2.6', '공사 없이 우리 집에 맞춘 월패드. 집 구조 그대로의 화면, 음성 비서, 사람 감지 조명, 라디오.', ('#0B1630', '#1E40AF', 'home', '/assets/prog/home-main.jpg')),
  ('program-lagrills', '라그릴스 허브', 'iot', 'dev', '사업장 실증', 'Windows', 'v2.6', '셀프 바베큐장의 구역별 에어컨을 매장 PC 한 화면에서 켜고 끕니다.', ('#B45309', '#F59E0B', 'shop', 'https://i.ytimg.com/vi/jSeZK3VLMT4/hqdefault.jpg')),
  ('project-farm', 'IoT 비닐하우스', 'plan', 'plan', '기획 중', 'IoT', '—', '부모님과 짓는 농사에 홈 IoT를 옮겨 오는 스마트팜 실험.', ('#15803D', '#65A30D', 'leaf', '')),
  ('project-control', '중앙관제', 'ops', 'dev', '내부 운영', 'Windows · 웹', 'v1.17', '내가 만든 프로그램들의 상태를 한 화면에 모으고, 음성으로 묻고, 메일까지 정리하는 관제실.', ('#0B1630', '#0FB5A2', 'radar', '')),
@@ -156,7 +156,7 @@ D['program-booking'] = dict(
 G = {
  'drive-console': [('/assets/drive-console.jpg', '태블릿 메인 화면'), ('/assets/prog/dc-phone.jpg', '휴대폰 세로 메인 화면 (v1.3.56)', 'tall'), ('/assets/drive-console-2.jpg', '차량 정보 화면')],
  'airang': [('/assets/airang-phone.jpg', '아이랑 휴대폰 화면', 'tall')],
- 'project-home-iot': [('/assets/prog/home-energy.jpg', '에너지 화면 — 가전별 실시간 전력 (재현 화면)'), ('/assets/prog/home-auto.jpg', '장면 · 자동화 화면 — 아침 조명, 빈 방 끄기, 외출 소등 (재현 화면)')],
+ 'project-home-iot': [('/assets/prog/home-main.jpg', '홈 화면 — 집 전체 상태, 전력 흐름, 장면, 방별 조명·온도·커튼, 보안'), ('/assets/prog/home-auto.jpg', '장면 · 자동화 — 아침 조명, 해 질 때 커튼, 빈 방 끄기, 외출 소등, 밤 소등'), ('/assets/prog/home-energy.jpg', '에너지 — 지금 쓰는 전력, 가전별 전력, 태양광·배터리·전기차 연결 상태'), ('/assets/prog/home-radio.jpg', '라디오 — 월패드에서 바로 듣는 즐겨찾기 방송, 꺼짐 예약')],
  'project-control': [('/assets/prog/control-main.jpg', '관제 메인 화면 — 프로그램 10개를 한 화면에 (재현 화면)')],
  'program-ai-team': [('/assets/prog/aiteam-flow.jpg', 'AI 팀 작업실이 일하는 방식'), ('/assets/prog/aiteam-home.jpg', '홈 화면 — 팀장 AI와 팀원 AI 연결 (재현 화면)'), ('/assets/prog/aiteam-order.jpg', '지시 화면 — 프로젝트별 대화와 지금 일하는 AI'), ('/assets/prog/aiteam-phone.jpg', '휴대폰 화면', 'tall')],
  'project-commerce': [('/assets/prog/ali-final.jpg', '마켓 등록 초안 확인 — 노출 최적화, 마진, 취급 판정')],
