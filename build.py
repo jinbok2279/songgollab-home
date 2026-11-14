@@ -42,7 +42,7 @@ def page(slug, title, desc, body, on='', lang='ko', tail=''):
         for ck, cn in _P.CATS[1:]:
             rows = ''.join(f'<a href="/{p[0]}"><span class="dot {p[3]}"></span>{p[1]}<em>{p[4]}</em></a>' for p in _P.P if p[2] == ck)
             groups += f'<div class="mm-col"><b>{cn}</b>{rows}</div>'
-        return f'<div class="has-mm"><a href="/projects"{cls}>{v} ▾</a><div class="mm"><div class="mm-in">{groups}<a class="mm-all" href="/projects">프로그램 14개 한눈에 →</a></div></div></div>'
+        return f'<div class="has-mm"><a href="/projects"{cls}>{v} ▾</a><div class="mm"><div class="mm-in">{groups}<a class="mm-all" href="/projects">프로그램 13개 한눈에 →</a></div></div></div>'
     nav = ''.join(_item(k, v) for k, v in NAV)
     t = f'{title} | 송골랩' if title else '송골랩 SONGGOL LAB'
     url = SITE + ('/' + slug if slug != 'index' else '/')
@@ -85,7 +85,7 @@ def page(slug, title, desc, body, on='', lang='ko', tail=''):
     </div>
     <div class="foot-cols">
       <div><b>SEMICONDUCTOR</b><a href="/consulting">반도체 세정 공정</a><a href="/consulting#areas">분야</a><a href="/contact?topic=반도체">사전 상담</a></div>
-      <div><b>PROGRAMS</b><a href="/projects">프로그램 14개</a><a href="/drive-console">드라이브 콘솔</a><a href="/airang">아이랑</a><a href="/project-home-iot">홈 IoT</a></div>
+      <div><b>PROGRAMS</b><a href="/projects">프로그램 13개</a><a href="/drive-console">드라이브 콘솔</a><a href="/airang">아이랑</a><a href="/project-home-iot">홈 IoT</a></div>
       <div><b>ABOUT</b><a href="/about">소개</a><a href="/videos">영상</a><a href="{BLOG}" target="_blank" rel="noopener">블로그 ↗</a><a href="/drive-console-privacy">개인정보처리방침</a></div>
     </div>
   </div>
@@ -621,7 +621,7 @@ PAGES['404'] = ('페이지를 찾을 수 없어요', '요청하신 페이지가 
 
 # ---------- 쓰기 ----------
 def main():
-    import home, programs  # 첫 화면·반도체 세정 공정(home.py), 프로그램 14개(programs.py)
+    import home, programs  # 첫 화면·반도체 세정 공정(home.py), 프로그램 13개(programs.py)
     import workshop
     home.add(globals())
     programs.add(globals())

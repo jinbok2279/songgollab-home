@@ -64,7 +64,7 @@ def add(g):
   <h1>현장 엔지니어의 방식으로<br><span class="grad">생활 속 문제를 풉니다</span></h1>
   <p class="lead">20년 동안 반도체 세정장비 현장에서 불량의 원인을 찾던 엔지니어가, 이제 집과 차와 가게의 불편을 프로그램으로 풀고 있습니다. 직접 만들고, 직접 쓰면서 다듬습니다.</p>
   <div class="cta">{btn('/projects', '프로그램 둘러보기 →')}{btn('/drive-console#tester', '드라이브 콘솔 테스터 신청', 'line')}</div>
-  <div class="metrics"><div><b><em>14</em>개</b><span>직접 만든 프로그램</span></div><div><b><em>2</em>개</b><span>누구나 쓰는 공개 서비스</span></div><div><b><em>20</em>년</b><span>반도체 장비 현장</span></div></div>
+  <div class="metrics"><div><b><em>13</em>개</b><span>직접 만든 프로그램</span></div><div><b><em>2</em>개</b><span>누구나 쓰는 공개 서비스</span></div><div><b><em>20</em>년</b><span>반도체 장비 현장</span></div></div>
 </div>
 <div class="collage" aria-hidden="true">
   <div class="c1"><img src="/assets/drive-console.jpg" alt=""></div>
@@ -105,7 +105,7 @@ def add(g):
     <div class="posts" id="posts"><a class="card post" href="{BLOG}" target="_blank" rel="noopener"><span class="d">블로그</span><b>개발 일지와 소식은 송골랩 블로그에서 볼 수 있어요</b></a></div></div>
   <div class="card tl"><span class="eyebrow">Timeline</span><h3 style="font-size:24px;margin:10px 0 18px">걸어온 길</h3><ul>
     <li><b>20년</b>반도체 세정장비 공정 엔지니어 — 공정 개발, 장비 평가, 불량 원인 추적</li>
-    <li><b>2026.10</b>송골랩 시작 · 홈 IoT, 아이랑, 드라이브 콘솔부터 프로그램 14개</li>
+    <li><b>2026.10</b>송골랩 시작 · 홈 IoT, 아이랑, 드라이브 콘솔부터 프로그램 13개</li>
     <li><b>2026.11</b>송골랩 사업자 등록 · 홈페이지 songgollab.co.kr 개설</li>
     <li><b>준비 중</b>반도체 공정·설비 컨설팅</li></ul></div>
 </div></div></section>'''
@@ -118,7 +118,7 @@ def add(g):
     tail = '''<script>function sgPosts(d){try{var box=document.getElementById('posts');var es=(d.feed.entry||[]).slice(0,4);if(!es.length)return;box.innerHTML='';es.forEach(function(e){var l=(e.link||[]).find(function(x){return x.rel==='alternate'});var a=document.createElement('a');a.className='card post';a.href=l?l.href:'https://songgollab.blogspot.com';a.target='_blank';a.rel='noopener';var dt=new Date(e.published.$t);var s=document.createElement('span');s.className='d';s.textContent=dt.getFullYear()+'.'+String(dt.getMonth()+1).padStart(2,'0')+'.'+String(dt.getDate()).padStart(2,'0');var t=document.createElement('b');t.textContent=e.title.$t;a.append(s,t);box.append(a)})}catch(_){}}</script>
 <script src="https://songgollab.blogspot.com/feeds/posts/summary?alt=json-in-script&max-results=4&callback=sgPosts" async></script>'''
 
-    PAGES['index'] = ('', '송골랩 — 20년 반도체 장비 엔지니어가 직접 만들고 쓰는 프로그램 14개. 드라이브 콘솔, 아이랑, 홈 IoT, 중앙관제, AI Team과 반도체 세정 공정 엔지니어링.', '',
+    PAGES['index'] = ('', '송골랩 — 20년 반도체 장비 엔지니어가 직접 만들고 쓰는 프로그램 13개. 드라이브 콘솔, 아이랑, 홈 IoT, 중앙관제, AI Team과 반도체 세정 공정 엔지니어링.', '',
                       hero + lab_sec + how_sec + blog_sec + cta, 'ko', tail + PG.FILTER_JS)
 
     # ------------------------------------------------------------ 컨설팅
