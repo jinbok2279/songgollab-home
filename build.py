@@ -84,7 +84,7 @@ def page(slug, title, desc, body, on='', lang='ko', tail=''):
       <p>상호 송골랩 · <a href="mailto:{MAIL}">{MAIL}</a></p>
     </div>
     <div class="foot-cols">
-      <div><b>SEMICONDUCTOR</b><a href="/consulting">반도체 세정 공정</a><a href="/consulting#areas">분야</a><a href="/contact?topic=반도체">사전 상담</a></div>
+      <div><b>SEMICONDUCTOR</b><a href="/consulting">반도체 세정 공정</a><a href="/consulting#areas">해 온 일</a></div>
       <div><b>PROGRAMS</b><a href="/projects">프로그램 13개</a><a href="/drive-console">드라이브 콘솔</a><a href="/airang">아이랑</a><a href="/project-home-iot">홈 IoT</a></div>
       <div><b>ABOUT</b><a href="/about">소개</a><a href="/videos">영상</a><a href="{BLOG}" target="_blank" rel="noopener">블로그 ↗</a><a href="/drive-console-privacy">개인정보처리방침</a></div>
     </div>
@@ -417,7 +417,7 @@ CONTACT_FORM = f'''<form class="form" id="cform" novalidate>
 <h2 style="margin:0">문의 남기기</h2>
 <label>이름<input name="name" autocomplete="name" required></label>
 <label>연락처 (이메일 또는 전화)<input name="contact" required></label>
-<label>문의 분야<select name="topic"><option>반도체 공정·설비 컨설팅 사전 상담</option><option>드라이브 콘솔 테스터 신청</option><option>서비스 의견 · 아이랑</option><option>서비스 의견 · 드라이브 콘솔</option><option>오류 신고</option><option>프로젝트 의견 · 홈 IoT</option><option>설치 상담 · 홈 IoT</option><option>기술 교류</option><option>협업 · 사업 제안</option><option>기타</option></select></label>
+<label>문의 분야<select name="topic"><option>드라이브 콘솔 테스터 신청</option><option>서비스 의견 · 아이랑</option><option>서비스 의견 · 드라이브 콘솔</option><option>오류 신고</option><option>프로젝트 의견 · 홈 IoT</option><option>설치 상담 · 홈 IoT</option><option>기술 교류</option><option>협업 · 사업 제안</option><option>기타</option></select></label>
 <label>내용<textarea name="body" required placeholder="드라이브 콘솔 테스터 신청은 플레이스토어에서 쓰는 Gmail 주소를 적어 주세요."></textarea></label>
 <label class="agree"><input type="checkbox" name="agree" required>문의 답변을 위한 개인정보(이름·연락처) 수집·이용에 동의합니다</label>
 <p class="err" id="cerr" role="alert"></p>

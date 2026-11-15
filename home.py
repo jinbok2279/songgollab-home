@@ -52,9 +52,7 @@ def add(g):
     FLOW = [('현상 관찰', '언제·어디서·얼마나'), ('데이터 수집', '로그·레시피·이력'), ('가설 분리', 'SW·HW·시퀀스·제어'), ('검증', '조건을 바꿔 재현'), ('기준 확정', '합격선과 관리값'), ('이관', '문서화·현장 전달')]
     SEMI['areas'] = areas_html
     flow_html = '<div class="flow">' + ''.join(f'<div class="rv"><b>{a}</b><span>{b}</span></div>' for a, b in FLOW) + '</div>'
-    FEE = '''<div class="fee rv"><div class="ic2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l5 5L21 4"/></svg></div>
-<div><h3>성과 연동형으로 진행합니다</h3><p>시작할 때 목표 기준을 함께 정하고, 그 기준을 달성했을 때 합당한 비용을 받는 방식을 기본으로 생각하고 있습니다. 세부 조건은 상담에서 정합니다.</p></div>
-<a class="btn btn-teal" href="/contact?topic=반도체">사전 상담</a></div>'''
+    FEE = ''
 
     # ------------------------------------------------------------ 첫 화면
     import programs as PG
@@ -87,8 +85,7 @@ def add(g):
   <div><span class="eyebrow">Semiconductor · 반도체 세정 공정</span>
   <h2>보이지 않는 원인까지<br>끝까지 추적합니다</h2>
   <p>장비의 SW·HW·시퀀스·제어를 함께 엮어 불량의 원인을 찾아 온 20년의 방식. 세정 공정·설비 엔지니어링을 따로 정리했습니다.</p>
-  <div class="status"><i></i>반도체 공정·설비 컨설팅 준비 중 · 사전 상담 가능</div>
-  <div class="cta" style="display:flex;gap:10px;margin-top:22px;flex-wrap:wrap">{btn('/consulting', '반도체 세정 공정 보기 →')}{btn('/contact?topic=반도체', '사전 상담', 'line')}</div></div>
+  <div class="cta" style="display:flex;gap:10px;margin-top:22px;flex-wrap:wrap">{btn('/consulting', '반도체 세정 공정 보기 →')}</div></div>
   <div><div class="panel"><div class="panel-head"><span>WAFER MAP · INSPECTION</span><b>● ANALYZING</b></div>{wafer_svg()}<span class="panel-note">설명용 일러스트 · 실제 데이터 아님</span></div></div>
 </div></div></section>'''
 
@@ -106,12 +103,11 @@ def add(g):
   <div class="card tl"><span class="eyebrow">Timeline</span><h3 style="font-size:24px;margin:10px 0 18px">걸어온 길</h3><ul>
     <li><b>20년</b>반도체 세정장비 공정 엔지니어 — 공정 개발, 장비 평가, 불량 원인 추적</li>
     <li><b>2026.10</b>송골랩 시작 · 홈 IoT, 아이랑, 드라이브 콘솔부터 프로그램 13개</li>
-    <li><b>2026.11</b>송골랩 사업자 등록 · 홈페이지 songgollab.co.kr 개설</li>
-    <li><b>준비 중</b>반도체 공정·설비 컨설팅</li></ul></div>
+    <li><b>2026.11</b>송골랩 사업자 등록 · 홈페이지 songgollab.co.kr 개설</li></ul></div>
 </div></div></section>'''
 
     cta = f'''<section class="s2" style="padding-top:0"><div class="wrap"><div class="cta-x grid-bg glow">
-<div><span class="eyebrow">Contact</span><h3 style="margin-top:10px">써 보시고,<br>의견을 들려주세요</h3><p>테스터 신청, 프로그램 의견, 반도체 사전 상담, 협업 제안 모두 반갑습니다.</p></div>
+<div><span class="eyebrow">Contact</span><h3 style="margin-top:10px">써 보시고,<br>의견을 들려주세요</h3><p>테스터 신청, 프로그램 의견, 오류 신고 모두 반갑습니다.</p></div>
 <div class="links">{btn('/contact', '문의하기', 'teal')}{btn('mailto:' + MAIL, MAIL, 'line')}</div>
 </div></div></section>'''
 
@@ -129,21 +125,12 @@ def add(g):
     body = f'''<section class="page-hero"><div class="wrap"><div class="crumb"><a href="/">홈</a> › <span>반도체 세정 공정</span></div>
 <span class="eyebrow">Semiconductor · Wet Clean Process &amp; Equipment</span><h1>반도체 세정 공정 · 설비 엔지니어링</h1>
 <p class="lead">20년 동안 반도체 세정장비 현장에서 장비의 소프트웨어·하드웨어·동작 순서·제어를 함께 보며 불량의 원인을 찾아 왔습니다. 그 경험을 정리했습니다.</p>
-<div class="status"><i></i>준비 중 · 사전 상담과 일정 협의를 받고 있습니다</div>
-<div class="cta">{btn('/contact?topic=반도체', '사전 상담 문의 →', 'teal')}{btn('#areas', '분야 보기', 'line')}</div></div></section>
+<div class="cta">{btn('#areas', '해 온 일 보기 →', 'teal')}</div></div></section>
 <section class="s2"><div class="wrap split">
-  <div><span class="eyebrow">When · 이런 상황이라면</span><h2 style="font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.03em;margin:10px 0 14px;line-height:1.25">현상은 보이는데<br>원인이 잡히지 않을 때</h2>
+  <div><span class="eyebrow">Experience · 현장에서 자주 만난 일</span><h2 style="font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.03em;margin:10px 0 14px;line-height:1.25">현상은 보이는데<br>원인이 잡히지 않던 일들</h2>
   <p style="color:var(--ink2)">장비 문제는 대부분 한 가지 원인으로 생기지 않습니다. 소프트웨어 설정, 하드웨어 상태, 동작 순서, 제어 값이 겹쳐서 나타납니다. 그래서 한 사람이 네 가지를 함께 봐야 빨리 풀립니다.</p></div>
   <ul class="cases">{"".join(f'<li class="rv">{c}</li>' for c in CASES)}</ul>
 </div></section>
-<section class="s2" id="areas" style="padding-top:0"><div class="wrap"><div class="head"><div><span class="eyebrow">Areas · 컨설팅 분야</span><h2>직접 해 온 일들</h2></div><p>20년 동안 세정장비 현장에서 직접 다뤄 온 일만 적었습니다.</p></div>{areas_html}</div></section>
-<section class="s2 white"><div class="wrap"><div class="head"><div><span class="eyebrow">Process · 진행 순서</span><h2>추측 대신,<br>재현되는 근거로</h2></div><p>원인을 찾았다고 말하려면 같은 조건에서 다시 일어나야 합니다.</p></div>{flow_html}{FEE}</div></section>
-<section class="s2"><div class="wrap"><div class="head"><div><span class="eyebrow">Engagement · 진행 형태</span><h2>필요한 만큼만</h2></div><p>상황에 맞춰 범위를 정합니다. 아래는 예시이며 상담에서 조정합니다.</p></div>
-<div class="engage">{"".join(f'<div class="rv"><span class="k">{k}</span><h3>{t}</h3><p>{d}</p></div>' for k, t, d in ENG)}</div>
-<div class="note blue" style="margin-top:24px;max-width:none">지금은 <b>준비 단계</b>로, 사전 상담과 일정 협의만 받고 있습니다. 상담 단계에서는 고객사·장비의 기밀 자료를 받지 않으며, 필요한 경우 비밀유지 약정 후 진행합니다.</div>
-</div></section>
-<section class="s2" style="padding-top:0"><div class="wrap"><div class="cta-x grid-bg glow">
-<div><span class="eyebrow">Contact</span><h3 style="margin-top:10px">장비 문제,<br>같이 끝까지 봅시다</h3><p>회사명 없이 현상만 간단히 적어 주셔도 됩니다.</p></div>
-<div class="links">{btn('/contact?topic=반도체', '사전 상담 문의', 'teal')}{btn('mailto:' + MAIL + '?subject=%5B%EB%B0%98%EB%8F%84%EC%B2%B4%20%EC%BB%A8%EC%84%A4%ED%8C%85%20%EC%82%AC%EC%A0%84%20%EC%83%81%EB%8B%B4%5D', '메일 보내기', 'line')}</div>
-</div></div></section>'''
-    PAGES['consulting'] = ('반도체 세정장비', '20년 반도체 세정장비 현장 경험 — 불량 원인 추적, 스케줄러·시퀀스 로직 검토, 공정 데이터 분석 도구, 평가 자동화 구상. 컨설팅 준비 중 · 사전 상담 가능.', 'consulting', body)
+<section class="s2" id="areas" style="padding-top:0"><div class="wrap"><div class="head"><div><span class="eyebrow">Areas · 해 온 일</span><h2>직접 해 온 일들</h2></div><p>20년 동안 세정장비 현장에서 직접 다뤄 온 일만 적었습니다.</p></div>{areas_html}</div></section>
+<section class="s2 white"><div class="wrap"><div class="head"><div><span class="eyebrow">Process · 진행 순서</span><h2>추측 대신,<br>재현되는 근거로</h2></div><p>원인을 찾았다고 말하려면 같은 조건에서 다시 일어나야 합니다.</p></div>{flow_html}{FEE}</div></section>'''
+    PAGES['consulting'] = ('반도체 세정장비', '20년 반도체 세정장비 현장 경험 — 불량 원인 추적, 스케줄러·시퀀스 로직 검토, 공정 데이터 분석 도구, 평가 자동화 구상. 현장에서 쌓은 경험을 정리했습니다.', 'consulting', body)

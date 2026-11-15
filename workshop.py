@@ -106,8 +106,7 @@ def add(g):
   <div><span class="eyebrow">Semiconductor · 반도체 세정장비</span>
   <h2>보이지 않는 원인까지<br>끝까지 추적합니다</h2>
   <p>이 작업실의 시작은 반도체 세정장비 현장입니다. 20년 동안 장비의 소프트웨어·하드웨어·동작 순서·제어를 함께 엮어 불량의 원인을 찾아 왔습니다. 그 일을 따로 정리했습니다.</p>
-  <div class="status"><i></i>반도체 공정·설비 컨설팅 준비 중 · 사전 상담 가능</div>
-  <div class="cta" style="display:flex;gap:10px;margin-top:22px;flex-wrap:wrap">{btn('/consulting', '반도체 세정장비 보기 →')}{btn('/contact?topic=반도체', '사전 상담', 'line')}</div></div>
+  <div class="cta" style="display:flex;gap:10px;margin-top:22px;flex-wrap:wrap">{btn('/consulting', '반도체 세정장비 보기 →')}</div></div>
   <div><div class="panel"><div class="panel-head"><span>WAFER MAP · INSPECTION</span><b>● ANALYZING</b></div>{H.wafer_svg()}<span class="panel-note">설명용 일러스트 · 실제 데이터 아님</span></div></div>
 </div>
 <div style="margin-top:40px">{H.SEMI['areas']}</div>
@@ -123,7 +122,7 @@ def add(g):
 
     doors = f'''<section class="s2"><div class="wrap doors">
 <a class="door rv" href="/drive-console#tester"><span class="eyebrow">Door 1</span><h3>써 보기</h3><p>드라이브 콘솔 테스터 신청, 아이랑 사용, 프로그램 의견 보내기.</p><span class="go">테스터 신청 →</span></a>
-<a class="door dark2 rv" href="/contact"><span class="eyebrow">Door 2</span><h3>같이 일하기</h3><p>반도체 세정 공정 사전 상담, 프로그램 개발 의뢰, 협업 제안.</p><span class="go">문의하기 →</span></a>
+<a class="door dark2 rv" href="/contact"><span class="eyebrow">Door 2</span><h3>의견 보내기</h3><p>프로그램 의견, 오류 신고, 기술 이야기.</p><span class="go">의견 보내기 →</span></a>
 </div></section>'''
 
     PAGES['index'] = ('', '송골랩 — 20년 반도체 장비 엔지니어의 공개 작업실. 집·차·가게의 불편을 프로그램으로 만들고 직접 쓰면서 고치는 과정을 작업 일지로 남깁니다.', '',
