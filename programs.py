@@ -191,7 +191,7 @@ G = {
  'project-commerce': [('/assets/prog/ali-final.jpg', '마켓 등록 초안 확인 — 노출 최적화, 마진, 취급 판정')],
 }
 V = {
- 'project-control': [('/assets/video/control-hud-20261117.mp4', '나만의 자비스~! 송골랩 중앙관제 소개 (1분 34초)')],
+ 'project-control': [('zH4ejgkLxcM', '나만의 자비스~! 송골랩 중앙관제 소개 (1분 34초)')],
  'drive-console': [('T9bEMuzRCQA', '30초 소개'), ('rpFFTn9Ux6Q', '3분 기능 설명 v1.3'), ('wwWg9VWy7Y4', '테스터 모집')],
  'airang': [('YRNth4rPD_I', '아이랑 경기'), ('y_lwf2FhGaQ', '아이랑 서울 25개 구'), ('uvaTydTX3Bk', '아이랑 충남')],
  'project-home-iot': [('jB_N9SyBGMU', 'IoT 이야기 EP.1'), ('66hwKAWMw84', 'EP.3 스마트홈의 하루'), ('mKFjxUG26es', 'EP.4 새는 전기 막기')],
