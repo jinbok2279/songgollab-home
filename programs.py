@@ -28,7 +28,7 @@ P = [
  ('project-home-iot', '송골집 IoT · AI 월패드', 'iot', 'dev', '실증 중', 'Windows · 태블릿', 'v2.6', '공사 없이 우리 집에 맞춘 월패드. 집 구조 그대로의 화면, 음성 비서, 사람 감지 조명, 라디오.', ('#0B1630', '#1E40AF', 'home', '/assets/prog/home-main.jpg')),
  ('program-lagrills', '라그릴스 허브', 'iot', 'dev', '사업장 실증', 'Windows', 'v2.6', '셀프 바베큐장의 구역별 에어컨을 매장 PC 한 화면에서 켜고 끕니다.', ('#B45309', '#F59E0B', 'shop', 'https://i.ytimg.com/vi/jSeZK3VLMT4/hqdefault.jpg')),
  ('project-farm', 'IoT 비닐하우스', 'plan', 'plan', '기획 중', 'IoT', '—', '부모님과 짓는 농사에 홈 IoT를 옮겨 오는 스마트팜 실험.', ('#15803D', '#65A30D', 'leaf', '')),
- ('project-control', '중앙관제', 'ops', 'dev', '내부 운영', 'Windows · 웹', 'v1.17', '내가 만든 프로그램들의 상태를 한 화면에 모으고, 음성으로 묻고, 메일까지 정리하는 관제실.', ('#0B1630', '#0FB5A2', 'radar', '')),
+ ('project-control', '중앙관제', 'ops', 'dev', '운영 중', 'Windows · 웹 · 휴대폰', 'v1.19.8', '다들 하나씩은 가지고 계시죠? 나만의 자비스~! 내가 만든 프로그램들이 알아서 모이는 관제 화면, 목소리로 묻고 시킵니다.', ('#0B1630', '#0FB5A2', 'radar', '/assets/prog/control-v1198-10.jpg')),
  ('program-ai-team', 'AI Team', 'ops', 'dev', '내부 운영', 'Windows · 휴대폰', 'v4.6', '여러 AI에게 일을 나눠 맡기는 작업실. 팀장 AI가 계획·검수하고 팀원 AI들이 나눠 처리합니다.', ('#6D28D9', '#2563EB', 'ai', '')),
  ('program-sns', 'SNS 통합관리', 'ops', 'dev', '내부 운영', 'Windows', 'v0.6', '인스타그램·스레드·블로그를 한 프로그램에서. 글쓰기, 예약, 반응 보기까지.', ('#DB2777', '#F59E0B', 'sns', '')),
  ('program-login', '로그인 상태 점검판', 'ops', 'dev', '내부 사용', 'Chrome 확장', 'v1.0', '60여 개 사이트의 로그인·API 키 상태를 한 화면에서. 끊기면 바로 알려 줍니다.', ('#334155', '#64748B', 'lock', '/assets/prog/login-00-cover.jpg')),
@@ -71,14 +71,18 @@ D['program-lagrills'] = dict(
  log=[('2026.10.04', '허브 v2.6 설치', '구역마다 IR 리모컨을 달고 매장 PC에 허브를 설치했습니다.'), ('다음', '전 구역 전등 · 예약 연동', '예약 시간에 맞춰 미리 켜고, 에어컨 전력을 확인하는 기능으로 넓힙니다.')],
  videos=['jSeZK3VLMT4', 'oSnE9LrclWM'], links=[('/project-home-iot', '송골집 IoT 보기'), ('https://songgollab.blogspot.com/2026/10/pc.html', '설치기 글 ↗')])
 D['project-control'] = dict(
- lead='송골랩이 만든 프로그램들(홈 IoT, 드라이브 콘솔, 아이랑 관리, 송골트레이더, AI Team 등)의 상태를 한 화면에 모으는 내부 관제실입니다. 음성으로 묻고, 메일을 정리하고, 각 프로그램 담당 AI에게 수정 요청까지 보냅니다.',
- why='프로그램이 늘어나면서 무엇이 잘 돌고 무엇이 멈췄는지 하나씩 열어 봐야 했습니다. 한 화면에서 보고, 문제가 생기면 바로 손쓸 수 있게 만들었습니다.',
- feats=[('프로그램 상태 모음', '연결된 프로그램마다 카드 하나. 정상·주의·끊김을 색으로 보고, 누르면 자세한 상황 창이 열립니다.'), ('음성 비서', '말로 묻고 답을 듣습니다. 화면 가운데 코어가 말할 때 반응합니다.'),
-        ('메일 관제', '여러 메일함을 한곳에서 읽고, 광고 메일은 자동으로 휴지통·보관함으로 보냅니다.'), ('오늘의 뉴스', '분야별 주요 기사 제목을 첫 화면에서 봅니다.'),
-        ('개발 연락소', '각 프로그램을 맡은 AI에게 질문하거나 수정을 요청하고 답을 모아 봅니다.'), ('집 밖 접속 · 태블릿', 'PC·태블릿·휴대폰 화면을 따로 맞췄고, 밖에서도 안전하게 접속합니다.')],
- flow=[('각 프로그램', '정해진 규격으로 상태 보내기'), ('관제 서버', '모아서 저장·판정'), ('관제 화면', '카드·연결선으로 표시'), ('알림 · 조치', '음성·메일·수정 요청')],
- log=[('v1.13', '노드 관제', '여러 PC·장치를 노드로 묶어 상태를 봅니다.'), ('v1.14 ~ 1.15', '메일 관제', '광고 메일 자동 정리, 관제 안에서 바로 읽기.'), ('v1.16', '방마다 지금', '송골집 창을 방별 현재 상태로.'), ('v1.17', '영화 같은 화면', '창이 열릴 때의 효과, 빛나는 연결선, 오늘의 뉴스 카드 복구.')],
- note='내부 전용 프로그램이라 구성도·접속 정보·보안 세부 사항은 공개하지 않습니다. 이미지는 콘셉트입니다.', image=('ai', '통합 관리 콘셉트 이미지'))
+ lead='다들 하나씩은 가지고 계시죠? 나만의 자비스~! 집·일·프로그램을 한 화면에서, 목소리로 관리하는 송골랩 중앙관제(SONGGOLLAB HUD)입니다. 가운데 AI 코어를 중심으로, 내가 만든 프로그램들이 연결되는 순간 카드로 알아서 모입니다.',
+ why='집에는 IoT 기기, 일에는 자동매매·SNS·3D 프린터·AI 도구가 있습니다. 프로그램이 하나씩 늘다 보니 창을 열고 닫는 데만 하루가 갔습니다. 무엇이 잘 돌고 무엇이 멈췄는지 한 화면에서 보고, 말로 묻고 시킬 수 있게 만들었습니다.',
+ feats=[('카드로 자동 정리', '연결된 프로그램마다 카드 하나. 상태(연결·주의)와 꼭 알아야 할 숫자 한 줄만 보이고, 누르면 자세한 창이 열립니다.'),
+        ('주소와 토큰만 넣으면 연결', '프로그램에 관제 주소와 토큰만 넣으면 첫 신호가 오는 순간 카드가 생깁니다. 보기 싫은 카드는 설정에서 숨깁니다.'),
+        ('목소리로', '“자비스”라고 부르면 상시 듣기로 명령을 받습니다. 말 대신 글로 명령해도 됩니다.'),
+        ('확인 카드', '출력 시작·정지처럼 되돌리기 어려운 일은 바로 하지 않고 확인 카드로 한 번 더 묻습니다.'),
+        ('개발 현황판', '프로젝트 단계·로그인 점검·만료 일정·유료 구독을 한눈에 봅니다.'),
+        ('폰 앱 · 전체 화면', '휴대폰에서 같은 관제를 보고, TV·모니터에는 전체 화면 관제 모드로 띄웁니다.')],
+ flow=[('각 프로그램', '관제 주소 + 토큰으로 상태 보내기'), ('관제 서버', '첫 신호에 자동 등록 · 모아서 판정'), ('관제 화면', 'AI 코어 중심 카드 · 연결선'), ('목소리 · 조치', '묻고 시키기 · 위험한 일은 확인 카드')],
+ log=[('v1.13', '노드 관제', '여러 PC·장치를 노드로 묶어 상태를 봅니다.'), ('v1.14 ~ 1.15', '메일 관제', '광고 메일 자동 정리, 관제 안에서 바로 읽기.'), ('v1.16', '방마다 지금', '송골집 창을 방별 현재 상태로.'), ('v1.17', '영화 같은 화면', '창이 열릴 때의 효과, 빛나는 연결선, 오늘의 뉴스 카드.'),
+      ('v1.19.8', '연결 프로그램 15개 · 소개 영상', '송골오토트레이더·3D 프린터·AI Team·SNS 통합관리·앱 출시 현황까지 연결. 첫 소개 영상 공개 (2026-11-17).')],
+ note='실제 운영 중인 화면입니다. 개인 금액·메일 이름은 가렸고, 접속 주소·토큰·보안 세부 사항은 공개하지 않습니다. 주식 쪽은 모의투자 화면이며 숫자는 기능 예시입니다.')
 D['program-ai-team'] = dict(
  lead='하나의 AI에 모든 일을 맡기지 않고, 일의 성격에 따라 여러 AI에게 나눠 맡기는 작업실입니다. 팀장 AI가 계획을 세우고 검수하며, 팀원 AI들이 조각을 나눠 처리합니다.',
  why='AI 사용량과 비용을 줄이면서도, 글·영상·코드를 꾸준히 만들어야 했습니다. 쉬운 일은 가볍고 저렴한 AI가, 어려운 일은 강한 AI가 맡도록 나눴습니다.',
@@ -172,13 +176,22 @@ G = {
  'drive-console': [('/assets/drive-console.jpg', '태블릿 메인 화면'), ('/assets/prog/dc-phone.jpg', '휴대폰 세로 메인 화면 (v1.3.56)', 'tall'), ('/assets/drive-console-2.jpg', '차량 정보 화면')],
  'airang': [('/assets/airang-phone.jpg', '아이랑 휴대폰 화면', 'tall')],
  'project-home-iot': [('/assets/prog/home-main.jpg', '홈 화면 — 집 전체 상태, 전력 흐름, 장면, 방별 조명·온도·커튼, 보안'), ('/assets/prog/home-auto.jpg', '장면 · 자동화 — 아침 조명, 해 질 때 커튼, 빈 방 끄기, 외출 소등, 밤 소등'), ('/assets/prog/home-energy.jpg', '에너지 — 지금 쓰는 전력, 가전별 전력, 태양광·배터리·전기차 연결 상태'), ('/assets/prog/home-radio.jpg', '라디오 — 월패드에서 바로 듣는 즐겨찾기 방송, 꺼짐 예약')],
- 'project-control': [('/assets/prog/control-main.jpg', '관제 메인 화면 — 프로그램 10개를 한 화면에 (재현 화면)')],
+ 'project-control': [('/assets/prog/control-v1198-10.jpg', '메인 화면 — 가운데 AI 코어를 중심으로 연결된 프로그램이 카드로 모입니다 (v1.19.8 실제 화면)'),
+   ('/assets/prog/control-v1198-19.jpg', '카드마다 상태(연결·주의)와 핵심 숫자 한 줄, 누르면 자세한 창'),
+   ('/assets/prog/control-v1198-42.jpg', '송골홈 — 방마다 조명·문·센서·냉장고 온도 (Home Assistant 연결)'),
+   ('/assets/prog/control-v1198-49.jpg', '3D 프린터 — 진행률·노즐·베드 온도 실시간, 출력 시작은 확인 카드로'),
+   ('/assets/prog/control-v1198-55.jpg', 'AI Team — 여러 AI에 일을 나눠 맡기고 지금 하는 일·검수 대기를 한눈에'),
+   ('/assets/prog/control-v1198-62.jpg', 'SNS 통합관리 — 스레드 방문·팔로워·댓글·예약 글'),
+   ('/assets/prog/control-v1198-69.jpg', '그 밖의 연결 프로그램 — 뉴스·Home Assistant·아이랑 정보·투자비·메일·앱 출시·노드 관제'),
+   ('/assets/prog/control-v1198-77.jpg', '연결·설정 — 주소와 토큰만 넣으면 첫 신호에 자동 등록'),
+   ('/assets/prog/control-v1198-84.jpg', '목소리로 — “자비스, 프린터 어때?” 위험한 명령은 확인 카드로')],
  'program-ai-team': [('/assets/prog/aiteam-flow.jpg', 'AI 팀 작업실이 일하는 방식'), ('/assets/prog/aiteam-home.jpg', '홈 화면 — 팀장 AI와 팀원 AI 연결 (재현 화면)'), ('/assets/prog/aiteam-order.jpg', '지시 화면 — 프로젝트별 대화와 지금 일하는 AI'), ('/assets/prog/aiteam-phone.jpg', '휴대폰 화면', 'tall')],
  'program-login': [('/assets/prog/login-01-dashboard.jpg', '점검판 메인 화면 — 문제 있는 곳이 항상 맨 위로 (화면 속 상태값은 예시)'), ('/assets/prog/login-02-popup.jpg', 'Chrome 툴바 아이콘을 누르면 뜨는 요약 팝업', 'tall'), ('/assets/prog/login-04-login-method.jpg', '사이트마다 "어떻게 로그인하는지"를 적어 두는 칸', 'tall'), ('/assets/prog/login-03-google-recovery.jpg', '맨 위에 고정한 구글 계정 복구 수단 점검'), ('/assets/prog/login-05-api-keys.jpg', '「API 키·토큰」 탭과 오른쪽 만료일 달력')],
  'program-invest': [('/assets/prog/invest-dashboard.jpg', '대시보드 — 이번 달 투자비, 프로젝트별·월별 그래프, 구매 내역에서 프로젝트 바로 바꾸기 (화면 예시 · 예시 데이터)'), ('/assets/prog/invest-analysis.jpg', '분석 — 월말 예상, 자동 분석 문장, 프로젝트별 예산 사용률, 프로젝트 × 월 표 (화면 예시 · 예시 데이터)'), ('/assets/prog/invest-flow.jpg', '매주 자동 업데이트 4단계 — 수집 → 분류 → 드라이브 저장 → 프로그램 반영')],
  'project-commerce': [('/assets/prog/ali-final.jpg', '마켓 등록 초안 확인 — 노출 최적화, 마진, 취급 판정')],
 }
 V = {
+ 'project-control': [('/assets/video/control-hud-20261117.mp4', '나만의 자비스~! 송골랩 중앙관제 소개 (1분 34초)')],
  'drive-console': [('T9bEMuzRCQA', '30초 소개'), ('rpFFTn9Ux6Q', '3분 기능 설명 v1.3'), ('wwWg9VWy7Y4', '테스터 모집')],
  'airang': [('YRNth4rPD_I', '아이랑 경기'), ('y_lwf2FhGaQ', '아이랑 서울 25개 구'), ('uvaTydTX3Bk', '아이랑 충남')],
  'project-home-iot': [('jB_N9SyBGMU', 'IoT 이야기 EP.1'), ('66hwKAWMw84', 'EP.3 스마트홈의 하루'), ('mKFjxUG26es', 'EP.4 새는 전기 막기')],
@@ -186,6 +199,7 @@ V = {
  'project-farm': [('05GXvZZknDs', 'IoT 이야기 EP.5 — 멀리서 살피기')],
 }
 R = {
+ 'project-control': [('https://songgollab.blogspot.com', '송골랩 블로그 ↗', '연결된 프로그램 하나하나의 소개 글'), ('/project-home-iot', '송골집 IoT', '방마다 조명·문·센서'), ('/program-trader', '송골트레이더', '주식·코인 자동매매 (개인 테스트용)'), ('/program-ai-team', 'AI Team', '여러 AI에 일을 나눠 맡기는 작업실'), ('/program-sns', 'SNS 통합관리', '인스타·스레드·블로그 한곳에서')],
  'drive-console': [('/drive-console', '사용 안내 · 설치 방법', '준비물, 5단계 설치, 사용법, 자주 묻는 질문'), ('/project-drive', '개발 기록 · 화면 둘러보기', 'v0.6부터 v1.3.53까지, 고장 코드 진단 구조'), ('/drive-console-privacy', '개인정보처리방침', '한국어 · English'), ('/drive-console-en', 'English page', 'Drive Console in English')],
  'airang': [('https://airang.songgollab.co.kr', '아이랑 바로 열기 ↗', '도시를 골라 바로 사용'), ('/airang', '아이랑 소개 · 로드맵', '운영 방식, 개발 일지, 단계별 계획'), ('https://songgollab.blogspot.com', '블로그 글 ↗', '아이랑 서울·경기·충남 소개 글')],
  'project-home-iot': [('/iot-guide', 'IoT, 쉽게 알아보기', '영상 5편으로 정리한 홈 IoT 입문'), ('https://songgollab.blogspot.com/2026/10/pc.html', '라그릴스 설치기 ↗', '바베큐장 에어컨을 한 화면으로')],
@@ -201,7 +215,11 @@ def gallery(slug):
 def videos(slug, yt):
     items = V.get(slug)
     if not items: return ''
-    return '<div class="vids">' + ''.join(f'<div>{yt(i, t)}</div>' for i, t in items) + '</div>'
+    def one(i, t):
+        if i.startswith('/'):
+            return f'<div class="video"><video src="{i}" poster="{i[:-4]}.jpg" controls preload="none" playsinline style="width:100%;height:100%;background:#000"></video></div><p class="vlabel">{t}</p>'
+        return yt(i, t)
+    return '<div class="vids">' + ''.join(f'<div>{one(i, t)}</div>' for i, t in items) + '</div>'
 
 def resources(slug):
     items = R.get(slug)
