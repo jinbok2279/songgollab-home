@@ -617,6 +617,36 @@ PAGES['drive-console-privacy'] = ('드라이브 콘솔 개인정보처리방침'
  + sec(f'<div class="legal">{PRIV_KO}{PRIV_EN}</div>', cls='tight'))
 
 # ======================================================================
+# 송골 고스톱 개인정보처리방침 (구글 플레이 등록용 주소: /gostop-privacy)
+GOSTOP_PRIV_KO = """<p class="meta">시행일 2026년 11월 21일 · 앱: 송골 고스톱(Songgol Gostop, kr.songgollab.gostop) · 만든 곳: 송골랩(SONGGOLLAB)</p>
+<h3>1. 한 줄 요약</h3><p>송골 고스톱은 <b>회원가입·로그인이 없고, 어떤 개인정보도 송골랩이나 외부 서버로 보내지 않습니다.</b> 광고·분석 도구도 넣지 않았습니다.</p>
+<h3>2. 폰 안에만 저장되는 정보</h3><p>처음 실행할 때 적은 <b>이름(닉네임)</b>, 고른 캐릭터, 게임 코인 잔액과 리필 횟수, 함께 친 사람별 <b>전적</b>(상대 이름·판 수·승패·코인 증감), 그리고 상대 폰이 나를 알아보기 위해 앱이 만든 <b>임의의 번호</b>가 이 폰 안에만 저장됩니다. 이 정보는 앱을 지우면 함께 지워지며, 송골랩은 이 정보를 볼 수 없습니다.</p>
+<h3>3. 근처 사람과 같이 칠 때 주고받는 정보</h3><p>방을 만들거나 들어가면 <b>블루투스 또는 같은 와이파이(공유기)</b>로 근처 폰과 직접 연결됩니다. 이때 닉네임, 캐릭터, 앱이 만든 임의의 번호, 코인 잔액, 게임 진행 내용만 같은 방의 폰끼리 주고받습니다. 인터넷 서버를 거치지 않으며, 방을 나가면 연결이 끊깁니다.</p>
+<h3>4. 권한을 쓰는 이유</h3><ul>
+<li><b>근처 기기(블루투스 찾기·알리기·연결)</b>: 근처 폰의 방을 찾고 연결합니다.</li>
+<li><b>위치</b>: 안드로이드 규정상 블루투스로 근처 기기를 찾을 때 필요합니다. 위치를 기록하거나 어디에도 보내지 않습니다.</li>
+<li><b>근처 와이파이 기기·와이파이 상태·멀티캐스트·인터넷</b>: 같은 공유기에 연결된 폰끼리 방을 찾고 연결합니다. 외부 인터넷 서버에는 접속하지 않습니다.</li>
+</ul><p>권한은 폰 설정에서 언제든 끌 수 있으며, 끄면 '같이 치기'만 안 되고 AI 연습은 그대로 됩니다.</p>
+<h3>5. 음성(말하기)</h3><p>쪽·뻑·고 같은 음성은 폰에 깔린 음성 엔진(구글·삼성 등)으로 읽습니다. 고른 목소리에 따라 해당 음성 엔진 제공사의 처리 방식이 적용될 수 있습니다.</p>
+<h3>6. 게임 코인</h3><p>코인은 게임 안에서만 쓰는 점수입니다. 돈을 받고 팔지 않고, 현금이나 물건으로 바꿀 수 없으며, 다른 사람에게 보낼 수도 없습니다.</p>
+<h3>7. 이용 연령</h3><p>고스톱 게임 특성상 만 19세 이상을 대상으로 합니다.</p>
+<h3>8. 문의</h3><p>이메일 songgollab@gmail.com · <a href="/contact">songgollab.co.kr/contact</a></p>
+<h3>9. 바뀔 때</h3><p>이 방침이 바뀌면 이 페이지에 날짜와 함께 알려 드립니다.</p>"""
+GOSTOP_PRIV_EN = """<h2 style="margin-top:40px">Privacy Policy (English)</h2>
+<p class="meta">Effective November 21, 2026 · App: Songgol Gostop (kr.songgollab.gostop) · Developer: SONGGOLLAB</p>
+<h3>1. Summary</h3><p>Songgol Gostop has no sign-up or login and <b>does not send any personal data to SONGGOLLAB or any server.</b> It contains no ads or analytics SDKs.</p>
+<h3>2. Data kept only on your phone</h3><p>Your nickname, chosen character, in-game coin balance and refill count, per-opponent game records, and a random ID created by the app are stored only on your device and are deleted when you uninstall the app.</p>
+<h3>3. Playing with people nearby</h3><p>When you create or join a room, phones connect directly over Bluetooth or the same Wi-Fi network. Only the nickname, character, the app's random ID, coin balance and game moves are exchanged between phones in the same room. No internet server is involved.</p>
+<h3>4. Permissions</h3><p>Nearby devices (Bluetooth) and location are used only to find and connect to nearby phones, as Android requires; location is never recorded or sent. Nearby Wi-Fi devices, Wi-Fi state, multicast and internet permissions are used only to find and connect phones on the same local network.</p>
+<h3>5. Voice</h3><p>Voice lines are read by the text-to-speech engine installed on your phone (e.g., Google or Samsung).</p>
+<h3>6. Coins</h3><p>Coins are in-game points only. They are never sold, cannot be exchanged for money or goods, and cannot be transferred.</p>
+<h3>7. Age</h3><p>Intended for adults aged 19 and over.</p>
+<h3>8. Contact</h3><p>songgollab@gmail.com</p>"""
+PAGES['gostop-privacy'] = ('송골 고스톱 개인정보처리방침', '송골 고스톱 앱(kr.songgollab.gostop) 개인정보처리방침 · Songgol Gostop Privacy Policy', 'services',
+ hero([('', '송골 고스톱'), ('', '개인정보처리방침')], '송골 고스톱 · Privacy Policy', '개인정보처리방침', '송골 고스톱 앱이 어떤 정보를 왜 쓰는지, 어디에 남는지 알려 드립니다.')
+ + sec(f'<div class="legal">{GOSTOP_PRIV_KO}{GOSTOP_PRIV_EN}</div>', cls='tight'))
+
+# ======================================================================
 PAGES['404'] = ('페이지를 찾을 수 없어요', '요청하신 페이지가 없거나 주소가 바뀌었어요.', '',
  hero([('', '404')], '404', '페이지를 찾을 수 없어요', '주소가 바뀌었거나 없는 페이지예요. 블로그 글을 찾으신다면 송골랩 블로그에서 볼 수 있어요.',
       btn('/', '홈으로') + btn(BLOG, '블로그 가기 ↗', 'ghost')))
