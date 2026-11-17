@@ -92,6 +92,8 @@ def page(slug, title, desc, body, on='', lang='ko', tail=''):
   <div class="wrap foot-bottom"><span>© 2026 SONGGOL LAB. All rights reserved.</span><span class="mono">BUILT IN YONGIN, KR</span></div>
 </footer>
 <script src="/assets/site.js?v={VER}" defer></script>{tail}
+<script>/* 방문 집계 (GoatCounter · 쿠키·개인정보 없음). 내 방문을 빼려면 주소 끝에 #toggle-goatcounter 를 붙여 한 번 열기 */</script>
+<script data-goatcounter="https://songgollab-edu-app.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
 '''
