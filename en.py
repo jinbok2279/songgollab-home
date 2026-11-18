@@ -36,7 +36,7 @@ def card(p):
     href = '/drive-console-en' if slug == 'drive-console' else ('/en/' + slug if slug in EN_PAGES else '/' + slug)
     stc = {'live': 'live', 'plan': 'plan'}.get(st, '')
     catname = dict(CATS)[cat]
-    kr = '<span>Korea only</span>' if slug in KR_ONLY else ''
+    kr = ''
     meta = f'<span>{pl}</span>' + (f'<span>{ver}</span>' if ver not in ('—', '0단계') else '') + kr
     return f'''<a class="prog rv" data-cat="{cat}" href="{href}">{PG.art(c1, c2, ic, ph)}<span class="st {stc}">{s}</span></div>
 <div class="tx"><span class="cat">{catname.upper() if cat != "svc" else "PUBLIC SERVICE"}</span><h3>{n}</h3><p>{o}</p><div class="meta">{meta}</div></div></a>'''
@@ -83,7 +83,7 @@ def add(g):
   <a class="try rv" href="/drive-console-en"><div class="im" style="background-image:url('/assets/drive-console.jpg')"></div>
     <div class="tx"><span class="badge amber">Testers wanted · Free</span><h3>Drive Console</h3><p>Turn a spare Android tablet or phone into a car dashboard. It reads fault codes and shows the likely cause and what to check, in order.</p><span class="go">Join the test →</span></div></a>
   <a class="try rv" href="/airang"><div class="im" style="background-image:url('/assets/airang-phone.jpg');background-position:top"></div>
-    <div class="tx"><span class="badge">Public service · Korea only</span><h3>Airang</h3><p>Local info for families with kids in 63 Korean towns, collected every morning onto one screen. No sign-up. (Korean only)</p><span class="go">Open Airang →</span></div></a>
+    <div class="tx"><span class="badge">Public service</span><h3>Airang</h3><p>Local info for families with kids in 63 Korean towns, collected every morning onto one screen. No sign-up. (Korean only)</p><span class="go">Open Airang →</span></div></a>
 </div></div></section>'''
 
     tools = ''.join(
@@ -130,7 +130,7 @@ def add(g):
     cat = '<div class="progs" id="progs">' + ''.join(card(p) for p in PG.P) + '</div>'
     ph = ehero('Programs', 'Programs', f'Built by me,<br>used by me — {len(PG.P)} programs',
                    'An engineer with 20 years on semiconductor equipment, turning everyday hassles into programs one at a time. Public services, internal tools, personal R&amp;D and ideas still in planning — all here.')
-    note = '<p class="p" style="margin-top:18px;color:var(--ink3,#64748B)">Detail pages are being translated. Until then, programs without an English page open the Korean page. “Korea only” services work only with Korean data or accounts.</p>'
+    note = '<p class="p" style="margin-top:18px;color:var(--ink3,#64748B)">Detail pages are being translated. Until then, programs without an English page open the Korean page.</p>'
     PAGES['en/projects'] = ('Programs', f'{len(PG.P)} programs built and used by Songgol Lab — Drive Console, Central Control, 3D Print Bench, Butler Robot, home IoT and more.', 'projects',
                             ph + g['sec'](filt + cat + note, cls='tight') + g['band']('See something you like?', 'Want to try one, or build something similar? Drop me a line.', btn(f'mailto:{MAIL}', 'Email me')), 'en', PG.FILTER_JS)
 
