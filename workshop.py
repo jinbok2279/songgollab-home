@@ -3,10 +3,11 @@
 숫자는 STATS 의 기준일 값입니다. 고칠 때 기준일도 같이 바꾸세요."""
 
 AS_OF = '2026.11.12'
-STATS = [('42', '일', '첫 줄을 쓴 지 (2026.10.01)'), ('13', '개', '만든 프로그램'), ('238', '번', '버전 업데이트'), ('12', '명', '드라이브 콘솔 테스터'), ('63', '곳', '아이랑이 열린 동네')]
+STATS = [('42', '일', '첫 줄을 쓴 지 (2026.10.01)'), ('14', '개', '만든 프로그램'), ('238', '번', '버전 업데이트'), ('12', '명', '드라이브 콘솔 테스터'), ('63', '곳', '아이랑이 열린 동네')]
 
 # 날짜, 프로그램(slug, 이름), 버전, 제목, 내용, 종류(new/fix/ship/milestone)
 LOG = [
+ ('11.18', ('program-printbench', '3D Print Bench'), 'v0.9', '3D 프린터 관리 프로그램 페이지 공개', '모니터링·작업 대기열·자동 슬라이스·출력 시작 인터락까지, 3D 프린터를 PC 한 화면에서.', 'milestone'),
  ('11.17', ('project-control', '중앙관제'), 'v1.19.8', '나만의 자비스~! 소개 영상 공개', '연결 프로그램 15개가 한 화면에 모이는 실제 운영 화면을 1분 34초 영상으로 정리했습니다.', 'milestone'),
  ('11.14', ('program-trader', '송골트레이더'), 'v0.3.0', '주식 + 코인 → 송골트레이더 하나로', '따로 쓰던 주식·코인 자동매매를 한 프로그램, 한 화면으로 합쳤습니다. 네온 레이더 대시보드와 Claude 복기 회의를 넣었습니다.', 'milestone'),
  ('11.12', ('', '송골랩'), '', '홈페이지 이사 · songgollab.co.kr', '블로그에 얹혀 있던 홈페이지를 직접 만든 사이트로 옮겼습니다. 블로그는 블로그대로 남깁니다.', 'milestone'),
@@ -95,7 +96,7 @@ def add(g):
         f'<a class="tool rv" href="/{s}"><span class="dot {st}"></span><b>{n}</b><em>{stl}</em><code>{v if v != "—" else ""}</code></a>'
         for s, n, c, st, stl, pl, v, one, art in PG.P)
     tools_sec = f'''<section class="s2"><div class="wrap">
-<div class="head"><div><span class="eyebrow">On the bench · 작업대 위의 것들</span><h2>지금까지 만든 13개</h2></div>
+<div class="head"><div><span class="eyebrow">On the bench · 작업대 위의 것들</span><h2>지금까지 만든 14개</h2></div>
 <p>공개 서비스부터 집·가게의 IoT, 운영을 돕는 도구, 개인 연구, 기획 중인 것까지. 눌러서 자세히 보세요.</p></div>
 <div class="tools">{bench_list}</div>
 <p style="margin-top:22px"><a class="more" style="font-weight:700;color:var(--blue)" href="/projects">프로그램 자세히 보기 →</a></p>
@@ -132,5 +133,5 @@ def add(g):
     full = g['hero']([('', '작업 일지')], 'Work log · 작업 일지', '작업대에서<br>있었던 모든 일',
                      f'2026년 10월 1일 첫 줄부터 지금까지. 새 기능, 고친 것, 공개한 것, 이정표를 날짜순으로 남깁니다. 프로그램 이름을 누르면 자세한 소개로 갑니다.')
     legend = '<div class="legend">' + ''.join(f'<span class="kb {c}">{l}</span>' for l, c in KIND.values()) + '</div>'
-    PAGES['log'] = ('작업 일지', '송골랩 공개 작업실의 작업 일지 — 2026.10.01 첫 줄부터 프로그램 13개, 버전 업데이트 238번의 기록.', 'log',
+    PAGES['log'] = ('작업 일지', '송골랩 공개 작업실의 작업 일지 — 2026.10.01 첫 줄부터 프로그램 14개, 버전 업데이트 238번의 기록.', 'log',
                     full + g['sec'](legend + log_items(LOG), cls='tight') + g['band']('다음 줄은 무엇이 될까요?', '필요한 기능이나 불편한 점을 알려 주시면 작업 일지에 올라갑니다.', btn('/contact', '의견 보내기')))

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""송골랩 프로그램 13개 — 목록(/projects)과 상세 페이지. build.py가 불러 씁니다.
+"""송골랩 프로그램 14개 — 목록(/projects)과 상세 페이지. build.py가 불러 씁니다.
 내부 주소·계정·키·IP 같은 정보는 넣지 않습니다."""
 
 ICON = {
@@ -29,6 +29,7 @@ P = [
  ('program-lagrills', '라그릴스 허브', 'iot', 'dev', '사업장 실증', 'Windows', 'v2.6', '셀프 바베큐장의 구역별 에어컨을 매장 PC 한 화면에서 켜고 끕니다.', ('#B45309', '#F59E0B', 'shop', 'https://i.ytimg.com/vi/jSeZK3VLMT4/hqdefault.jpg')),
  ('project-farm', 'IoT 비닐하우스', 'plan', 'plan', '기획 중', 'IoT', '—', '부모님과 짓는 농사에 홈 IoT를 옮겨 오는 스마트팜 실험.', ('#15803D', '#65A30D', 'leaf', '')),
  ('project-control', '중앙관제', 'ops', 'dev', '운영 중', 'Windows · 웹 · 휴대폰', 'v1.19.8', '다들 하나씩은 가지고 계시죠? 나만의 자비스~! 내가 만든 프로그램들이 알아서 모이는 관제 화면, 목소리로 묻고 시킵니다.', ('#0B1630', '#0FB5A2', 'radar', '/assets/prog/control-v1198-10.jpg')),
+ ('program-printbench', '3D Print Bench', 'iot', 'dev', '개발 중', 'Windows', 'v0.9', '3D 프린터를 PC 한 화면에서 보고, 맡기고, 안전하게 돌리는 프로그램. 클라우드 없이 집 안 네트워크에서만.', ('#0B1A2A', '#22D3EE', 'radar', '/assets/prog/pb-monitor.jpg')),
  ('program-ai-team', 'AI Team', 'ops', 'dev', '내부 운영', 'Windows · 휴대폰', 'v4.6', '여러 AI에게 일을 나눠 맡기는 작업실. 팀장 AI가 계획·검수하고 팀원 AI들이 나눠 처리합니다.', ('#6D28D9', '#2563EB', 'ai', '')),
  ('program-sns', 'SNS 통합관리', 'ops', 'dev', '내부 운영', 'Windows', 'v0.6', '인스타그램·스레드·블로그를 한 프로그램에서. 글쓰기, 예약, 반응 보기까지.', ('#DB2777', '#F59E0B', 'sns', '')),
  ('program-login', '로그인 상태 점검판', 'ops', 'dev', '내부 사용', 'Chrome 확장', 'v1.0', '60여 개 사이트의 로그인·API 키 상태를 한 화면에서. 끊기면 바로 알려 줍니다.', ('#334155', '#64748B', 'lock', '/assets/prog/login-00-cover.jpg')),
@@ -83,6 +84,22 @@ D['project-control'] = dict(
  log=[('v1.13', '노드 관제', '여러 PC·장치를 노드로 묶어 상태를 봅니다.'), ('v1.14 ~ 1.15', '메일 관제', '광고 메일 자동 정리, 관제 안에서 바로 읽기.'), ('v1.16', '방마다 지금', '송골집 창을 방별 현재 상태로.'), ('v1.17', '영화 같은 화면', '창이 열릴 때의 효과, 빛나는 연결선, 오늘의 뉴스 카드.'),
       ('v1.19.8', '연결 프로그램 15개 · 소개 영상', '송골오토트레이더·3D 프린터·AI Team·SNS 통합관리·앱 출시 현황까지 연결. 첫 소개 영상 공개 (2026-11-17).')],
  note='실제 운영 중인 화면입니다. 개인 금액·메일 이름은 가렸고, 접속 주소·토큰·보안 세부 사항은 공개하지 않습니다. 주식 쪽은 모의투자 화면이며 숫자는 기능 예시입니다.')
+D['program-printbench'] = dict(
+ lead='3D 프린터를 PC 한 화면에서 보고, 맡기고, 안전하게 돌리는 Windows 프로그램입니다. 출력 상태 확인부터 작업 대기열, 자동 슬라이스, 필라멘트 관리, 점검까지 한곳에서 합니다. 클라우드 없이 집 안 네트워크에서만 동작하고, 화면은 모두 한국어입니다.',
+ why='3D 프린터는 출력 한 번에 몇 시간씩 걸립니다. 그동안 프린터 앞을 지키거나, 프린터 화면과 슬라이서를 오가며 확인해야 했습니다. 중고 프린터를 들인 날 바로 만들기 시작해, 그 일을 PC 한 화면으로 모았습니다.',
+ feats=[('실시간 모니터링', '진행률, 남은 시간, 완료 예상 시각, 노즐·베드 온도와 그래프. 실제 출력 경로를 프린터 그림 안에서 3D로 보여 줍니다.'),
+        ('작업 대기열 · 자동 슬라이스', '파일을 쌓아 두면 프린터가 비는 대로 순서대로 보냅니다. STL·3MF는 OrcaSlicer로 자동 슬라이스합니다.'),
+        ('출력 전 미리보기', '설계 배치도, 슬라이스 결과, 첫 레이어를 그림으로 확인하고 층별 경로를 슬라이더로 봅니다.'),
+        ('여러 대 · 필라멘트 관리', '프린터 여러 대에 작업을 나눠 보내고, 롤 용량을 등록하면 출력할 때마다 남은 양을 계산합니다.'),
+        ('점검 · 캘리브레이션', '베드를 데운 뒤 레벨링·진동 보정을 한 번에 하는 전체 자가 점검, 통신·팬·가열을 확인하는 건강 점검.'),
+        ('야간 조용 출력 · 자동 절전', '밤에는 출력 속도를 자동으로 낮추고, 출력이 없으면 히터·팬·조명을 끕니다. 휴대폰·ESP32-CAM을 카메라로 씁니다.')],
+ flow=[('파일 넣기', 'G-code · STL · 3MF'), ('자동 슬라이스', '미리보기 그림 생성'), ('인터락 점검', '재료 · 온도 · 기종 · 노즐 · 잔량'), ('출력', '베드 비움 확인 후 시작'), ('모니터링', '필라멘트 자동 차감 · 완료 알림')],
+ safety_title='출력 전에 막아 주는 안전장치 (인터락)',
+ safety=[('재료', 'PLA용 G-code를 PETG가 걸린 프린터에서 시작하려 하면 막습니다.'), ('온도', '재료별 안전 범위를 벗어난 노즐·베드 온도면 막습니다.'), ('기종 · 노즐', '다른 기종용 G-code나 노즐 지름이 다르면 막습니다.'),
+         ('잔량', '남은 필라멘트가 모자랄 것 같으면 막습니다.'), ('가장자리', '첫 레이어가 베드 끝까지 오면 알려 줍니다.'), ('막힌 이유를 그대로', '확인창에 이유를 보여 주고, 꼭 필요하면 한 번 더 확인한 뒤 시작합니다. 그 기록이 남습니다.')],
+ env='Windows 10/11 64비트 · Creality K 계열 순정 펌웨어(K1에서 확인), Klipper·Bambu Lab은 준비 중 · PC와 프린터가 같은 공유기 · 자동 슬라이스는 OrcaSlicer 필요 · 인터넷은 모델 찾기에만 사용',
+ log=[('v0.4', '첫 연결', '중고 K1을 들인 날, 모니터링부터 시작.'), ('v0.9', '대기열 · 인터락 · 점검', '작업 대기열과 자동 슬라이스, 출력 시작 인터락, 전체 자가 점검, 야간 조용 출력.'), ('2026-11', '중앙관제 연결 · 소개 영상', '관제 화면에 진행률·온도 카드, 90초 소개 영상 공개.')],
+ note='Creality, K1, Bambu Lab, OrcaSlicer, Printables는 각 회사의 상표이며, 이 프로그램은 해당 회사와 관계가 없는 독립 프로그램입니다. 화면 속 프린터 주소는 예시 값입니다.')
 D['program-ai-team'] = dict(
  lead='하나의 AI에 모든 일을 맡기지 않고, 일의 성격에 따라 여러 AI에게 나눠 맡기는 작업실입니다. 팀장 AI가 계획을 세우고 검수하며, 팀원 AI들이 조각을 나눠 처리합니다.',
  why='AI 사용량과 비용을 줄이면서도, 글·영상·코드를 꾸준히 만들어야 했습니다. 쉬운 일은 가볍고 저렴한 AI가, 어려운 일은 강한 AI가 맡도록 나눴습니다.',
@@ -162,6 +179,15 @@ D['program-booking'] = dict(
 
 # ---------------------------------------------------------------- 이미지 · 영상 · 자료
 G = {
+ 'program-printbench': [('/assets/prog/pb-monitor.jpg', '모니터링 — 프린터 그림 안에 출력물이 쌓이는 모습, 진행률·남은 시간·온도'),
+   ('/assets/prog/pb-queue.jpg', '작업 대기열 — 설계 배치도·슬라이스 결과·첫 레이어 미리보기, 3D 경로'),
+   ('/assets/prog/pb-printers.jpg', '프린터 — 여러 대를 카드로, 일괄 출력·베드 비움 확인'),
+   ('/assets/prog/pb-check.jpg', '점검·설정 — 이동, 필라멘트 잔량, 캘리브레이션, 건강 점검'),
+   ('/assets/prog/pb-models.jpg', '모델 찾기 — Printables 검색, 3D로 돌려 보고 대기열에'),
+   ('/assets/prog/pb-settings.jpg', '설정 — 프린터 연결, 재료 프리셋, 카메라, 작업함·슬라이서'),
+   ('/assets/prog/pb-interlock.jpg', '출력 시작 인터락 — 항목별로 켜고 끄기'),
+   ('/assets/prog/pb-calib.jpg', '캘리브레이션 — 전체 자가 점검'),
+   ('/assets/prog/pb-night.jpg', '야간 조용 출력 — 22:00~07:00 속도 50%')],
  'program-trader': [('/assets/prog/trader-stock.jpg', '대시보드 · 주식 — 네온 BUY/SELL 레이더, 감시 종목, 오늘 수익률 (화면 예시 · 예시 데이터)'),
    ('/assets/prog/trader-coin.jpg', '대시보드 · 코인 — 업비트 탭으로 바꾸면 같은 레이더에 코인이 찍힙니다 (화면 예시)'),
    ('/assets/prog/trader-chart.jpg', '차트 — 분봉 차트, 이동평균, 매수·매도 표시, 거래량과 체결강도'),
@@ -191,6 +217,7 @@ G = {
  'project-commerce': [('/assets/prog/ali-final.jpg', '마켓 등록 초안 확인 — 노출 최적화, 마진, 취급 판정')],
 }
 V = {
+ 'program-printbench': [('IrBtIR7gi1k', '3D 프린터 관리 프로그램, 직접 만들었습니다 (90초)')],
  'project-control': [('zH4ejgkLxcM', '나만의 자비스~! 송골랩 중앙관제 소개 (1분 34초)')],
  'drive-console': [('T9bEMuzRCQA', '30초 소개'), ('rpFFTn9Ux6Q', '3분 기능 설명 v1.3'), ('wwWg9VWy7Y4', '테스터 모집')],
  'airang': [('YRNth4rPD_I', '아이랑 경기'), ('y_lwf2FhGaQ', '아이랑 서울 25개 구'), ('uvaTydTX3Bk', '아이랑 충남')],
@@ -257,11 +284,11 @@ def detail(g, slug):
     body += sec(boxes(d['feats'], 3 if len(d['feats']) != 4 else 2), 'feat', 'Features · 주요 기능', '할 수 있는 것', cls='alt')
     body += sec(boxes(d['flow'], len(d['flow']) if len(d['flow']) <= 4 else 3, True), 'how', 'How it works · 동작 방식', '이렇게 돌아갑니다')
     if d.get('safety'):
-        body += sec(boxes(d['safety'], 3) + (f'<p class="p" style="margin-top:18px"><b>사용 환경</b> · {d["env"]}</p>' if d.get('env') else ''), 'safe', 'Safety · 안전장치', '돈이 걸린 프로그램이라 먼저 막아 둔 것', cls='alt')
+        body += sec(boxes(d['safety'], 3) + (f'<p class="p" style="margin-top:18px"><b>사용 환경</b> · {d["env"]}</p>' if d.get('env') else ''), 'safe', 'Safety · 안전장치', d.get('safety_title', '돈이 걸린 프로그램이라 먼저 막아 둔 것'), cls='alt')
     body += media_sections(g, slug)
     body += sec(log([(a, b, c) for a, b, c in d['log']]) + (note(d['note'], True) if d.get('note') else ''), 'log', 'Log · 개발 기록', '어떻게 만들어 왔나', cls='alt')
     links = ''.join(btn(h, t, 'ghost') for h, t in d.get('links', []))
-    body += g['band']('다른 프로그램도 둘러보세요', '송골랩이 직접 만들고 쓰는 프로그램 13개를 모아 두었습니다.', btn('/projects', '프로그램 전체') + links + btn('/contact', '문의하기', 'ghost'))
+    body += g['band']('다른 프로그램도 둘러보세요', '송골랩이 직접 만들고 쓰는 프로그램 14개를 모아 두었습니다.', btn('/projects', '프로그램 전체') + links + btn('/contact', '문의하기', 'ghost'))
     return body
 
 def add(g):
@@ -274,7 +301,7 @@ def add(g):
         m = media_sections(g, slug, slug == 'project-home-iot')
         v[3] = body[:i] + m + body[i:] if i > 0 else body + m
         PAGES[slug] = tuple(v)
-    hero = g['hero']([('', '프로그램')], 'Programs · 프로그램', '직접 만들고, 직접 쓰는<br>프로그램 13개',
+    hero = g['hero']([('', '프로그램')], 'Programs · 프로그램', '직접 만들고, 직접 쓰는<br>프로그램 14개',
                      '20년 장비 엔지니어가 생활과 일에서 겪은 불편을 하나씩 프로그램으로 만들었습니다. 공개 서비스부터 내부 도구, 개인 연구, 기획 중인 것까지 모두 모았습니다.')
-    PAGES['projects'] = ('프로그램', '송골랩이 직접 만들고 쓰는 프로그램 13개 — 드라이브 콘솔, 아이랑, 송골집 IoT, 라그릴스 허브, 중앙관제, AI Team, SNS 통합관리, 알리 소싱 도우미, 송골트레이더 등.', 'projects',
+    PAGES['projects'] = ('프로그램', '송골랩이 직접 만들고 쓰는 프로그램 14개 — 드라이브 콘솔, 아이랑, 송골집 IoT, 라그릴스 허브, 중앙관제, AI Team, SNS 통합관리, 알리 소싱 도우미, 송골트레이더 등.', 'projects',
                          hero + g['sec'](filters() + catalog(), cls='tight') + g['band']('관심 가는 프로그램이 있나요?', '써 보고 싶거나, 비슷한 걸 만들고 싶다면 편하게 연락 주세요.', g['btn']('/contact', '문의하기')), 'ko', FILTER_JS)
