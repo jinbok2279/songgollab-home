@@ -616,3 +616,4 @@ body{background:var(--bg)}
 .foot .brand img{height:44px!important}
 .logo-full{display:block;width:min(320px,80%);height:auto;margin:0 auto;filter:drop-shadow(0 18px 30px rgba(12,24,48,.18))}
 @media (max-width:600px){.brand img{height:34px!important}}
+.top .lang{font:700 13px/1 "JetBrains Mono",monospace;color:var(--ink2,#475569);padding:8px 10px;border:1px solid var(--line,#E2E8F0);border-radius:999px;margin-right:8px;text-decoration:none;white-space:nowrap}.top .lang:hover{color:var(--blue,#2563EB);border-color:currentColor}@media(max-width:860px){.top .lang{margin-left:auto}}

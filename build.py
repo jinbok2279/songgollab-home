@@ -32,20 +32,63 @@ NAV = [('log', '작업 일지'), ('projects', '프로그램'), ('services', '써
 
 VER = 'x'
 
+EN_PAGES = set()   # en.py가 채움: 영문판이 있는 한국어 slug
 def page(slug, title, desc, body, on='', lang='ko', tail=''):
+    en = lang == 'en' and slug.startswith('en/')
+    base = slug[3:] if en else slug          # 한국어 짝 slug
+    def href(k):                             # 영문 페이지에서는 영문판이 있으면 /en/ 으로
+        if not en: return '/' + k
+        return '/en/' + k if k in EN_PAGES else ('/drive-console-en' if k == 'drive-console' else '/' + k)
     def _item(k, v):
         cls = ' class=on' if k == on else ''
         if k != 'projects':
-            return f'<a href="/{k}"{cls}>{v}</a>'
+            return f'<a href="{href(k)}"{cls}>{v}</a>'
         import programs as _P
+        if en:
+            import en as _E
+            cats, names = _E.CATS[1:], _E.NAMES
+        else:
+            cats, names = _P.CATS[1:], {}
         groups = ''
-        for ck, cn in _P.CATS[1:]:
-            rows = ''.join(f'<a href="/{p[0]}"><span class="dot {p[3]}"></span>{p[1]}<em>{p[4]}</em></a>' for p in _P.P if p[2] == ck)
+        for ck, cn in cats:
+            rows = ''.join(f'<a href="{href(p[0])}"><span class="dot {p[3]}"></span>{names.get(p[0], (p[1], p[4]))[0]}<em>{names.get(p[0], (p[1], p[4]))[1]}</em></a>' for p in _P.P if p[2] == ck)
             groups += f'<div class="mm-col"><b>{cn}</b>{rows}</div>'
-        return f'<div class="has-mm"><a href="/projects"{cls}>{v} ▾</a><div class="mm"><div class="mm-in">{groups}<a class="mm-all" href="/projects">프로그램 15개 한눈에 →</a></div></div></div>'
-    nav = ''.join(_item(k, v) for k, v in NAV)
-    t = f'{title} | 송골랩' if title else '송골랩 SONGGOL LAB'
-    url = SITE + ('/' + slug if slug != 'index' else '/')
+        allt = f'All {len(_P.P)} programs →' if en else f'프로그램 {len(_P.P)}개 한눈에 →'
+        return f'<div class="has-mm"><a href="{href("projects")}"{cls}>{v} ▾</a><div class="mm"><div class="mm-in">{groups}<a class="mm-all" href="{href("projects")}">{allt}</a></div></div></div>'
+    if en:
+        import en as _E
+        nav = ''.join(_item(k, v) for k, v in _E.NAV)
+        t = f'{title} | Songgol Lab' if title else 'Songgol Lab — an engineer\'s open workshop'
+        url = SITE + '/en/' + ('' if base == 'index' else base)
+        ko_url = SITE + ('/' if base == 'index' else '/' + base)
+        alt = f'<link rel="alternate" hreflang="ko" href="{ko_url}"><link rel="alternate" hreflang="en" href="{url}">'
+        switch = f'<a class="lang" href="{"/" if base == "index" else "/" + base}" lang="ko">한국어</a>'
+        home, blog_t, contact_t, contact_h, menu_t = '/en/', 'Blog', 'Contact', f'mailto:{MAIL}', 'Open menu'
+        brand_alt, brand_b = 'Songgol Lab symbol', 'Songgol Lab'
+        foot = f'''<div class="foot-cols">
+      <div><b>SEMICONDUCTOR</b><a href="{href('consulting')}">Wet-clean equipment</a></div>
+      <div><b>PROGRAMS</b><a href="{href('projects')}">All {len(__import__('programs').P)} programs</a><a href="/drive-console-en">Drive Console</a><a href="{href('airang')}">Airang</a><a href="{href('project-home-iot')}">Home IoT</a></div>
+      <div><b>ABOUT</b><a href="{href('about')}">About</a><a href="{href('videos')}">Videos</a><a href="{BLOG}" target="_blank" rel="noopener">Blog ↗</a><a href="/drive-console-privacy">Privacy policy</a></div>
+    </div>'''
+        biz = f'Songgol Lab · Yongin, Korea · <a href="mailto:{MAIL}">{MAIL}</a>'
+    else:
+        nav = ''.join(_item(k, v) for k, v in NAV)
+        t = f'{title} | 송골랩' if title else '송골랩 SONGGOL LAB'
+        url = SITE + ('/' + slug if slug != 'index' else '/')
+        alt = ''
+        if slug in EN_PAGES:
+            en_url = SITE + '/en/' + ('' if slug == 'index' else slug)
+            alt = f'<link rel="alternate" hreflang="ko" href="{url}"><link rel="alternate" hreflang="en" href="{en_url}">'
+        en_href = ('/en/' + ('' if slug == 'index' else slug)) if slug in EN_PAGES else ('/drive-console-en' if slug == 'drive-console' else '/en/')
+        switch = f'<a class="lang" href="{en_href}" lang="en">EN</a>' if lang == 'ko' else ''
+        home, blog_t, contact_t, contact_h, menu_t = '/', '블로그', '문의하기', '/contact', '메뉴 열기'
+        brand_alt, brand_b = '송골랩 심벌', '송골랩'
+        foot = f'''<div class="foot-cols">
+      <div><b>SEMICONDUCTOR</b><a href="/consulting">반도체 세정 공정</a><a href="/consulting#areas">해 온 일</a></div>
+      <div><b>PROGRAMS</b><a href="/projects">프로그램 {len(__import__('programs').P)}개</a><a href="/drive-console">드라이브 콘솔</a><a href="/airang">아이랑</a><a href="/project-home-iot">홈 IoT</a></div>
+      <div><b>ABOUT</b><a href="/about">소개</a><a href="/videos">영상</a><a href="{BLOG}" target="_blank" rel="noopener">블로그 ↗</a><a href="/drive-console-privacy">개인정보처리방침</a></div>
+    </div>'''
+        biz = f'상호 송골랩 · <a href="mailto:{MAIL}">{MAIL}</a>'
     return f'''<!doctype html>
 <html lang="{lang}">
 <head>
@@ -57,20 +100,20 @@ def page(slug, title, desc, body, on='', lang='ko', tail=''):
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:image" content="{SITE}/assets/og.jpg">
 <meta property="og:url" content="{url}">
-<link rel="canonical" href="{url}">
+<link rel="canonical" href="{url}">{alt}
 <link rel="icon" href="/assets/favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap">
 <link rel="stylesheet" href="/assets/site.css?v={VER}">
 </head>
-<body class="pg-{slug}">
+<body class="pg-{slug.replace('/', '-')}">
 <header class="top" id="top">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/logo-symbol.png" alt="송골랩 심벌"><span><b>송골랩</b><small>SONGGOL LAB</small></span></a>
-    <nav class="nav" id="nav">{nav}<a class="ext" href="{BLOG}" target="_blank" rel="noopener">블로그</a></nav>
-    <a class="btn btn-primary" href="/contact">문의하기</a>
-    <button class="menu-btn" aria-label="메뉴 열기" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <a class="brand" href="{home}"><img src="/assets/logo-symbol.png" alt="{brand_alt}"><span><b>{brand_b}</b><small>SONGGOL LAB</small></span></a>
+    <nav class="nav" id="nav">{nav}<a class="ext" href="{BLOG}" target="_blank" rel="noopener">{blog_t}</a></nav>
+    {switch}<a class="btn btn-primary" href="{contact_h}">{contact_t}</a>
+    <button class="menu-btn" aria-label="{menu_t}" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
   </div>
 </header>
 <main>
@@ -79,15 +122,11 @@ def page(slug, title, desc, body, on='', lang='ko', tail=''):
 <footer class="foot">
   <div class="wrap">
     <div class="foot-brand">
-      <div class="brand"><img src="/assets/logo-symbol.png" alt=""><span><b>송골랩</b><small>SONGGOL LAB</small></span></div>
+      <div class="brand"><img src="/assets/logo-symbol.png" alt=""><span><b>{brand_b}</b><small>SONGGOL LAB</small></span></div>
       <p class="foot-tag">Semiconductor Process &amp; Equipment Engineering · Life-tech Lab</p>
-      <p>상호 송골랩 · <a href="mailto:{MAIL}">{MAIL}</a></p>
+      <p>{biz}</p>
     </div>
-    <div class="foot-cols">
-      <div><b>SEMICONDUCTOR</b><a href="/consulting">반도체 세정 공정</a><a href="/consulting#areas">해 온 일</a></div>
-      <div><b>PROGRAMS</b><a href="/projects">프로그램 15개</a><a href="/drive-console">드라이브 콘솔</a><a href="/airang">아이랑</a><a href="/project-home-iot">홈 IoT</a></div>
-      <div><b>ABOUT</b><a href="/about">소개</a><a href="/videos">영상</a><a href="{BLOG}" target="_blank" rel="noopener">블로그 ↗</a><a href="/drive-console-privacy">개인정보처리방침</a></div>
-    </div>
+    {foot}
   </div>
   <div class="wrap foot-bottom"><span>© 2026 SONGGOL LAB. All rights reserved.</span><span class="mono">BUILT IN YONGIN, KR</span></div>
 </footer>
@@ -658,6 +697,8 @@ def main():
     home.add(globals())
     programs.add(globals())
     workshop.add(globals())
+    import en
+    en.add(globals())
     css = '\n'.join(open(os.path.join(HERE, 'assets', f), encoding='utf-8').read() for f in ('base.css', 'pages.css', 'theme.css', 'workshop.css', 'media.css'))
     open(os.path.join(HERE, 'assets/site.css'), 'w', encoding='utf-8').write(css)
     import hashlib
@@ -667,8 +708,10 @@ def main():
         title, desc, on, body = v[:4]
         lang = v[4] if len(v) > 4 else 'ko'
         tail = v[5] if len(v) > 5 else ''
-        open(os.path.join(HERE, slug + '.html'), 'w', encoding='utf-8').write(page(slug, title, desc, body, on, lang, tail))
-    urls = ['/' + k if k != 'index' else '/' for k in PAGES if k != '404']
+        fp = os.path.join(HERE, (slug + '/index' if slug == 'en' else slug) + '.html')
+        os.makedirs(os.path.dirname(fp), exist_ok=True)
+        open(fp, 'w', encoding='utf-8').write(page(slug if slug != 'en' else 'en/index', title, desc, body, on, lang, tail))
+    urls = [('/' + k if k != 'index' else '/') if k != 'en' else '/en/' for k in PAGES if k != '404']
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{SITE}{u}</loc></url>\n' for u in urls) + '</urlset>\n'
     open(os.path.join(HERE, 'sitemap.xml'), 'w', encoding='utf-8').write(sm)
     open(os.path.join(HERE, 'robots.txt'), 'w', encoding='utf-8').write(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
