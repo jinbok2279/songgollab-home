@@ -226,7 +226,8 @@ V = {
  'project-farm': [('05GXvZZknDs', 'IoT 이야기 EP.5 — 멀리서 살피기')],
 }
 R = {
- 'project-control': [('https://songgollab.blogspot.com', '송골랩 블로그 ↗', '연결된 프로그램 하나하나의 소개 글'), ('/project-home-iot', '송골집 IoT', '방마다 조명·문·센서'), ('/program-trader', '송골트레이더', '주식·코인 자동매매 (개인 테스트용)'), ('/program-ai-team', 'AI Team', '여러 AI에 일을 나눠 맡기는 작업실'), ('/program-sns', 'SNS 통합관리', '인스타·스레드·블로그 한곳에서')],
+ 'program-printbench': [('https://www.instagram.com/reel/Dfzp4hBtetm/', '인스타그램 릴스 ↗', '같은 소개 영상을 인스타에서 보기'), ('https://www.youtube.com/shorts/IrBtIR7gi1k', '유튜브 쇼츠 ↗', '90초 소개 영상')],
+ 'project-control': [('https://www.instagram.com/reel/Df1KJ2CqsRY/', '인스타그램 릴스 ↗', '나만의 자비스~! 소개 영상을 인스타에서 보기'), ('https://songgollab.blogspot.com', '송골랩 블로그 ↗', '연결된 프로그램 하나하나의 소개 글'), ('/project-home-iot', '송골집 IoT', '방마다 조명·문·센서'), ('/program-trader', '송골트레이더', '주식·코인 자동매매 (개인 테스트용)'), ('/program-ai-team', 'AI Team', '여러 AI에 일을 나눠 맡기는 작업실'), ('/program-sns', 'SNS 통합관리', '인스타·스레드·블로그 한곳에서')],
  'drive-console': [('/drive-console', '사용 안내 · 설치 방법', '준비물, 5단계 설치, 사용법, 자주 묻는 질문'), ('/project-drive', '개발 기록 · 화면 둘러보기', 'v0.6부터 v1.3.53까지, 고장 코드 진단 구조'), ('/drive-console-privacy', '개인정보처리방침', '한국어 · English'), ('/drive-console-en', 'English page', 'Drive Console in English')],
  'airang': [('https://airang.songgollab.co.kr', '아이랑 바로 열기 ↗', '도시를 골라 바로 사용'), ('/airang', '아이랑 소개 · 로드맵', '운영 방식, 개발 일지, 단계별 계획'), ('https://songgollab.blogspot.com', '블로그 글 ↗', '아이랑 서울·경기·충남 소개 글')],
  'project-home-iot': [('/iot-guide', 'IoT, 쉽게 알아보기', '영상 5편으로 정리한 홈 IoT 입문'), ('https://songgollab.blogspot.com/2026/10/pc.html', '라그릴스 설치기 ↗', '바베큐장 에어컨을 한 화면으로')],
