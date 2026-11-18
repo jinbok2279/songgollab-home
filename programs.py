@@ -217,20 +217,22 @@ G = {
  'project-commerce': [('/assets/prog/ali-final.jpg', '마켓 등록 초안 확인 — 노출 최적화, 마진, 취급 판정')],
 }
 V = {
+ 'program-trader': [('Nvq0dlwMAn0', '송골오토트레이더 v0.3.5 소개')],
  'program-printbench': [('IrBtIR7gi1k', '3D 프린터 관리 프로그램, 직접 만들었습니다 (90초)')],
  'project-control': [('zH4ejgkLxcM', '나만의 자비스~! 송골랩 중앙관제 소개 (1분 34초)')],
- 'drive-console': [('T9bEMuzRCQA', '30초 소개'), ('rpFFTn9Ux6Q', '3분 기능 설명 v1.3'), ('wwWg9VWy7Y4', '테스터 모집')],
- 'airang': [('YRNth4rPD_I', '아이랑 경기'), ('y_lwf2FhGaQ', '아이랑 서울 25개 구'), ('uvaTydTX3Bk', '아이랑 충남')],
- 'project-home-iot': [('jB_N9SyBGMU', 'IoT 이야기 EP.1'), ('66hwKAWMw84', 'EP.3 스마트홈의 하루'), ('mKFjxUG26es', 'EP.4 새는 전기 막기')],
+ 'drive-console': [('GByXJ7pOTPk', 'v1.3.63 소개 (TPMS·핸들 리모컨)'), ('T9bEMuzRCQA', '30초 소개'), ('rpFFTn9Ux6Q', '3분 기능 설명 v1.3'), ('wwWg9VWy7Y4', '테스터 모집')],
+ 'airang': [('m-w0heCisV0', '아이랑 1분 소개'), ('YRNth4rPD_I', '아이랑 경기'), ('y_lwf2FhGaQ', '아이랑 서울 25개 구'), ('uvaTydTX3Bk', '아이랑 충남')],
+ 'project-home-iot': [('bA8uSPnpZbo', '집사 로봇 1편'), ('jB_N9SyBGMU', 'IoT 이야기 EP.1'), ('66hwKAWMw84', 'EP.3 스마트홈의 하루'), ('mKFjxUG26es', 'EP.4 새는 전기 막기')],
  'program-lagrills': [('jSeZK3VLMT4', '라그릴스 허브 v2.6 소개'), ('oSnE9LrclWM', '셀프 바베큐장 라그릴스')],
  'project-farm': [('05GXvZZknDs', 'IoT 이야기 EP.5 — 멀리서 살피기')],
 }
 R = {
+ 'program-trader': [('https://www.instagram.com/reel/Df0mNvtqJUK/', '인스타그램 릴스 ↗', '송골오토트레이더 v0.3.5 소개 영상'), ('https://www.instagram.com/reel/DfwXLE8RBIo/', '인스타그램 릴스 ↗', '송골트레이더 v0.3.0 30초 소개')],
  'program-printbench': [('https://www.instagram.com/reel/Dfzp4hBtetm/', '인스타그램 릴스 ↗', '같은 소개 영상을 인스타에서 보기'), ('https://www.youtube.com/shorts/IrBtIR7gi1k', '유튜브 쇼츠 ↗', '90초 소개 영상')],
  'project-control': [('https://www.instagram.com/reel/Df1KJ2CqsRY/', '인스타그램 릴스 ↗', '나만의 자비스~! 소개 영상을 인스타에서 보기'), ('https://songgollab.blogspot.com', '송골랩 블로그 ↗', '연결된 프로그램 하나하나의 소개 글'), ('/project-home-iot', '송골집 IoT', '방마다 조명·문·센서'), ('/program-trader', '송골트레이더', '주식·코인 자동매매 (개인 테스트용)'), ('/program-ai-team', 'AI Team', '여러 AI에 일을 나눠 맡기는 작업실'), ('/program-sns', 'SNS 통합관리', '인스타·스레드·블로그 한곳에서')],
- 'drive-console': [('/drive-console', '사용 안내 · 설치 방법', '준비물, 5단계 설치, 사용법, 자주 묻는 질문'), ('/project-drive', '개발 기록 · 화면 둘러보기', 'v0.6부터 v1.3.53까지, 고장 코드 진단 구조'), ('/drive-console-privacy', '개인정보처리방침', '한국어 · English'), ('/drive-console-en', 'English page', 'Drive Console in English')],
- 'airang': [('https://airang.songgollab.co.kr', '아이랑 바로 열기 ↗', '도시를 골라 바로 사용'), ('/airang', '아이랑 소개 · 로드맵', '운영 방식, 개발 일지, 단계별 계획'), ('https://songgollab.blogspot.com', '블로그 글 ↗', '아이랑 서울·경기·충남 소개 글')],
- 'project-home-iot': [('/iot-guide', 'IoT, 쉽게 알아보기', '영상 5편으로 정리한 홈 IoT 입문'), ('https://songgollab.blogspot.com/2026/10/pc.html', '라그릴스 설치기 ↗', '바베큐장 에어컨을 한 화면으로')],
+ 'drive-console': [('https://www.instagram.com/reel/Df0flU6B2ry/', '인스타그램 릴스 ↗', '드라이브 콘솔 v1.3.63 소개 영상'), ('/drive-console', '사용 안내 · 설치 방법', '준비물, 5단계 설치, 사용법, 자주 묻는 질문'), ('/project-drive', '개발 기록 · 화면 둘러보기', 'v0.6부터 v1.3.53까지, 고장 코드 진단 구조'), ('/drive-console-privacy', '개인정보처리방침', '한국어 · English'), ('/drive-console-en', 'English page', 'Drive Console in English')],
+ 'airang': [('https://www.instagram.com/reel/Df0YofWh4pI/', '인스타그램 릴스 ↗', '아이랑 1분 소개 영상'), ('https://airang.songgollab.co.kr', '아이랑 바로 열기 ↗', '도시를 골라 바로 사용'), ('/airang', '아이랑 소개 · 로드맵', '운영 방식, 개발 일지, 단계별 계획'), ('https://songgollab.blogspot.com', '블로그 글 ↗', '아이랑 서울·경기·충남 소개 글')],
+ 'project-home-iot': [('https://www.instagram.com/reel/Df0inYYtUTW/', '인스타그램 릴스 ↗', '집사 로봇 1편 — 고장 난 로봇청소기로 집사 로봇 만들기'), ('/iot-guide', 'IoT, 쉽게 알아보기', '영상 5편으로 정리한 홈 IoT 입문'), ('https://songgollab.blogspot.com/2026/10/pc.html', '라그릴스 설치기 ↗', '바베큐장 에어컨을 한 화면으로')],
  'program-lagrills': [('https://songgollab.blogspot.com/2026/10/pc.html', '설치기 전체 글 ↗', '2일 작업 기록')],
 }
 
