@@ -51,7 +51,7 @@ def page(slug, title, desc, body, on='', lang='ko', tail=''):
             cats, names = _P.CATS[1:], {}
         groups = ''
         for ck, cn in cats:
-            rows = ''.join(f'<a href="{href(p[0])}"><span class="dot {p[3]}"></span>{names.get(p[0], (p[1], p[4]))[0]}<em>{names.get(p[0], (p[1], p[4]))[1]}</em></a>' for p in _P.P if p[2] == ck)
+            rows = ''.join(f'<a href="{href(p[0])}"><span class="dot {p[3]}"></span>{names.get(p[0], (p[1], p[4]))[0]}{'' if en else '<em>' + names.get(p[0], (p[1], p[4]))[1] + '</em>'}</a>' for p in _P.P if p[2] == ck)
             groups += f'<div class="mm-col"><b>{cn}</b>{rows}</div>'
         allt = f'All {len(_P.P)} programs →' if en else f'프로그램 {len(_P.P)}개 한눈에 →'
         return f'<div class="has-mm"><a href="{href("projects")}"{cls}>{v} ▾</a><div class="mm"><div class="mm-in">{groups}<a class="mm-all" href="{href("projects")}">{allt}</a></div></div></div>'

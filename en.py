@@ -87,7 +87,7 @@ def add(g):
 </div></div></section>'''
 
     tools = ''.join(
-        f'<a class="tool rv" href="{"/drive-console-en" if s == "drive-console" else ("/en/" + s if s in EN_PAGES else "/" + s)}"><span class="dot {st}"></span><b>{EP[s][0]}</b><em>{EP[s][1]}</em><code>{v if v not in ("—", "0단계") else ""}</code></a>'
+        f'<a class="tool rv" href="{"/drive-console-en" if s == "drive-console" else ("/en/" + s if s in EN_PAGES else "/" + s)}"><span class="dot {st}"></span><b>{EP[s][0]}</b><code>{v if v not in ("—", "0단계") else ""}</code></a>'
         for s, n, c, st, stl, pl, v, one, art in PG.P)
     tools_sec = f'''<section class="s2"><div class="wrap">
 <div class="head"><div><span class="eyebrow">On the bench</span><h2>{len(PG.P)} programs so far</h2></div>
