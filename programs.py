@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""송골랩 프로그램 14개 — 목록(/projects)과 상세 페이지. build.py가 불러 씁니다.
+"""송골랩 프로그램 15개 — 목록(/projects)과 상세 페이지. build.py가 불러 씁니다.
 내부 주소·계정·키·IP 같은 정보는 넣지 않습니다."""
 
 ICON = {
@@ -30,6 +30,7 @@ P = [
  ('project-farm', 'IoT 비닐하우스', 'plan', 'plan', '기획 중', 'IoT', '—', '부모님과 짓는 농사에 홈 IoT를 옮겨 오는 스마트팜 실험.', ('#15803D', '#65A30D', 'leaf', '')),
  ('project-control', '중앙관제', 'ops', 'dev', '운영 중', 'Windows · 웹 · 휴대폰', 'v1.19.8', '다들 하나씩은 가지고 계시죠? 나만의 자비스~! 내가 만든 프로그램들이 알아서 모이는 관제 화면, 목소리로 묻고 시킵니다.', ('#0B1630', '#0FB5A2', 'radar', '/assets/prog/control-v1198-10.jpg')),
  ('program-printbench', '3D Print Bench', 'iot', 'dev', '개발 중', 'Windows', 'v0.9', '3D 프린터를 PC 한 화면에서 보고, 맡기고, 안전하게 돌리는 프로그램. 클라우드 없이 집 안 네트워크에서만.', ('#0B1A2A', '#22D3EE', 'radar', '/assets/prog/pb-monitor.jpg')),
+ ('project-robot', '집사 로봇', 'iot', 'plan', '설계 완료', '로봇청소기 + 3D 프린터 부품', '0단계', '고장 난 로봇청소기와 안 쓰는 3D 프린터로, 부르면 오고 물을 가져다주는 집사 로봇을 만듭니다.', ('#16202E', '#F59E0B', 'home', '/assets/prog/robot-06.jpg')),
  ('program-ai-team', 'AI Team', 'ops', 'dev', '내부 운영', 'Windows · 휴대폰', 'v4.6', '여러 AI에게 일을 나눠 맡기는 작업실. 팀장 AI가 계획·검수하고 팀원 AI들이 나눠 처리합니다.', ('#6D28D9', '#2563EB', 'ai', '')),
  ('program-sns', 'SNS 통합관리', 'ops', 'dev', '내부 운영', 'Windows', 'v0.6', '인스타그램·스레드·블로그를 한 프로그램에서. 글쓰기, 예약, 반응 보기까지.', ('#DB2777', '#F59E0B', 'sns', '')),
  ('program-login', '로그인 상태 점검판', 'ops', 'dev', '내부 사용', 'Chrome 확장', 'v1.0', '60여 개 사이트의 로그인·API 키 상태를 한 화면에서. 끊기면 바로 알려 줍니다.', ('#334155', '#64748B', 'lock', '/assets/prog/login-00-cover.jpg')),
@@ -100,6 +101,26 @@ D['program-printbench'] = dict(
  env='Windows 10/11 64비트 · Creality K 계열 순정 펌웨어(K1에서 확인), Klipper·Bambu Lab은 준비 중 · PC와 프린터가 같은 공유기 · 자동 슬라이스는 OrcaSlicer 필요 · 인터넷은 모델 찾기에만 사용',
  log=[('v0.4', '첫 연결', '중고 K1을 들인 날, 모니터링부터 시작.'), ('v0.9', '대기열 · 인터락 · 점검', '작업 대기열과 자동 슬라이스, 출력 시작 인터락, 전체 자가 점검, 야간 조용 출력.'), ('2026-11', '중앙관제 연결 · 소개 영상', '관제 화면에 진행률·온도 카드, 90초 소개 영상 공개.')],
  note='Creality, K1, Bambu Lab, OrcaSlicer, Printables는 각 회사의 상표이며, 이 프로그램은 해당 회사와 관계가 없는 독립 프로그램입니다. 화면 속 프린터 주소는 예시 값입니다.')
+D['project-robot'] = dict(
+ lead='버리려던 로봇청소기와 안 쓰는 3D 프린터로, 부르면 오고 물을 가져다주는 집사 로봇을 만듭니다. 새로 사는 부품은 약 10만 원을 목표로 합니다. 지금은 설계를 마치고 실측을 시작한 단계입니다.',
+ why='바퀴 기어 하나가 갈려 멈춘 로봇청소기(삼성 제트봇 AI)가 있었습니다. 바퀴·배터리·라이다·낭떠러지 센서는 멀쩡했고, 쓰지 않는 구형 3D 프린터도 한 대 있었습니다. 버리면 고철이지만 합치면 움직이는 로봇의 뼈대가 됩니다. 시중 가정용 로봇은 비싸거나 우리 집 홈 IoT와 자유롭게 연결하기 어려워, 직접 만들기로 했습니다.',
+ feats=[('부르면 옵니다', '집 지도를 만들고, 부르는 위치로 스스로 이동합니다.'),
+        ('물을 가져다줍니다', '컵 트레이에 컵을 올려 배달하고, 컵이 있는지 무게로 알아챕니다.'),
+        ('얼굴이 있습니다', '태블릿이 얼굴과 화면이 되고, 누가 불렀는지 알아봅니다.'),
+        ('높이가 바뀝니다', '다닐 때는 낮추고, 사람 앞에 멈추면 태블릿을 올립니다.'),
+        ('하부는 로봇청소기 그대로', '바퀴·배터리·라이다·낭떠러지 센서·범퍼를 그대로 쓰고, 갈린 바퀴 기어만 3D 프린터로 다시 뽑습니다.'),
+        ('리프트는 3D 프린터 Z축', '프린터 Z축의 모터·리드스크류·가이드 봉을 통째로 옮겨 세워, 새로 설계할 부품을 크게 줄였습니다.')],
+ flow=[('준비 · 실측', '본체·라이다·프린터 부품 치수 (지금 여기)'), ('청소기 진단', '분해, 배터리·라이다 확인'), ('부품 테스트', '바퀴·라이다 단독 구동'), ('리프트', 'Z축 옮겨 조립'), ('주행 · 지도', '집 지도, 목적지 이동'), ('태블릿 · 기능', '부르면 오기, 컵 감지'), ('충전 · 마무리', '충전 도크, 케이스, 안전 점검')],
+ safety_title='왜 이렇게 설계했나',
+ safety=[('라이다는 원래 자리에', '위치를 옮기면 다시 맞추기 어려워 그대로 둡니다. 기둥 두 개가 라이다 양옆을 지나가게 해 앞쪽 시야를 가리지 않습니다.'),
+         ('움직일 땐 내리고, 멈추면 올리고', '바닥 지름이 약 35cm로 작아, 높이 세우면 급정거 때 넘어질 수 있습니다.'),
+         ('뒤쪽 보조 바퀴', '라이다와 리프트가 뒤에 있어 무게중심이 바퀴축보다 뒤에 옵니다. 작은 볼 캐스터로 받칩니다.'),
+         ('스스로 멈추는 몸', '통신이 끊기거나 낭떠러지·장애물을 만나면, 로봇 안의 제어 보드가 혼자서 바퀴를 멈춥니다.'),
+         ('뜨거운 부분은 덮기', '모터와 보드에 통풍 구멍이 있는 커버를 씌우고, 프린터 팬을 옮겨 답니다.'),
+         ('위험한 것부터 확인', '배터리와 라이다를 쓸 수 없으면 계획이 바뀌므로, 돈을 쓰기 전에 먼저 확인합니다.')],
+ env='새로 사는 부품 목표 약 9~10만 원 (처음 계획 약 21만 원에서 있는 부품을 최대한 써서 줄임) · 단계마다 확인된 것만 구입 · 두뇌는 이미 24시간 켜져 있는 집 미니PC, 얼굴은 태블릿',
+ log=[('2026-11', '구상', '무릎 높이 집 안 이동 로봇, 상단 태블릿, 부르면 오고 물 가져오기.'), ('2026-11-17', '쇼츠 1편 공개', '고장 난 로봇청소기, 집사 로봇으로 살릴 수 있을까?'), ('2026-11-18', '설계 완료 · 0단계(실측) 시작', '리프트를 3D 프린터 Z축 재사용 안으로 확정. 다음 편은 제트봇 분해기.')],
+ note='치수·높이·무게중심·비용은 사진과 계획으로 잡은 추정치이며, 실측 후 고쳐 나갑니다. 3D 그림 중 일부는 초기 컨셉(레일 + 모터 하나)입니다.')
 D['program-ai-team'] = dict(
  lead='하나의 AI에 모든 일을 맡기지 않고, 일의 성격에 따라 여러 AI에게 나눠 맡기는 작업실입니다. 팀장 AI가 계획을 세우고 검수하며, 팀원 AI들이 조각을 나눠 처리합니다.',
  why='AI 사용량과 비용을 줄이면서도, 글·영상·코드를 꾸준히 만들어야 했습니다. 쉬운 일은 가볍고 저렴한 AI가, 어려운 일은 강한 AI가 맡도록 나눴습니다.',
@@ -179,6 +200,17 @@ D['program-booking'] = dict(
 
 # ---------------------------------------------------------------- 이미지 · 영상 · 자료
 G = {
+ 'project-robot': [('/assets/prog/robot-06.jpg', '조립 완성(현재 안) — 라이다 양옆으로 프린터 Z축 두 개, 그 사이를 가로대가 오르내립니다'),
+   ('/assets/prog/robot-07.jpg', '리프트를 약 20cm 올린 모습 — 태블릿 위쪽 높이 약 52 → 72cm (추정)'),
+   ('/assets/prog/robot-05.jpg', '부품 17가지 — 대부분 로봇청소기와 3D 프린터에서 나온 것'),
+   ('/assets/prog/robot-08.jpg', '본체 속 — 먼지통 자리에 제어 보드와 전원 모듈'),
+   ('/assets/prog/robot-02.jpg', '부품용으로 남아 있던 삼성 제트봇 AI — 바퀴 기어 하나가 갈려 멈춤', 'tall'),
+   ('/assets/prog/robot-03.jpg', '쓰지 않던 구형 3D 프린터 (프루사 i3 계열)', 'tall'),
+   ('/assets/prog/robot-04.jpg', 'Z축 모터와 리드스크류 — 통째로 떼어 리프트로', 'tall'),
+   ('/assets/prog/robot-01.jpg', '초기 컨셉 — 로봇청소기 위에 태블릿 얼굴과 컵 트레이'),
+   ('/assets/prog/robot-09.jpg', '초기 컨셉 — 라이다 시야, 기둥이 양옆을 지나가게'),
+   ('/assets/prog/robot-10.jpg', '초기 컨셉 — 리프트 내림, 주황 점이 무게중심(추정)'),
+   ('/assets/prog/robot-11.jpg', '초기 컨셉 — 리프트 올림, 무게중심이 올라가 급정거 때 더 흔들림')],
  'program-printbench': [('/assets/prog/pb-monitor.jpg', '모니터링 — 프린터 그림 안에 출력물이 쌓이는 모습, 진행률·남은 시간·온도'),
    ('/assets/prog/pb-queue.jpg', '작업 대기열 — 설계 배치도·슬라이스 결과·첫 레이어 미리보기, 3D 경로'),
    ('/assets/prog/pb-printers.jpg', '프린터 — 여러 대를 카드로, 일괄 출력·베드 비움 확인'),
@@ -217,22 +249,24 @@ G = {
  'project-commerce': [('/assets/prog/ali-final.jpg', '마켓 등록 초안 확인 — 상품명, 마진, 취급 판정')],
 }
 V = {
+ 'project-robot': [('bA8uSPnpZbo', '쇼츠 1편 — 고장 난 로봇청소기, 집사 로봇으로 살릴 수 있을까?')],
  'program-trader': [('Nvq0dlwMAn0', '송골오토트레이더 v0.3.5 소개')],
  'program-printbench': [('IrBtIR7gi1k', '3D 프린터 관리 프로그램, 직접 만들었습니다 (90초)')],
  'project-control': [('zH4ejgkLxcM', '나만의 자비스~! 송골랩 중앙관제 소개 (1분 34초)')],
  'drive-console': [('GByXJ7pOTPk', 'v1.3.63 소개 (TPMS·핸들 리모컨)'), ('T9bEMuzRCQA', '30초 소개'), ('rpFFTn9Ux6Q', '3분 기능 설명 v1.3'), ('wwWg9VWy7Y4', '테스터 모집')],
  'airang': [('m-w0heCisV0', '아이랑 1분 소개'), ('YRNth4rPD_I', '아이랑 경기'), ('y_lwf2FhGaQ', '아이랑 서울 25개 구'), ('uvaTydTX3Bk', '아이랑 충남')],
- 'project-home-iot': [('bA8uSPnpZbo', '집사 로봇 1편'), ('jB_N9SyBGMU', 'IoT 이야기 EP.1'), ('66hwKAWMw84', 'EP.3 스마트홈의 하루'), ('mKFjxUG26es', 'EP.4 새는 전기 막기')],
+ 'project-home-iot': [('jB_N9SyBGMU', 'IoT 이야기 EP.1'), ('66hwKAWMw84', 'EP.3 스마트홈의 하루'), ('mKFjxUG26es', 'EP.4 새는 전기 막기')],
  'program-lagrills': [('jSeZK3VLMT4', '라그릴스 허브 v2.6 소개'), ('oSnE9LrclWM', '셀프 바베큐장 라그릴스')],
  'project-farm': [('05GXvZZknDs', 'IoT 이야기 EP.5 — 멀리서 살피기')],
 }
 R = {
+ 'project-robot': [('https://www.instagram.com/reel/Df0inYYtUTW/', '인스타그램 릴스 ↗', '쇼츠 1편을 인스타에서 보기'), ('/project-home-iot', '송골집 IoT', '로봇이 연결될 우리 집 홈 IoT'), ('/program-printbench', '3D Print Bench', '부품을 뽑는 3D 프린터 관리 프로그램')],
  'program-trader': [('https://www.instagram.com/reel/Df0mNvtqJUK/', '인스타그램 릴스 ↗', '송골오토트레이더 v0.3.5 소개 영상'), ('https://www.instagram.com/reel/DfwXLE8RBIo/', '인스타그램 릴스 ↗', '송골트레이더 v0.3.0 30초 소개')],
  'program-printbench': [('https://www.instagram.com/reel/Dfzp4hBtetm/', '인스타그램 릴스 ↗', '같은 소개 영상을 인스타에서 보기'), ('https://www.youtube.com/shorts/IrBtIR7gi1k', '유튜브 쇼츠 ↗', '90초 소개 영상')],
  'project-control': [('https://www.instagram.com/reel/Df1KJ2CqsRY/', '인스타그램 릴스 ↗', '나만의 자비스~! 소개 영상을 인스타에서 보기'), ('https://songgollab.blogspot.com', '송골랩 블로그 ↗', '연결된 프로그램 하나하나의 소개 글'), ('/project-home-iot', '송골집 IoT', '방마다 조명·문·센서'), ('/program-trader', '송골트레이더', '주식·코인 자동매매 (개인 테스트용)'), ('/program-ai-team', 'AI Team', '여러 AI에 일을 나눠 맡기는 작업실'), ('/program-sns', 'SNS 통합관리', '인스타·스레드·블로그 한곳에서')],
  'drive-console': [('https://www.instagram.com/reel/Df0flU6B2ry/', '인스타그램 릴스 ↗', '드라이브 콘솔 v1.3.63 소개 영상'), ('/drive-console', '사용 안내 · 설치 방법', '준비물, 5단계 설치, 사용법, 자주 묻는 질문'), ('/project-drive', '개발 기록 · 화면 둘러보기', 'v0.6부터 v1.3.53까지, 고장 코드 진단 구조'), ('/drive-console-privacy', '개인정보처리방침', '한국어 · English'), ('/drive-console-en', 'English page', 'Drive Console in English')],
  'airang': [('https://www.instagram.com/reel/Df0YofWh4pI/', '인스타그램 릴스 ↗', '아이랑 1분 소개 영상'), ('https://airang.songgollab.co.kr', '아이랑 바로 열기 ↗', '도시를 골라 바로 사용'), ('/airang', '아이랑 소개 · 로드맵', '운영 방식, 개발 일지, 단계별 계획'), ('https://songgollab.blogspot.com', '블로그 글 ↗', '아이랑 서울·경기·충남 소개 글')],
- 'project-home-iot': [('https://www.instagram.com/reel/Df0inYYtUTW/', '인스타그램 릴스 ↗', '집사 로봇 1편 — 고장 난 로봇청소기로 집사 로봇 만들기'), ('/iot-guide', 'IoT, 쉽게 알아보기', '영상 5편으로 정리한 홈 IoT 입문'), ('https://songgollab.blogspot.com/2026/10/pc.html', '라그릴스 설치기 ↗', '바베큐장 에어컨을 한 화면으로')],
+ 'project-home-iot': [('/iot-guide', 'IoT, 쉽게 알아보기', '영상 5편으로 정리한 홈 IoT 입문'), ('https://songgollab.blogspot.com/2026/10/pc.html', '라그릴스 설치기 ↗', '바베큐장 에어컨을 한 화면으로')],
  'program-lagrills': [('https://songgollab.blogspot.com/2026/10/pc.html', '설치기 전체 글 ↗', '2일 작업 기록')],
 }
 
@@ -291,7 +325,7 @@ def detail(g, slug):
     body += media_sections(g, slug)
     body += sec(log([(a, b, c) for a, b, c in d['log']]) + (note(d['note'], True) if d.get('note') else ''), 'log', 'Log · 개발 기록', '어떻게 만들어 왔나', cls='alt')
     links = ''.join(btn(h, t, 'ghost') for h, t in d.get('links', []))
-    body += g['band']('다른 프로그램도 둘러보세요', '송골랩이 직접 만들고 쓰는 프로그램 14개를 모아 두었습니다.', btn('/projects', '프로그램 전체') + links + btn('/contact', '문의하기', 'ghost'))
+    body += g['band']('다른 프로그램도 둘러보세요', '송골랩이 직접 만들고 쓰는 프로그램 15개를 모아 두었습니다.', btn('/projects', '프로그램 전체') + links + btn('/contact', '문의하기', 'ghost'))
     return body
 
 def add(g):
@@ -304,7 +338,7 @@ def add(g):
         m = media_sections(g, slug, slug == 'project-home-iot')
         v[3] = body[:i] + m + body[i:] if i > 0 else body + m
         PAGES[slug] = tuple(v)
-    hero = g['hero']([('', '프로그램')], 'Programs · 프로그램', '직접 만들고, 직접 쓰는<br>프로그램 14개',
+    hero = g['hero']([('', '프로그램')], 'Programs · 프로그램', '직접 만들고, 직접 쓰는<br>프로그램 15개',
                      '20년 장비 엔지니어가 생활과 일에서 겪은 불편을 하나씩 프로그램으로 만들었습니다. 공개 서비스부터 내부 도구, 개인 연구, 기획 중인 것까지 모두 모았습니다.')
-    PAGES['projects'] = ('프로그램', '송골랩이 직접 만들고 쓰는 프로그램 14개 — 드라이브 콘솔, 아이랑, 송골집 IoT, 라그릴스 허브, 중앙관제, AI Team, SNS 통합관리, 알리 소싱 도우미, 송골트레이더 등.', 'projects',
+    PAGES['projects'] = ('프로그램', '송골랩이 직접 만들고 쓰는 프로그램 15개 — 드라이브 콘솔, 아이랑, 송골집 IoT, 라그릴스 허브, 중앙관제, AI Team, SNS 통합관리, 알리 소싱 도우미, 송골트레이더 등.', 'projects',
                          hero + g['sec'](filters() + catalog(), cls='tight') + g['band']('관심 가는 프로그램이 있나요?', '써 보고 싶거나, 비슷한 걸 만들고 싶다면 편하게 연락 주세요.', g['btn']('/contact', '문의하기')), 'ko', FILTER_JS)
