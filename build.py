@@ -68,7 +68,7 @@ def page(slug, title, desc, body, on='', lang='ko', tail=''):
         foot = f'''<div class="foot-cols">
       <div><b>SEMICONDUCTOR</b><a href="{href('consulting')}">Wet-clean equipment</a></div>
       <div><b>PROGRAMS</b><a href="{href('projects')}">All {len(__import__('programs').P)} programs</a><a href="/drive-console-en">Drive Console</a><a href="{href('airang')}">Airang</a><a href="{href('project-home-iot')}">Home IoT</a></div>
-      <div><b>ABOUT</b><a href="{href('about')}">About</a><a href="{href('videos')}">Videos</a><a href="{BLOG}" target="_blank" rel="noopener">Blog ↗</a><a href="/drive-console-privacy">Privacy policy</a></div>
+      <div><b>ABOUT</b><a href="{href('about')}">About</a><a href="{href('videos')}">Videos</a><a href="{BLOG}" target="_blank" rel="noopener">Blog ↗</a><a href="/drive-console-privacy#privacy-en">Privacy policy</a></div>
     </div>'''
         biz = f'Songgol Lab · Yongin, Korea · <a href="mailto:{MAIL}">{MAIL}</a>'
     else:

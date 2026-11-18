@@ -8,7 +8,7 @@
     b.addEventListener('click', function () {
       if (b.classList.contains('playing')) return;
       var th = b.querySelector('.th');
-      th.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1" title="영상" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+      th.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1" title="' + (document.documentElement.lang === 'en' ? 'Video' : '영상') + '" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
       b.classList.add('playing');
     });
   });
