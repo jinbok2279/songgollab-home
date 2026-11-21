@@ -1,4 +1,2 @@
-__pycache__/
-*.pyc
-shot.js
+.DS_Store
 __pycache__/
