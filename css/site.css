@@ -380,3 +380,20 @@ h1, h2, h3 { text-wrap: balance; letter-spacing: -.02em; }
 .note-list .note-name:hover { color: var(--orange); }
 .note-list.compact .note-name { font-size: 16px; }
 .note-more { font-weight: 700; white-space: nowrap; }
+
+/* ---- shop */
+.shop-empty { background: var(--card); border: 1px dashed var(--line-2); border-radius: 18px; padding: clamp(28px, 5vw, 56px); text-align: center; }
+.shop-empty h3 { margin: 6px 0 10px; font-size: clamp(22px, 2.4vw, 28px); }
+.shop-empty p { margin: 0 auto 18px; color: var(--ink-2); max-width: 34em; }
+.shop-empty .chips { justify-content: center; }
+.btn.is-off { background: var(--paper); color: var(--muted); border: 1px dashed var(--line-2); cursor: default; pointer-events: none; }
+.price { margin: 0; font: 600 24px/1.2 var(--body); }
+.biz { border-top: 1px solid var(--line); padding-top: 40px; }
+.biz-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr)); gap: 0 32px; margin: 0; }
+.biz-list div { display: flex; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.biz-list dt { flex: 0 0 10em; color: var(--muted); }
+.biz-list dd { margin: 0; color: var(--ink); }
+.biz-list .tbd { color: var(--muted); font-style: normal; }
+.biz-note { margin: 16px 0 0; font-size: 13px; color: var(--muted); }
+.gallery figure { margin: 0; border-radius: 12px; overflow: hidden; background: var(--ph); aspect-ratio: 4 / 3; }
+.gallery figure img { width: 100%; height: 100%; object-fit: cover; }
