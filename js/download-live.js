@@ -18,7 +18,7 @@
     return d.toISOString().slice(0, 10);
   }
   function mb(bytes) {
-    var v = bytes / 1048576;
+    var v = bytes / 1000000;   // 사이트 표기와 같은 십진 MB
     return (v >= 10 ? Math.round(v * 10) / 10 : Math.round(v * 100) / 100).toString().replace(/\.0+$/, '') + 'MB';
   }
   function verNum(v) { return String(v || '').split(/[^0-9]+/).filter(Boolean).map(Number); }
